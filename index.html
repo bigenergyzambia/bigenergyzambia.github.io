@@ -8,393 +8,184 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gold: #C8962A;
-    --gold-light: #E8B84B;
-    --gold-pale: #F5E6C0;
-    --navy: #0D1B3E;
-    --navy-mid: #152347;
-    --black: #060C18;
-    --white: #F8F5EE;
-    --gray: #8A8F9A;
+    --gold: #C8962A; --gold-light: #E8B84B; --gold-pale: #F5E6C0;
+    --navy: #0D1B3E; --navy-mid: #152347; --black: #060C18;
+    --white: #F8F5EE; --gray: #8A8F9A;
   }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--black); color:var(--white); font-family:'Josefin Sans',sans-serif; font-weight:300; overflow-x:hidden; }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--black);
-    color: var(--white);
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
+  /* NAV */
   nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    padding: 18px 60px;
-    display: flex; align-items: center; justify-content: space-between;
-    background: linear-gradient(to bottom, rgba(6,12,24,0.97), transparent);
-    border-bottom: 1px solid rgba(200,150,42,0.15);
-    backdrop-filter: blur(6px);
+    position:fixed; top:0; width:100%; z-index:100;
+    padding:18px 60px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:linear-gradient(to bottom,rgba(6,12,24,0.97),transparent);
+    border-bottom:1px solid rgba(200,150,42,0.15);
+    backdrop-filter:blur(6px);
   }
-  .nav-logo {
-    display: flex; align-items: center; gap: 14px; text-decoration: none;
-  }
-  .nav-logo img { height: 52px; width: 52px; object-fit: contain; }
-  .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-  .nav-logo-text span:first-child {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 17px; font-weight: 700;
-    color: var(--gold-light); letter-spacing: 2px;
-  }
-  .nav-logo-text span:last-child {
-    font-size: 9px; letter-spacing: 4px; color: var(--gray); text-transform: uppercase;
-  }
-  .nav-links { display: flex; gap: 40px; list-style: none; }
-  .nav-links a {
-    text-decoration: none; color: var(--white); font-size: 11px;
-    letter-spacing: 3px; text-transform: uppercase;
-    opacity: 0.75; transition: all 0.3s;
-    position: relative; padding-bottom: 4px;
-  }
-  .nav-links a::after {
-    content: ''; position: absolute; bottom: 0; left: 0;
-    width: 0; height: 1px; background: var(--gold);
-    transition: width 0.3s;
-  }
-  .nav-links a:hover { opacity: 1; color: var(--gold-light); }
-  .nav-links a:hover::after { width: 100%; }
-  .nav-cta {
-    padding: 10px 24px; border: 1px solid var(--gold);
-    color: var(--gold); font-size: 10px; letter-spacing: 3px;
-    text-transform: uppercase; text-decoration: none;
-    transition: all 0.3s;
-  }
-  .nav-cta:hover { background: var(--gold); color: var(--black); }
+  .nav-logo { display:flex; align-items:center; gap:14px; text-decoration:none; }
+  .nav-logo img { height:56px; width:56px; object-fit:contain; filter:drop-shadow(0 0 12px rgba(200,150,42,0.3)); }
+  .nav-logo-text { display:flex; flex-direction:column; line-height:1.1; }
+  .nav-logo-text span:first-child { font-family:'Cormorant Garamond',serif; font-size:17px; font-weight:700; color:var(--gold-light); letter-spacing:2px; }
+  .nav-logo-text span:last-child { font-size:9px; letter-spacing:4px; color:var(--gray); text-transform:uppercase; }
+  .nav-links { display:flex; gap:40px; list-style:none; }
+  .nav-links a { text-decoration:none; color:var(--white); font-size:11px; letter-spacing:3px; text-transform:uppercase; opacity:0.75; transition:all 0.3s; position:relative; padding-bottom:4px; }
+  .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:1px; background:var(--gold); transition:width 0.3s; }
+  .nav-links a:hover { opacity:1; color:var(--gold-light); }
+  .nav-links a:hover::after { width:100%; }
+  .nav-cta { padding:10px 24px; border:1px solid var(--gold); color:var(--gold); font-size:10px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; transition:all 0.3s; }
+  .nav-cta:hover { background:var(--gold); color:var(--black); }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
-    min-height: 100vh;
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-    background: radial-gradient(ellipse at 60% 50%, #152347 0%, #060C18 70%);
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden;
+    background:radial-gradient(ellipse at 60% 50%, #152347 0%, #060C18 70%);
   }
-  .hero-bg-lines {
-    position: absolute; inset: 0; opacity: 0.06;
-    background-image:
-      linear-gradient(rgba(200,150,42,0.8) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200,150,42,0.8) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-  .hero-glow {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
-    width: 700px; height: 700px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(200,150,42,0.07) 0%, transparent 70%);
-    animation: pulse 4s ease-in-out infinite;
-  }
+  .hero-bg-lines { position:absolute; inset:0; opacity:0.05; background-image:linear-gradient(rgba(200,150,42,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(200,150,42,0.8) 1px,transparent 1px); background-size:80px 80px; }
+  .hero-glow { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:700px; height:700px; border-radius:50%; background:radial-gradient(circle,rgba(200,150,42,0.07) 0%,transparent 70%); animation:pulse 4s ease-in-out infinite; }
   @keyframes pulse { 0%,100%{transform:translate(-50%,-50%) scale(1)} 50%{transform:translate(-50%,-50%) scale(1.08)} }
-
-  .hero-content {
-    text-align: center; position: relative; z-index: 2;
-    padding: 0 20px;
-    animation: fadeUp 1.2s ease both;
-  }
+  .hero-content { text-align:center; position:relative; z-index:2; padding:0 20px; animation:fadeUp 1.2s ease both; }
   @keyframes fadeUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
-
-  .hero-badge {
-    display: inline-block; padding: 6px 20px;
-    border: 1px solid rgba(200,150,42,0.4); border-radius: 2px;
-    font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 32px;
-    animation: fadeUp 1.2s 0.2s ease both;
-  }
-  .hero-logo {
-    width: 160px; height: 160px; margin: 0 auto 32px;
-    animation: fadeUp 1.2s 0.3s ease both;
-    filter: drop-shadow(0 0 40px rgba(200,150,42,0.3));
-  }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(42px, 7vw, 82px);
-    font-weight: 300; line-height: 1.05;
-    letter-spacing: 4px;
-    animation: fadeUp 1.2s 0.4s ease both;
-  }
-  .hero h1 em {
-    font-style: normal; color: var(--gold-light);
-    display: block; font-weight: 600;
-  }
-  .hero-sub {
-    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
-    color: var(--gray); margin: 24px 0 48px;
-    animation: fadeUp 1.2s 0.6s ease both;
-  }
-  .hero-btns {
-    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
-    animation: fadeUp 1.2s 0.8s ease both;
-  }
-  .btn-primary {
-    padding: 14px 40px; background: var(--gold);
-    color: var(--black); font-size: 11px; letter-spacing: 3px;
-    text-transform: uppercase; text-decoration: none; font-weight: 600;
-    transition: all 0.3s;
-  }
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-  .btn-outline {
-    padding: 14px 40px; border: 1px solid rgba(255,255,255,0.3);
-    color: var(--white); font-size: 11px; letter-spacing: 3px;
-    text-transform: uppercase; text-decoration: none;
-    transition: all 0.3s;
-  }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-  .hero-scroll {
-    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    font-size: 9px; letter-spacing: 4px; color: var(--gray); text-transform: uppercase;
-    animation: bounce 2s infinite;
-  }
-  .hero-scroll::after {
-    content: ''; width: 1px; height: 40px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-  }
+  .hero-badge { display:inline-block; padding:6px 20px; border:1px solid rgba(200,150,42,0.4); font-size:10px; letter-spacing:5px; text-transform:uppercase; color:var(--gold); margin-bottom:32px; animation:fadeUp 1.2s 0.2s ease both; }
+  .hero-logo { width:200px; height:200px; margin:0 auto 32px; animation:fadeUp 1.2s 0.3s ease both; filter:drop-shadow(0 0 50px rgba(200,150,42,0.4)); }
+  .hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(42px,7vw,82px); font-weight:300; line-height:1.05; letter-spacing:4px; animation:fadeUp 1.2s 0.4s ease both; }
+  .hero h1 em { font-style:normal; color:var(--gold-light); display:block; font-weight:600; }
+  .hero-sub { font-size:11px; letter-spacing:5px; text-transform:uppercase; color:var(--gray); margin:24px 0 48px; animation:fadeUp 1.2s 0.6s ease both; }
+  .hero-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; animation:fadeUp 1.2s 0.8s ease both; }
+  .btn-primary { padding:14px 40px; background:var(--gold); color:var(--black); font-size:11px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; font-weight:600; transition:all 0.3s; }
+  .btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); }
+  .btn-outline { padding:14px 40px; border:1px solid rgba(255,255,255,0.3); color:var(--white); font-size:11px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; transition:all 0.3s; }
+  .btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+  .hero-scroll { position:absolute; bottom:40px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; font-size:9px; letter-spacing:4px; color:var(--gray); text-transform:uppercase; animation:bounce 2s infinite; }
+  .hero-scroll::after { content:''; width:1px; height:40px; background:linear-gradient(to bottom,var(--gold),transparent); }
   @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
 
-  /* ── SECTIONS ── */
-  section { padding: 120px 60px; }
+  /* STATS */
+  .stats-bar { background:var(--navy); border-top:1px solid rgba(200,150,42,0.2); border-bottom:1px solid rgba(200,150,42,0.2); padding:50px 60px; display:grid; grid-template-columns:repeat(4,1fr); }
+  .stat-item { text-align:center; padding:20px; border-right:1px solid rgba(200,150,42,0.15); }
+  .stat-item:last-child { border-right:none; }
+  .stat-num { font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:700; color:var(--gold-light); line-height:1; }
+  .stat-label { font-size:9px; letter-spacing:4px; text-transform:uppercase; color:var(--gray); margin-top:8px; }
 
-  .section-label {
-    font-size: 9px; letter-spacing: 6px; text-transform: uppercase;
-    color: var(--gold); display: flex; align-items: center; gap: 16px;
-    margin-bottom: 20px;
-  }
-  .section-label::before {
-    content: ''; width: 40px; height: 1px; background: var(--gold);
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 5vw, 58px); font-weight: 300;
-    line-height: 1.1; margin-bottom: 20px;
-  }
-  .section-title strong { color: var(--gold-light); font-weight: 600; }
+  /* SERVICES */
+  .services { background:var(--black); padding:120px 60px; }
+  .section-label { font-size:9px; letter-spacing:6px; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+  .section-label::before { content:''; width:40px; height:1px; background:var(--gold); }
+  .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,5vw,58px); font-weight:300; line-height:1.1; margin-bottom:20px; }
+  .section-title strong { color:var(--gold-light); font-weight:600; }
+  .services-intro { max-width:800px; margin-bottom:80px; }
+  .services-intro p { font-size:15px; line-height:1.9; color:rgba(248,245,238,0.7); margin-top:24px; }
 
-  /* ── STATS ── */
-  .stats-bar {
-    background: var(--navy);
-    border-top: 1px solid rgba(200,150,42,0.2);
-    border-bottom: 1px solid rgba(200,150,42,0.2);
-    padding: 50px 60px;
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-  }
-  .stat-item {
-    text-align: center; padding: 20px;
-    border-right: 1px solid rgba(200,150,42,0.15);
-  }
-  .stat-item:last-child { border-right: none; }
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 52px; font-weight: 700; color: var(--gold-light);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--gray); margin-top: 8px;
-  }
-
-  /* ── SERVICES ── */
-  .services { background: var(--black); }
-  .services-intro {
-    max-width: 800px; margin-bottom: 80px;
-  }
-  .services-intro p {
-    font-size: 15px; line-height: 1.9; color: rgba(248,245,238,0.7);
-    margin-top: 24px;
-  }
-  .services-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
-  }
+  /* SERVICE CARDS with photo bg */
+  .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; }
   .service-card {
-    background: var(--navy-mid);
-    padding: 48px 40px;
-    border: 1px solid rgba(200,150,42,0.1);
-    transition: all 0.4s;
-    position: relative; overflow: hidden;
-    cursor: default;
+    position:relative; overflow:hidden; min-height:340px;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    cursor:default;
   }
-  .service-card::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; width: 3px; height: 0;
-    background: var(--gold);
-    transition: height 0.4s;
+  .service-card-bg {
+    position:absolute; inset:0;
+    background-size:cover; background-position:center;
+    transition:transform 0.5s ease;
   }
-  .service-card:hover { background: #1a2d5a; border-color: rgba(200,150,42,0.3); transform: translateY(-4px); }
-  .service-card:hover::before { height: 100%; }
-  .service-icon {
-    font-size: 36px; margin-bottom: 24px; display: block;
+  .service-card:hover .service-card-bg { transform:scale(1.06); }
+  .service-card-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(6,12,24,0.95) 0%, rgba(6,12,24,0.6) 50%, rgba(6,12,24,0.2) 100%);
+    transition:background 0.3s;
   }
-  .service-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 11px; color: var(--gold); letter-spacing: 4px;
-    margin-bottom: 16px; display: block;
-  }
-  .service-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px; font-weight: 600; margin-bottom: 16px;
-    color: var(--white);
-  }
-  .service-card p {
-    font-size: 12px; line-height: 1.9; color: rgba(248,245,238,0.6);
-    letter-spacing: 0.3px;
-  }
-  .service-tags {
-    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px;
-  }
-  .service-tag {
-    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
-    padding: 4px 10px; border: 1px solid rgba(200,150,42,0.3);
-    color: var(--gold); border-radius: 1px;
-  }
+  .service-card:hover .service-card-overlay { background:linear-gradient(to top,rgba(13,27,62,0.97) 0%,rgba(13,27,62,0.7) 50%,rgba(13,27,62,0.3) 100%); }
+  .service-card-content { position:relative; z-index:2; padding:36px; }
+  .service-card-content::before { content:''; display:block; width:0; height:2px; background:var(--gold); transition:width 0.4s; margin-bottom:16px; }
+  .service-card:hover .service-card-content::before { width:40px; }
+  .service-num { font-size:9px; letter-spacing:4px; color:var(--gold); display:block; margin-bottom:10px; }
+  .service-card h3 { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:600; margin-bottom:12px; color:var(--white); }
+  .service-card p { font-size:12px; line-height:1.8; color:rgba(248,245,238,0.7); }
+  .service-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
+  .service-tag { font-size:9px; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border:1px solid rgba(200,150,42,0.4); color:var(--gold); }
 
-  /* ── WHY US ── */
-  .why {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--black) 100%);
-    position: relative; overflow: hidden;
-  }
-  .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
-  .why-visual {
-    position: relative; display: flex; align-items: center; justify-content: center;
-  }
-  .why-circle {
-    width: 380px; height: 380px; border-radius: 50%;
-    border: 1px solid rgba(200,150,42,0.2);
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-  }
-  .why-circle::before {
-    content: ''; position: absolute; inset: 20px; border-radius: 50%;
-    border: 1px solid rgba(200,150,42,0.1);
-  }
-  .why-circle-img {
-    width: 260px; height: 260px; object-fit: contain;
-    filter: drop-shadow(0 0 60px rgba(200,150,42,0.25));
-  }
-  .why-list { list-style: none; margin-top: 40px; }
-  .why-list li {
-    display: flex; gap: 20px; padding: 24px 0;
-    border-bottom: 1px solid rgba(200,150,42,0.1);
-    align-items: flex-start;
-  }
-  .why-list li:last-child { border-bottom: none; }
-  .why-bullet {
-    width: 32px; height: 32px; border: 1px solid var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 13px; flex-shrink: 0; margin-top: 2px;
-  }
-  .why-list h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px; font-weight: 600; margin-bottom: 6px; color: var(--gold-pale);
-  }
-  .why-list p { font-size: 12px; line-height: 1.8; color: rgba(248,245,238,0.55); }
+  /* WHY */
+  .why { background:linear-gradient(135deg,var(--navy) 0%,var(--black) 100%); padding:120px 60px; }
+  .why-inner { display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center; }
+  .why-visual { display:flex; align-items:center; justify-content:center; }
+  .why-circle { width:380px; height:380px; border-radius:50%; border:1px solid rgba(200,150,42,0.2); display:flex; align-items:center; justify-content:center; position:relative; }
+  .why-circle::before { content:''; position:absolute; inset:20px; border-radius:50%; border:1px solid rgba(200,150,42,0.1); }
+  .why-circle-img { width:280px; height:280px; object-fit:contain; filter:drop-shadow(0 0 40px rgba(200,150,42,0.3)); }
+  .why-list { list-style:none; margin-top:40px; }
+  .why-list li { display:flex; gap:20px; padding:24px 0; border-bottom:1px solid rgba(200,150,42,0.1); align-items:flex-start; }
+  .why-list li:last-child { border-bottom:none; }
+  .why-bullet { width:32px; height:32px; border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0; margin-top:2px; }
+  .why-list h4 { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; margin-bottom:6px; color:var(--gold-pale); }
+  .why-list p { font-size:12px; line-height:1.8; color:rgba(248,245,238,0.55); }
 
-  /* ── COUNTRIES ── */
-  .countries {
-    background: var(--black);
-    text-align: center;
-  }
-  .countries-inner { max-width: 900px; margin: 0 auto; }
-  .countries-inner p {
-    font-size: 14px; line-height: 1.9; color: rgba(248,245,238,0.65);
-    margin: 24px 0 60px;
-  }
-  .country-flags {
-    display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
-  }
-  .country-item {
-    display: flex; flex-direction: column; align-items: center; gap: 12px;
-  }
-  .country-flag { font-size: 48px; }
-  .country-name {
-    font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gray);
-  }
+  /* COUNTRIES */
+  .countries { background:var(--black); padding:120px 60px; text-align:center; }
+  .countries-inner { max-width:900px; margin:0 auto; }
+  .countries-inner p { font-size:14px; line-height:1.9; color:rgba(248,245,238,0.65); margin:24px 0 60px; }
+  .country-flags { display:flex; justify-content:center; gap:60px; flex-wrap:wrap; }
+  .country-item { display:flex; flex-direction:column; align-items:center; gap:12px; }
+  .country-flag { font-size:48px; }
+  .country-name { font-size:9px; letter-spacing:4px; text-transform:uppercase; color:var(--gray); }
 
-  /* ── CTA BAND ── */
-  .cta-band {
-    background: var(--gold);
-    padding: 80px 60px;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 40px; flex-wrap: wrap;
+  /* SOCIAL */
+  .social-band { background:var(--navy-mid); border-top:1px solid rgba(200,150,42,0.15); border-bottom:1px solid rgba(200,150,42,0.15); padding:60px; text-align:center; }
+  .social-band h3 { font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; margin-bottom:8px; }
+  .social-band p { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--gray); margin-bottom:40px; }
+  .social-links { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+  .social-btn {
+    display:flex; align-items:center; gap:12px;
+    padding:14px 32px; border:1px solid rgba(200,150,42,0.3);
+    color:var(--white); text-decoration:none; font-size:11px; letter-spacing:3px; text-transform:uppercase;
+    transition:all 0.3s;
   }
-  .cta-band h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 4vw, 46px); font-weight: 700;
-    color: var(--black); max-width: 600px; line-height: 1.2;
-  }
-  .btn-dark {
-    padding: 16px 48px; background: var(--black);
-    color: var(--gold-light); font-size: 11px; letter-spacing: 3px;
-    text-transform: uppercase; text-decoration: none; font-weight: 600;
-    transition: all 0.3s; white-space: nowrap; flex-shrink: 0;
-  }
-  .btn-dark:hover { background: var(--navy); }
+  .social-btn:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-2px); }
+  .social-btn svg { width:18px; height:18px; fill:currentColor; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy);
-    padding: 80px 60px 40px;
-    border-top: 1px solid rgba(200,150,42,0.2);
-  }
-  .footer-top {
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 60px; margin-bottom: 60px;
-  }
-  .footer-brand img { height: 70px; margin-bottom: 20px; }
-  .footer-brand p { font-size: 12px; line-height: 1.9; color: var(--gray); max-width: 280px; }
-  .footer-brand .reg {
-    margin-top: 20px; font-size: 9px; letter-spacing: 2px;
-    color: rgba(138,143,154,0.6); text-transform: uppercase;
-  }
-  .footer-col h4 {
-    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 24px;
-  }
-  .footer-col ul { list-style: none; }
-  .footer-col li { margin-bottom: 12px; }
-  .footer-col a {
-    text-decoration: none; color: var(--gray); font-size: 12px;
-    transition: color 0.3s; letter-spacing: 0.5px;
-  }
-  .footer-col a:hover { color: var(--gold-light); }
-  .footer-bottom {
-    border-top: 1px solid rgba(200,150,42,0.1);
-    padding-top: 30px; display: flex;
-    justify-content: space-between; align-items: center; flex-wrap: gap;
-  }
-  .footer-bottom p { font-size: 10px; color: rgba(138,143,154,0.6); letter-spacing: 1px; }
+  /* CTA */
+  .cta-band { background:var(--gold); padding:80px 60px; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+  .cta-band h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,46px); font-weight:700; color:var(--black); max-width:600px; line-height:1.2; }
+  .btn-dark { padding:16px 48px; background:var(--black); color:var(--gold-light); font-size:11px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; font-weight:600; transition:all 0.3s; white-space:nowrap; }
+  .btn-dark:hover { background:var(--navy); }
 
-  /* ── MOBILE ── */
-  @media (max-width: 900px) {
-    nav { padding: 16px 24px; }
-    .nav-links { display: none; }
-    section { padding: 80px 24px; }
-    .stats-bar { grid-template-columns: repeat(2,1fr); padding: 40px 24px; }
-    .stat-item:nth-child(2) { border-right: none; }
-    .services-grid { grid-template-columns: 1fr; }
-    .why-inner { grid-template-columns: 1fr; gap: 40px; }
-    .why-circle { width: 260px; height: 260px; }
-    .why-circle-img { width: 180px; height: 180px; }
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
-    .cta-band { flex-direction: column; text-align: center; }
-    .country-flags { gap: 30px; }
+  /* FOOTER */
+  footer { background:var(--navy); padding:80px 60px 40px; border-top:1px solid rgba(200,150,42,0.2); }
+  .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:60px; margin-bottom:60px; }
+  .footer-brand img { height:80px; object-fit:contain; margin-bottom:20px; filter:drop-shadow(0 0 16px rgba(200,150,42,0.25)); }
+  .footer-brand p { font-size:12px; line-height:1.9; color:var(--gray); max-width:280px; }
+  .footer-brand .reg { margin-top:20px; font-size:9px; letter-spacing:2px; color:rgba(138,143,154,0.6); text-transform:uppercase; }
+  .footer-social { display:flex; gap:12px; margin-top:20px; }
+  .footer-social a { width:36px; height:36px; border:1px solid rgba(200,150,42,0.3); display:flex; align-items:center; justify-content:center; color:var(--gray); text-decoration:none; transition:all 0.3s; font-size:14px; }
+  .footer-social a:hover { border-color:var(--gold); color:var(--gold); }
+  .footer-col h4 { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:24px; }
+  .footer-col ul { list-style:none; }
+  .footer-col li { margin-bottom:12px; }
+  .footer-col a { text-decoration:none; color:var(--gray); font-size:12px; transition:color 0.3s; }
+  .footer-col a:hover { color:var(--gold-light); }
+  .footer-bottom { border-top:1px solid rgba(200,150,42,0.1); padding-top:30px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  .footer-bottom p { font-size:10px; color:rgba(138,143,154,0.6); letter-spacing:1px; }
+
+  @media(max-width:900px) {
+    nav { padding:16px 24px; }
+    .nav-links { display:none; }
+    .services, .why, .countries { padding:80px 24px; }
+    .stats-bar { grid-template-columns:repeat(2,1fr); padding:40px 24px; }
+    .stat-item:nth-child(2) { border-right:none; }
+    .services-grid { grid-template-columns:1fr; }
+    .why-inner { grid-template-columns:1fr; gap:40px; }
+    .why-circle { width:260px; height:260px; }
+    .why-circle-img { width:190px; height:190px; }
+    .footer-top { grid-template-columns:1fr 1fr; gap:40px; }
+    .cta-band { flex-direction:column; text-align:center; }
+    .country-flags { gap:30px; }
+    .social-band { padding:40px 24px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
     <img src="logo.png" alt="Big Energy Logo">
@@ -431,22 +222,10 @@
 
 <!-- STATS -->
 <div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-num">3</div>
-    <div class="stat-label">Core Business Sectors</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">6+</div>
-    <div class="stat-label">Service Categories</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">2026</div>
-    <div class="stat-label">Incorporated</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">🌍</div>
-    <div class="stat-label">Pan-African Operations</div>
-  </div>
+  <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Core Business Sectors</div></div>
+  <div class="stat-item"><div class="stat-num">6+</div><div class="stat-label">Service Categories</div></div>
+  <div class="stat-item"><div class="stat-num">2026</div><div class="stat-label">Incorporated</div></div>
+  <div class="stat-item"><div class="stat-num">🌍</div><div class="stat-label">Pan-African Operations</div></div>
 </div>
 
 <!-- SERVICES -->
@@ -459,74 +238,68 @@
   <div class="services-grid">
 
     <div class="service-card">
-      <span class="service-icon">⛏️</span>
-      <span class="service-num">01</span>
-      <h3>Mining Services</h3>
-      <p>Mining equipment leasing and brokerage. We connect mining companies with the machinery, resources, and expertise they need to operate efficiently across the region.</p>
-      <div class="service-tags">
-        <span class="service-tag">Equipment Leasing</span>
-        <span class="service-tag">Brokerage</span>
-        <span class="service-tag">Consulting</span>
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <span class="service-num">01</span>
+        <h3>Mining Services</h3>
+        <p>Mining equipment leasing and brokerage. We connect mining companies with machinery, resources, and expertise across the region.</p>
+        <div class="service-tags"><span class="service-tag">Equipment Leasing</span><span class="service-tag">Brokerage</span></div>
       </div>
     </div>
 
     <div class="service-card">
-      <span class="service-icon">⚡</span>
-      <span class="service-num">02</span>
-      <h3>Electric Power & Solar</h3>
-      <p>Power generation, transmission and distribution solutions. Solar energy systems and electrical transformation equipment including switchboards, transformer panels, and fuse boxes.</p>
-      <div class="service-tags">
-        <span class="service-tag">Solar Energy</span>
-        <span class="service-tag">Transformers</span>
-        <span class="service-tag">Distribution Boards</span>
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <span class="service-num">02</span>
+        <h3>Solar & Electric Power</h3>
+        <p>Power generation, transmission and distribution. Solar energy systems and complete electrical transformation equipment.</p>
+        <div class="service-tags"><span class="service-tag">Solar Energy</span><span class="service-tag">Transformers</span></div>
       </div>
     </div>
 
     <div class="service-card">
-      <span class="service-icon">🌱</span>
-      <span class="service-num">03</span>
-      <h3>Agricultural Trade</h3>
-      <p>Wholesale distribution and brokerage of agricultural inputs including fertilizers, liquid fertilizers, and specialized agrochemicals for large-scale farming operations across Africa.</p>
-      <div class="service-tags">
-        <span class="service-tag">Fertilizers</span>
-        <span class="service-tag">Liquid Fertilizers</span>
-        <span class="service-tag">Wholesale</span>
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <span class="service-num">03</span>
+        <h3>Agricultural Trade</h3>
+        <p>Wholesale distribution of fertilizers, liquid fertilizers, and specialized agrochemicals for large-scale farming operations.</p>
+        <div class="service-tags"><span class="service-tag">Fertilizers</span><span class="service-tag">Wholesale</span></div>
       </div>
     </div>
 
     <div class="service-card">
-      <span class="service-icon">🛢️</span>
-      <span class="service-num">04</span>
-      <h3>Lubricants & Motor Oil</h3>
-      <p>Supply and wholesale distribution of motor oils and industrial lubricants for mining, transport, and agricultural machinery. Ensuring operational continuity across your fleet.</p>
-      <div class="service-tags">
-        <span class="service-tag">Motor Oil</span>
-        <span class="service-tag">Industrial Lubricants</span>
-        <span class="service-tag">Wholesale</span>
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <span class="service-num">04</span>
+        <h3>Lubricants & Motor Oil</h3>
+        <p>Supply and wholesale of motor oils and industrial lubricants for mining, transport, and agricultural machinery.</p>
+        <div class="service-tags"><span class="service-tag">Motor Oil</span><span class="service-tag">Industrial</span></div>
       </div>
     </div>
 
     <div class="service-card">
-      <span class="service-icon">🔌</span>
-      <span class="service-num">05</span>
-      <h3>Electrical Infrastructure</h3>
-      <p>Supply and installation support for electrical infrastructure including insurance panels, distribution boards, switchgear, fuse cups, and complete transformation systems.</p>
-      <div class="service-tags">
-        <span class="service-tag">Switchgear</span>
-        <span class="service-tag">Insurance Panels</span>
-        <span class="service-tag">Fuse Systems</span>
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <span class="service-num">05</span>
+        <h3>Electrical Infrastructure</h3>
+        <p>Supply of insurance panels, distribution boards, switchgear, fuse systems, and complete transformation systems.</p>
+        <div class="service-tags"><span class="service-tag">Switchgear</span><span class="service-tag">Panels</span></div>
       </div>
     </div>
 
     <div class="service-card">
-      <span class="service-icon">🤝</span>
-      <span class="service-num">06</span>
-      <h3>Trade Brokerage</h3>
-      <p>Non-specialized wholesale trade and brokerage services. Acting as the strategic bridge between suppliers and buyers across energy, mining, and agricultural sectors in Africa.</p>
-      <div class="service-tags">
-        <span class="service-tag">Brokerage</span>
-        <span class="service-tag">B2B Trade</span>
-        <span class="service-tag">Sourcing</span>
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <span class="service-num">06</span>
+        <h3>Trade Brokerage</h3>
+        <p>Non-specialized wholesale trade and brokerage. The strategic bridge between suppliers and buyers across energy, mining, and agriculture.</p>
+        <div class="service-tags"><span class="service-tag">Brokerage</span><span class="service-tag">B2B Trade</span></div>
       </div>
     </div>
 
@@ -541,38 +314,14 @@
         <img src="logo.png" alt="Big Energy Logo" class="why-circle-img">
       </div>
     </div>
-    <div class="why-content">
+    <div>
       <div class="section-label">Why Choose Us</div>
       <h2 class="section-title">Built on <strong>Trust & Expertise</strong></h2>
       <ul class="why-list">
-        <li>
-          <div class="why-bullet">🌍</div>
-          <div>
-            <h4>Pan-African Vision</h4>
-            <p>Headquartered in Lusaka, Zambia — strategically positioned to serve mining and energy markets across sub-Saharan Africa.</p>
-          </div>
-        </li>
-        <li>
-          <div class="why-bullet">🤝</div>
-          <div>
-            <h4>International Partnership</h4>
-            <p>With directors from Zambia and Turkey, we bring together local expertise and international business networks to deliver unmatched value.</p>
-          </div>
-        </li>
-        <li>
-          <div class="why-bullet">⚡</div>
-          <div>
-            <h4>Multi-Sector Capability</h4>
-            <p>From solar panels to fertilizers, mining equipment to motor oil — one partner for all your energy and resource needs.</p>
-          </div>
-        </li>
-        <li>
-          <div class="why-bullet">📋</div>
-          <div>
-            <h4>Fully Registered & Compliant</h4>
-            <p>Officially registered with PACRA under Reg. No. 120261045170. Operating with full legal compliance under Zambian law.</p>
-          </div>
-        </li>
+        <li><div class="why-bullet">🌍</div><div><h4>Pan-African Vision</h4><p>Headquartered in Lusaka, Zambia — strategically positioned to serve mining and energy markets across sub-Saharan Africa.</p></div></li>
+        <li><div class="why-bullet">🤝</div><div><h4>International Partnership</h4><p>With directors from Zambia and Turkey, we bring together local expertise and international business networks.</p></div></li>
+        <li><div class="why-bullet">⚡</div><div><h4>Multi-Sector Capability</h4><p>From solar panels to fertilizers, mining equipment to motor oil — one trusted partner for all your needs.</p></div></li>
+        <li><div class="why-bullet">📋</div><div><h4>Fully Registered & Compliant</h4><p>Officially registered with PACRA under Reg. No. 120261045170, operating with full legal compliance under Zambian law.</p></div></li>
       </ul>
     </div>
   </div>
@@ -583,7 +332,7 @@
   <div class="countries-inner">
     <div class="section-label" style="justify-content:center">Our Reach</div>
     <h2 class="section-title">Operating Across <strong>Africa</strong></h2>
-    <p>Based in Zambia with operations and partnerships extending across the African continent. Our network connects suppliers, buyers, and operators in key mining and energy markets.</p>
+    <p>Based in Zambia with operations and partnerships extending across the African continent, connecting suppliers, buyers, and operators in key markets.</p>
     <div class="country-flags">
       <div class="country-item"><div class="country-flag">🇿🇲</div><div class="country-name">Zambia</div></div>
       <div class="country-item"><div class="country-flag">🇨🇩</div><div class="country-name">DR Congo</div></div>
@@ -594,6 +343,26 @@
     </div>
   </div>
 </section>
+
+<!-- SOCIAL MEDIA -->
+<div class="social-band">
+  <h3>Follow Us on Social Media</h3>
+  <p>Stay connected for news and updates</p>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61564695637857" target="_blank" class="social-btn">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Facebook
+    </a>
+    <a href="https://www.linkedin.com/in/big-energy-reseources-zambia-014636405" target="_blank" class="social-btn">
+      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://wa.me/260973723566" target="_blank" class="social-btn">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
 
 <!-- CTA -->
 <div class="cta-band">
@@ -606,7 +375,12 @@
   <div class="footer-top">
     <div class="footer-brand">
       <img src="logo.png" alt="Big Energy Logo">
-      <p>Big Energy & Resources Limited is a Zambian-registered company delivering mining, energy, and trade solutions across Africa.</p>
+      <p>Big Energy & Resources Limited — Mining, Energy & Trade solutions across Africa.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61564695637857" target="_blank" title="Facebook">f</a>
+        <a href="https://www.linkedin.com/in/big-energy-reseources-zambia-014636405" target="_blank" title="LinkedIn">in</a>
+        <a href="https://wa.me/260973723566" target="_blank" title="WhatsApp">wa</a>
+      </div>
       <div class="reg">Reg. No. 120261045170 · PACRA · Zambia</div>
     </div>
     <div class="footer-col">
@@ -632,7 +406,7 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+260973723566">+260 973 723 566</a></li>
-        <li><a href="mailto:mwanzageorge128@gmail.com">mwanzageorge128@gmail.com</a></li>
+        <li><a href="mailto:bigenergyzambia@gmail.com">bigenergyzambia@gmail.com</a></li>
         <li><a href="#">Lusaka, Zambia</a></li>
       </ul>
     </div>
