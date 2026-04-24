@@ -131,14 +131,30 @@
   .footer-bottom { border-top:1px solid rgba(200,150,42,0.1); padding-top:30px; display:flex; justify-content:space-between; align-items:center; }
   .footer-bottom p { font-size:10px; color:rgba(138,143,154,0.6); letter-spacing:1px; }
 
-  @media(max-width:900px) {
-    nav { padding:16px 24px; }
+  @media(max-width:768px) {
+    nav { padding:12px 18px; }
     .nav-links { display:none; }
-    .page-hero, .contact-main, .map-section { padding-left:24px; padding-right:24px; }
-    .contact-grid { grid-template-columns:1fr; gap:40px; }
+    .nav-cta { padding:8px 14px; font-size:9px; }
+    .page-hero { padding:120px 18px 60px; }
+    .page-hero::before { display:none; }
+    .section-title { font-size:28px; }
+    .story-inner, .team-grid, .sectors-grid { grid-template-columns:1fr; }
+    .contact-grid { grid-template-columns:1fr; gap:30px; }
     .form-row { grid-template-columns:1fr; }
-    .contact-form { padding:32px 24px; }
-    .footer-top { grid-template-columns:1fr 1fr; gap:40px; }
+    .contact-form { padding:28px 18px; }
+    .contact-main, .map-section { padding-left:18px; padding-right:18px; padding-top:60px; }
+    .footer-top { grid-template-columns:1fr; gap:30px; }
+    .footer-bottom { flex-direction:column; text-align:center; gap:8px; }
+    .cta-band { flex-direction:column; text-align:center; padding:40px 18px; }
+    .why-inner { grid-template-columns:1fr; }
+    .why-visual { display:none; }
+    .team-card { padding:32px 24px; }
+    .whatsapp-btn { width:100%; justify-content:center; }
+    .social-links { flex-direction:column; align-items:center; }
+  }
+  @media(max-width:380px) {
+    .nav-cta { display:none; }
+    .section-title { font-size:24px; }
   }
 </style>
 </head>
@@ -272,7 +288,7 @@
     <div class="footer-brand">
       <img src="logo.png" alt="Big Energy Logo">
       <p>Big Energy & Resources Limited — Mining, Energy & Trade solutions across Africa.</p>
-      <div class="reg">Reg. No. 120261045170 · PACRA · Zambia</div>
+      <div class="reg">Reg. No. 11045170 · PACRA · Zambia</div>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
@@ -303,8 +319,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Big Energy & Resources Limited. All rights reserved.</p>
-    <p>Incorporated in Zambia · 21 April 2026</p>
+    <p>© Big Energy & Resources Limited. All rights reserved.</p>
+    <p>Incorporated in Zambia</p>
   </div>
 </footer>
 
