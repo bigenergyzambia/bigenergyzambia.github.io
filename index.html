@@ -69,14 +69,15 @@
     background:linear-gradient(135deg, var(--navy) 0%, #1a2d5a 100%);
     border-top:1px solid rgba(200,150,42,0.25);
     border-bottom:1px solid rgba(200,150,42,0.25);
-    padding:50px 60px;
     display:grid; grid-template-columns:repeat(3,1fr); gap:0;
   }
-  .bridge-item { text-align:center; padding:24px; border-right:1px solid rgba(200,150,42,0.15); }
+  .bridge-item { border-right:1px solid rgba(200,150,42,0.15); overflow:hidden; transition:all 0.3s; }
   .bridge-item:last-child { border-right:none; }
-  .bridge-icon { font-size:32px; margin-bottom:12px; }
-  .bridge-title { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--gold-light); margin-bottom:8px; }
-  .bridge-desc { font-size:11px; letter-spacing:1px; color:rgba(248,245,238,0.6); line-height:1.7; }
+  .bridge-item:hover { background:rgba(200,150,42,0.06); }
+  .bridge-img { width:100%; height:200px; background-size:cover; background-position:center; }
+  .bridge-body { padding:28px 32px; }
+  .bridge-title { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--gold-light); margin-bottom:10px; }
+  .bridge-desc { font-size:12px; letter-spacing:0.5px; color:rgba(248,245,238,0.6); line-height:1.8; }
 
   /* STATS */
   .stats-bar { background:var(--navy); padding:50px 60px; display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid rgba(200,150,42,0.15); }
@@ -224,19 +225,25 @@
 <!-- BRIDGE BANNER -->
 <div class="bridge-banner">
   <div class="bridge-item">
-    <div class="bridge-icon">🔍</div>
-    <div class="bridge-title">We Research</div>
-    <div class="bridge-desc">We identify the best global suppliers across Turkey, Europe and Asia for every product category your business needs.</div>
+    <div class="bridge-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80')"></div>
+    <div class="bridge-body">
+      <div class="bridge-title">We Research</div>
+      <div class="bridge-desc">We identify the best global suppliers across Turkey, Europe and Asia for every product category your business needs.</div>
+    </div>
   </div>
   <div class="bridge-item">
-    <div class="bridge-icon">🤝</div>
-    <div class="bridge-title">We Connect</div>
-    <div class="bridge-desc">Acting as your trusted broker and consultant, we bridge Zambian businesses with international suppliers and distributors.</div>
+    <div class="bridge-img" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80')"></div>
+    <div class="bridge-body">
+      <div class="bridge-title">We Connect</div>
+      <div class="bridge-desc">Acting as your trusted broker and consultant, we bridge Zambian businesses with international suppliers and distributors.</div>
+    </div>
   </div>
   <div class="bridge-item">
-    <div class="bridge-icon">✅</div>
-    <div class="bridge-title">We Deliver</div>
-    <div class="bridge-desc">From sourcing to logistics coordination, we ensure quality products reach you at the right price and the right time.</div>
+    <div class="bridge-img" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80')"></div>
+    <div class="bridge-body">
+      <div class="bridge-title">We Deliver</div>
+      <div class="bridge-desc">From sourcing to logistics coordination, we ensure quality products reach you at the right price and the right time.</div>
+    </div>
   </div>
 </div>
 
