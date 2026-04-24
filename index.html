@@ -146,6 +146,19 @@
   .country-role { font-size:9px; color:var(--gold); letter-spacing:1px; margin-top:2px; }
 
   /* SOCIAL */
+  /* PRESENTATIONS */
+  .presentations { background:var(--navy); padding:100px 60px; }
+  .pres-inner { max-width:900px; margin:0 auto; text-align:center; }
+  .pres-sub { font-size:13px; color:rgba(248,245,238,0.65); line-height:1.8; margin:20px 0 60px; max-width:700px; margin-left:auto; margin-right:auto; }
+  .pres-cards { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:20px; }
+  .pres-card { background:var(--navy-mid); border:1px solid rgba(200,150,42,0.2); padding:48px 36px; text-align:center; transition:all 0.3s; }
+  .pres-card:hover { border-color:rgba(200,150,42,0.5); transform:translateY(-4px); }
+  .pres-icon { font-size:48px; margin-bottom:20px; }
+  .pres-card h3 { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:600; color:var(--gold-light); margin-bottom:16px; }
+  .pres-card p { font-size:12px; line-height:1.9; color:rgba(248,245,238,0.65); margin-bottom:28px; }
+  .pres-btn { display:inline-block; padding:12px 32px; background:var(--gold); color:var(--black); font-size:10px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; font-weight:600; transition:all 0.3s; }
+  .pres-btn:hover { background:var(--gold-light); }
+
   .social-band { background:var(--navy-mid); border-top:1px solid rgba(200,150,42,0.15); border-bottom:1px solid rgba(200,150,42,0.15); padding:60px; text-align:center; }
   .social-band h3 { font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; margin-bottom:8px; }
   .social-band p { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--gray); margin-bottom:40px; }
@@ -228,7 +241,22 @@
     .country-flags { gap:20px; }
     .country-flag { font-size:36px; }
 
-    .social-band { padding:40px 18px; }
+    /* PRESENTATIONS */
+  .presentations { background:var(--navy); padding:100px 60px; }
+  .pres-inner { max-width:900px; margin:0 auto; text-align:center; }
+  .pres-sub { font-size:13px; color:rgba(248,245,238,0.65); line-height:1.8; margin:20px 0 60px; max-width:700px; margin-left:auto; margin-right:auto; }
+  .pres-cards { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:20px; }
+  .pres-card { background:var(--navy-mid); border:1px solid rgba(200,150,42,0.2); padding:48px 36px; text-align:center; transition:all 0.3s; }
+  .pres-card:hover { border-color:rgba(200,150,42,0.5); transform:translateY(-4px); }
+  .pres-icon { font-size:48px; margin-bottom:20px; }
+  .pres-card h3 { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:600; color:var(--gold-light); margin-bottom:16px; }
+  .pres-card p { font-size:12px; line-height:1.9; color:rgba(248,245,238,0.65); margin-bottom:28px; }
+  .pres-btn { display:inline-block; padding:12px 32px; background:var(--gold); color:var(--black); font-size:10px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; font-weight:600; transition:all 0.3s; }
+  .pres-btn:hover { background:var(--gold-light); }
+
+  .social-band { padding:40px 18px; }
+    .pres-cards { grid-template-columns:1fr; }
+    .presentations { padding:60px 18px; }
     .social-links { flex-direction:column; align-items:center; }
     .social-btn { width:220px; justify-content:center; }
 
@@ -500,6 +528,29 @@
     </a>
   </div>
 </div>
+
+<!-- PRESENTATIONS DOWNLOAD -->
+<section class="presentations" id="presentations">
+  <div class="pres-inner">
+    <div class="section-label" style="justify-content:center">Company Presentations</div>
+    <h2 class="section-title" style="text-align:center">Download Our <strong>Presentations</strong></h2>
+    <p class="pres-sub">Learn more about how we can work together. Download our detailed company presentations tailored for your needs.</p>
+    <div class="pres-cards">
+      <div class="pres-card">
+        <div class="pres-icon">🇹🇷</div>
+        <h3>For Turkish Suppliers</h3>
+        <p>Are you a Turkish manufacturer looking to enter the Zambian and southern African market? Discover how Big Energy & Resources can be your trusted local partner.</p>
+        <a href="presentation-for-suppliers.pptx" download class="pres-btn">Download Presentation</a>
+      </div>
+      <div class="pres-card">
+        <div class="pres-icon">🇿🇲</div>
+        <h3>For Zambian Buyers</h3>
+        <p>Are you a Zambian business looking for quality products at competitive prices? Learn how we source the best products from Turkey and global markets for you.</p>
+        <a href="presentation-for-buyers.pptx" download class="pres-btn">Download Presentation</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CTA -->
 <div class="cta-band">
