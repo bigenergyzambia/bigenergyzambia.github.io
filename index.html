@@ -53,7 +53,8 @@
     z-index:99999; 
     box-shadow:0 8px 32px rgba(0,0,0,0.6);
   }
-  .lang-switcher:hover .lang-dropdown { display:block !important; }
+  .lang-switcher:hover .lang-dropdown,
+  .lang-switcher.active .lang-dropdown { display:block !important; }
   .lang-dropdown.open { display:block; }
   .lang-option { display:flex; align-items:center; gap:10px; padding:10px 16px; cursor:pointer; transition:background 0.2s; font-size:11px; color:var(--white); letter-spacing:1px; border:none; background:none; width:100%; text-align:left; font-family:'Josefin Sans',sans-serif; }
   .lang-option:hover { background:rgba(200,150,42,0.1); color:var(--gold); }
@@ -298,7 +299,7 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="lang-switcher">
-    <div class="lang-btn">
+    <div class="lang-btn" onclick="this.parentElement.classList.toggle('active')">
       <img src="https://flagcdn.com/w20/gb.png" alt="EN" id="currentFlag">
       <span id="currentLang">EN</span> ▾
     </div>
