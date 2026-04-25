@@ -38,11 +38,22 @@
   .nav-cta { padding:10px 24px; border:1px solid var(--gold); color:var(--gold); font-size:10px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; transition:all 0.3s; }
   .nav-cta:hover { background:var(--gold); color:var(--black); }
   /* DİL SEÇİCİ */
-  .lang-switcher { position:relative; display:flex; align-items:center; }
-  .lang-btn { background:none; border:1px solid rgba(200,150,42,0.3); color:var(--gold); padding:6px 14px; font-size:10px; letter-spacing:2px; cursor:pointer; font-family:'Josefin Sans',sans-serif; display:flex; align-items:center; gap:6px; transition:all 0.3s; }
+  .lang-switcher { position:relative; display:flex; align-items:center; cursor:pointer; }
+  .lang-btn { background:none; border:1px solid rgba(200,150,42,0.3); color:var(--gold); padding:6px 14px; font-size:10px; letter-spacing:2px; cursor:pointer; font-family:'Josefin Sans',sans-serif; display:flex; align-items:center; gap:6px; transition:all 0.3s; user-select:none; }
   .lang-btn:hover { border-color:var(--gold); background:rgba(200,150,42,0.1); }
   .lang-btn img { height:14px; border-radius:2px; }
-  .lang-dropdown { display:none; position:fixed; top:72px; right:80px; background:var(--navy); border:1px solid rgba(200,150,42,0.3); min-width:165px; z-index:99999 !important; box-shadow:0 8px 32px rgba(0,0,0,0.6); }
+  .lang-dropdown { 
+    display:none; 
+    position:absolute; 
+    top:calc(100% + 8px); 
+    right:0; 
+    background:var(--navy); 
+    border:1px solid rgba(200,150,42,0.3); 
+    min-width:165px; 
+    z-index:99999; 
+    box-shadow:0 8px 32px rgba(0,0,0,0.6);
+  }
+  .lang-switcher:hover .lang-dropdown { display:block !important; }
   .lang-dropdown.open { display:block; }
   .lang-option { display:flex; align-items:center; gap:10px; padding:10px 16px; cursor:pointer; transition:background 0.2s; font-size:11px; color:var(--white); letter-spacing:1px; border:none; background:none; width:100%; text-align:left; font-family:'Josefin Sans',sans-serif; }
   .lang-option:hover { background:rgba(200,150,42,0.1); color:var(--gold); }
@@ -287,16 +298,16 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="lang-switcher">
-    <button class="lang-btn" onclick="toggleLang()" id="langBtn">
+    <div class="lang-btn">
       <img src="https://flagcdn.com/w20/gb.png" alt="EN" id="currentFlag">
       <span id="currentLang">EN</span> ▾
-    </button>
+    </div>
     <div class="lang-dropdown" id="langDropdown">
-      <button class="lang-option active" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png" alt="EN"> English</button>
-      <button class="lang-option" onclick="setLang('tr')"><img src="https://flagcdn.com/w20/tr.png" alt="TR"> Türkçe</button>
-      <button class="lang-option" onclick="setLang('fr')"><img src="https://flagcdn.com/w20/fr.png" alt="FR"> Français</button>
-      <button class="lang-option" onclick="setLang('pt')"><img src="https://flagcdn.com/w20/pt.png" alt="PT"> Português</button>
-      <button class="lang-option" onclick="setLang('ar')"><img src="https://flagcdn.com/w20/sa.png" alt="AR"> العربية</button>
+      <div class="lang-option active" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png" alt="EN"> English</div>
+      <div class="lang-option" onclick="setLang('tr')"><img src="https://flagcdn.com/w20/tr.png" alt="TR"> Türkçe</div>
+      <div class="lang-option" onclick="setLang('fr')"><img src="https://flagcdn.com/w20/fr.png" alt="FR"> Français</div>
+      <div class="lang-option" onclick="setLang('pt')"><img src="https://flagcdn.com/w20/pt.png" alt="PT"> Português</div>
+      <div class="lang-option" onclick="setLang('ar')"><img src="https://flagcdn.com/w20/sa.png" alt="AR"> العربية</div>
     </div>
   </div>
   <a href="contact.html" class="nav-cta" data-translate="nav_contact">Get In Touch</a>
