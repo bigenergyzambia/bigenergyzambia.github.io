@@ -42,7 +42,7 @@
   .lang-btn { background:none; border:1px solid rgba(200,150,42,0.3); color:var(--gold); padding:6px 14px; font-size:10px; letter-spacing:2px; cursor:pointer; font-family:'Josefin Sans',sans-serif; display:flex; align-items:center; gap:6px; transition:all 0.3s; }
   .lang-btn:hover { border-color:var(--gold); background:rgba(200,150,42,0.1); }
   .lang-btn img { height:14px; border-radius:2px; }
-  .lang-dropdown { display:none; position:fixed; top:70px; right:80px; background:var(--navy); border:1px solid rgba(200,150,42,0.3); min-width:165px; z-index:9999; box-shadow:0 8px 32px rgba(0,0,0,0.5); }
+  .lang-dropdown { display:none; position:fixed; top:72px; right:80px; background:var(--navy); border:1px solid rgba(200,150,42,0.3); min-width:165px; z-index:99999 !important; box-shadow:0 8px 32px rgba(0,0,0,0.6); }
   .lang-dropdown.open { display:block; }
   .lang-option { display:flex; align-items:center; gap:10px; padding:10px 16px; cursor:pointer; transition:background 0.2s; font-size:11px; color:var(--white); letter-spacing:1px; border:none; background:none; width:100%; text-align:left; font-family:'Josefin Sans',sans-serif; }
   .lang-option:hover { background:rgba(200,150,42,0.1); color:var(--gold); }
@@ -656,15 +656,22 @@ function toggleMenu() {
 }
 
 // ── LANGUAGE SWITCHER ──
-function toggleLang() {
-  document.getElementById('langDropdown').classList.toggle('open');
-}
-
-// Dışarı tıklayınca kapat
-document.addEventListener('click', function(e) {
-  const sw = document.querySelector('.lang-switcher');
-  if (sw && !sw.contains(e.target)) {
-    document.getElementById('langDropdown').classList.remove('open');
+document.addEventListener('DOMContentLoaded', function() {
+  var langBtn = document.getElementById('langBtn');
+  var langDropdown = document.getElementById('langDropdown');
+  
+  if (langBtn && langDropdown) {
+    langBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = langDropdown.style.display === 'block';
+      langDropdown.style.display = isOpen ? 'none' : 'block';
+    });
+    
+    document.addEventListener('click', function(e) {
+      if (!langBtn.contains(e.target)) {
+        langDropdown.style.display = 'none';
+      }
+    });
   }
 });
 
@@ -748,7 +755,7 @@ function setLang(lang) {
   document.querySelector(`.lang-option[onclick="setLang('${lang}')"]`).classList.add('active');
 
   // Dropdown kapat
-  document.getElementById('langDropdown').classList.remove('open');
+  var ld = document.getElementById('langDropdown'); if(ld) ld.style.display = 'none';
 
   // LocalStorage'a kaydet
   try { localStorage.setItem('bigEnergy_lang', lang); } catch(e) {}
