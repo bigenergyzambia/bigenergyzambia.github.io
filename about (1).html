@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Big Energy & Resources Limited</title>
+<meta name="description" content="Big Energy & Resources Limited — Your trusted corporate base in Southern Africa. Learn who we are, what we do and why choose us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C8962A; --gold-light: #E8B84B; --gold-pale: #F5E6C0;
+    --navy: #0D1B3E; --navy-mid: #152347; --black: #060C18;
+    --white: #F8F5EE; --gray: #8A8F9A;
+    --zambia-green: #198A00; --zambia-orange: #EF7D00; --turkey-red: #E30A17;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--black); color:var(--white); font-family:'Josefin Sans',sans-serif; font-weight:300; overflow-x:hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position:fixed; top:0; width:100%; z-index:100;
+    padding:18px 60px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:linear-gradient(to bottom,rgba(6,12,24,0.97),transparent);
+    border-bottom:1px solid rgba(200,150,42,0.15);
+    backdrop-filter:blur(6px);
+  }
+  .nav-logo { display:flex; align-items:center; gap:14px; text-decoration:none; }
+  .nav-logo img { height:56px; width:56px; object-fit:contain; filter:drop-shadow(0 0 12px rgba(200,150,42,0.4)); }
+  .nav-logo-text { display:flex; flex-direction:column; line-height:1.1; }
+  .nav-logo-text span:first-child { font-family:'Cormorant Garamond',serif; font-size:17px; font-weight:700; color:var(--gold-light); letter-spacing:2px; }
+  .nav-logo-text span:last-child { font-size:9px; letter-spacing:4px; color:var(--gray); text-transform:uppercase; }
+  .nav-links { display:flex; gap:40px; list-style:none; }
+  .nav-links a { text-decoration:none; color:var(--white); font-size:11px; letter-spacing:3px; text-transform:uppercase; opacity:0.75; transition:all 0.3s; position:relative; padding-bottom:4px; }
+  .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:1px; background:var(--gold); transition:width 0.3s; }
+  .nav-links a:hover, .nav-links a.active { opacity:1; color:var(--gold-light); }
+  .nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+  .nav-cta { padding:10px 24px; border:1px solid var(--gold); color:var(--gold); font-size:10px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; transition:all 0.3s; }
+  .nav-cta:hover { background:var(--gold); color:var(--black); }
+
+  /* ── HERO ── */
+  .about-hero {
+    min-height:60vh; display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden; padding-top:100px;
+    background:radial-gradient(ellipse at 60% 50%, #152347 0%, #060C18 70%);
+  }
+  .about-hero-lines { position:absolute; inset:0; opacity:0.04; background-image:linear-gradient(rgba(200,150,42,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(200,150,42,0.8) 1px,transparent 1px); background-size:80px 80px; }
+  .about-hero-glow { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(200,150,42,0.06) 0%,transparent 70%); }
+  .about-hero-content { text-align:center; position:relative; z-index:2; padding:0 20px; }
+  .about-hero-label { font-size:9px; letter-spacing:6px; text-transform:uppercase; color:var(--gold); margin-bottom:20px; display:block; }
+  .about-hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(42px,7vw,80px); font-weight:300; line-height:1.05; margin-bottom:24px; }
+  .about-hero-title em { color:var(--gold-light); font-style:italic; }
+  .about-hero-sub { font-size:13px; letter-spacing:3px; color:var(--gray); text-transform:uppercase; }
+  .about-hero-scroll { position:absolute; bottom:30px; left:50%; transform:translateX(-50%); font-size:9px; letter-spacing:4px; color:var(--gray); text-transform:uppercase; display:flex; flex-direction:column; align-items:center; gap:8px; animation:bounce 2s infinite; }
+  .about-hero-scroll::after { content:''; display:block; width:1px; height:40px; background:linear-gradient(to bottom, var(--gold), transparent); }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding:100px 60px; max-width:1300px; margin:0 auto; }
+  .section-label { font-size:9px; letter-spacing:6px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; display:block; }
+  .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(32px,4vw,52px); font-weight:300; line-height:1.1; margin-bottom:30px; }
+  .section-title strong { font-weight:600; }
+  .section-title em { color:var(--gold-light); font-style:italic; }
+  .divider { width:60px; height:1px; background:var(--gold); margin-bottom:40px; }
+
+  /* ── WHO WE ARE ── */
+  .who-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+  .who-text p { color:rgba(248,245,238,0.75); font-size:15px; line-height:1.9; margin-bottom:20px; letter-spacing:0.3px; }
+  .who-text p strong { color:var(--gold-light); font-weight:600; }
+  .who-visual { position:relative; }
+  .who-card {
+    background:linear-gradient(135deg, rgba(21,35,71,0.8), rgba(13,27,62,0.6));
+    border:1px solid rgba(200,150,42,0.2);
+    padding:40px; position:relative; overflow:hidden;
+  }
+  .who-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .who-card-quote {
+    font-family:'Cormorant Garamond',serif; font-size:clamp(18px,2.5vw,26px);
+    font-style:italic; line-height:1.5; color:var(--white); margin-bottom:24px;
+  }
+  .who-card-quote span { color:var(--gold-light); }
+  .who-card-attr { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gray); }
+  .who-badge-row { display:flex; gap:16px; margin-top:32px; flex-wrap:wrap; }
+  .who-badge {
+    padding:8px 16px; border:1px solid rgba(200,150,42,0.3);
+    font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold);
+  }
+
+  /* ── MISSION & VISION ── */
+  .mv-section { background:linear-gradient(to bottom, rgba(13,27,62,0.3), transparent); border-top:1px solid rgba(200,150,42,0.1); border-bottom:1px solid rgba(200,150,42,0.1); }
+  .mv-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:rgba(200,150,42,0.15); }
+  .mv-card {
+    background:var(--black); padding:60px 40px;
+    position:relative; overflow:hidden;
+    transition:background 0.4s;
+  }
+  .mv-card:hover { background:rgba(13,27,62,0.8); }
+  .mv-card::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--gold); transition:width 0.5s; }
+  .mv-card:hover::after { width:100%; }
+  .mv-card-img { width:100%; height:160px; object-fit:cover; margin-bottom:28px; filter:brightness(0.7) saturate(0.8); }
+  .mv-card h3 { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:600; color:var(--gold-light); margin-bottom:16px; letter-spacing:1px; }
+  .mv-card p { color:rgba(248,245,238,0.7); font-size:14px; line-height:1.8; }
+
+  /* ── WHAT WE DO ── */
+  .sectors-intro { max-width:700px; margin-bottom:60px; }
+  .sectors-intro p { color:rgba(248,245,238,0.75); font-size:15px; line-height:1.9; }
+  .sectors-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:2px; background:rgba(200,150,42,0.1); }
+  .sector-card {
+    background:var(--black); padding:48px 36px;
+    position:relative; overflow:hidden;
+    transition:all 0.4s;
+    cursor:default;
+  }
+  .sector-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+    background:linear-gradient(135deg, rgba(200,150,42,0.05), transparent);
+    opacity:0; transition:opacity 0.4s;
+  }
+  .sector-card:hover::before { opacity:1; }
+  .sector-card:hover { transform:translateY(-4px); }
+  .sector-card-img { width:100%; height:130px; object-fit:cover; margin-bottom:16px; filter:brightness(0.65) saturate(0.7); }
+  .sector-num { font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:300; color:rgba(200,150,42,0.15); line-height:1; margin-bottom:8px; display:block; }
+  .sector-card h3 { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--gold-light); margin-bottom:12px; letter-spacing:0.5px; }
+  .sector-card p { color:rgba(248,245,238,0.65); font-size:13px; line-height:1.8; margin-bottom:20px; }
+  .sector-tags { display:flex; flex-wrap:wrap; gap:8px; }
+  .sector-tag { padding:4px 10px; border:1px solid rgba(200,150,42,0.25); font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); }
+
+  /* ── HOW WE WORK (Methodology) ── */
+  .method-section { background:linear-gradient(to bottom, transparent, rgba(13,27,62,0.2), transparent); }
+  .method-steps { display:grid; grid-template-columns:1fr 1fr; gap:3px; background:rgba(200,150,42,0.08); margin-top:60px; }
+  .method-step {
+    background:var(--black); padding:50px 44px;
+    position:relative;
+  }
+  .method-step::before { content:attr(data-num); position:absolute; top:30px; right:30px; font-family:'Cormorant Garamond',serif; font-size:64px; font-weight:300; color:rgba(200,150,42,0.08); line-height:1; }
+  .method-step-label { font-size:9px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; display:block; }
+  .method-step h3 { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:600; color:var(--white); margin-bottom:16px; }
+  .method-step p { color:rgba(248,245,238,0.65); font-size:13px; line-height:1.8; }
+  .method-step ul { list-style:none; margin-top:16px; }
+  .method-step ul li { color:rgba(248,245,238,0.65); font-size:13px; padding:6px 0; border-bottom:1px solid rgba(200,150,42,0.08); display:flex; align-items:flex-start; gap:10px; }
+  .method-step ul li::before { content:'→'; color:var(--gold); flex-shrink:0; margin-top:1px; }
+
+  /* ── WHY AFRICA NOW ── */
+  .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+  .why-text p { color:rgba(248,245,238,0.75); font-size:15px; line-height:1.9; margin-bottom:20px; }
+  .why-text p strong { color:var(--gold-light); font-weight:600; }
+  .why-stats { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(200,150,42,0.1); }
+  .why-stat {
+    background:var(--black); padding:36px 28px; text-align:center;
+  }
+  .why-stat-num { font-family:'Cormorant Garamond',serif; font-size:42px; font-weight:300; color:var(--gold-light); line-height:1; margin-bottom:8px; }
+  .why-stat-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gray); line-height:1.4; }
+
+  /* ── LANGUAGES ── */
+  .lang-section { border-top:1px solid rgba(200,150,42,0.1); }
+  .lang-grid { display:flex; gap:0; margin-top:50px; background:rgba(200,150,42,0.08); }
+  .lang-card {
+    flex:1; padding:50px 36px; text-align:center; position:relative;
+    border-right:1px solid rgba(200,150,42,0.1);
+    transition:background 0.3s;
+  }
+  .lang-card:last-child { border-right:none; }
+  .lang-card:hover { background:rgba(13,27,62,0.6); }
+  .lang-flag-img { width:64px; height:44px; object-fit:cover; margin:0 auto 16px; display:block; border-radius:4px; filter:saturate(0.9); }
+  .lang-name { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--gold-light); margin-bottom:6px; }
+  .lang-native { font-size:11px; letter-spacing:2px; color:var(--gray); text-transform:uppercase; }
+
+  /* ── AFRICA SUPPORT ── */
+  .support-grid { display:grid; grid-template-columns:1fr 1fr; gap:3px; background:rgba(200,150,42,0.08); margin-top:50px; }
+  .support-card {
+    background:var(--black); padding:50px 44px;
+    position:relative; overflow:hidden;
+  }
+  .support-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:0; background:var(--gold); transition:height 0.4s; }
+  .support-card:hover::before { height:100%; }
+  .support-card-img { width:100%; height:140px; object-fit:cover; margin-bottom:24px; filter:brightness(0.65) saturate(0.7); }
+  .support-card h3 { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:600; color:var(--gold-light); margin-bottom:14px; }
+  .support-card p { color:rgba(248,245,238,0.65); font-size:13px; line-height:1.8; }
+
+  /* ── CTA ── */
+  .about-cta {
+    text-align:center; padding:120px 60px;
+    background:linear-gradient(135deg, rgba(13,27,62,0.4), rgba(6,12,24,0.8));
+    border-top:1px solid rgba(200,150,42,0.15);
+    position:relative; overflow:hidden;
+  }
+  .about-cta::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(200,150,42,0.05) 0%,transparent 70%); }
+  .about-cta h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(30px,4vw,52px); font-weight:300; margin-bottom:20px; position:relative; }
+  .about-cta h2 em { color:var(--gold-light); font-style:italic; }
+  .about-cta p { color:var(--gray); font-size:14px; letter-spacing:1px; margin-bottom:40px; position:relative; }
+  .cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative; }
+  .btn-primary { padding:14px 36px; background:var(--gold); color:var(--black); font-size:11px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; font-weight:600; transition:all 0.3s; font-family:'Josefin Sans',sans-serif; }
+  .btn-primary:hover { background:var(--gold-light); }
+  .btn-outline { padding:14px 36px; border:1px solid var(--gold); color:var(--gold); font-size:11px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; transition:all 0.3s; font-family:'Josefin Sans',sans-serif; }
+  .btn-outline:hover { background:var(--gold); color:var(--black); }
+
+  /* ── FOOTER ── */
+  footer {
+    background:rgba(6,12,24,0.98); border-top:1px solid rgba(200,150,42,0.15);
+    padding:70px 60px 30px;
+  }
+  .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:60px; margin-bottom:50px; }
+  .footer-brand { }
+  .footer-logo { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+  .footer-logo img { height:48px; width:48px; object-fit:contain; }
+  .footer-logo-text span:first-child { font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:700; color:var(--gold-light); letter-spacing:2px; display:block; }
+  .footer-logo-text span:last-child { font-size:8px; letter-spacing:3px; color:var(--gray); text-transform:uppercase; display:block; }
+  .footer-desc { color:rgba(138,143,154,0.8); font-size:13px; line-height:1.8; max-width:280px; }
+  .footer-col h4 { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
+  .footer-col a, .footer-col p { display:block; color:rgba(248,245,238,0.5); font-size:12px; letter-spacing:1px; text-decoration:none; margin-bottom:10px; transition:color 0.2s; }
+  .footer-col a:hover { color:var(--gold-light); }
+  .footer-bottom { border-top:1px solid rgba(200,150,42,0.1); padding-top:24px; display:flex; justify-content:space-between; align-items:center; }
+  .footer-copy { font-size:11px; color:var(--gray); letter-spacing:1px; }
+  .footer-reg { font-size:10px; color:rgba(138,143,154,0.5); letter-spacing:2px; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  .reveal-delay-1 { transition-delay:0.1s; }
+  .reveal-delay-2 { transition-delay:0.2s; }
+  .reveal-delay-3 { transition-delay:0.3s; }
+  .reveal-delay-4 { transition-delay:0.4s; }
+
+  /* ── MOBILE ── */
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+  .hamburger span { display:block; width:24px; height:1px; background:var(--white); transition:all 0.3s; }
+  .mobile-menu { display:none; position:fixed; inset:0; background:rgba(6,12,24,0.98); z-index:200; flex-direction:column; align-items:center; justify-content:center; gap:32px; }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a { font-size:13px; letter-spacing:4px; text-transform:uppercase; color:var(--white); text-decoration:none; opacity:0.8; }
+  .mobile-menu a:hover { color:var(--gold); opacity:1; }
+  .mobile-close { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--white); font-size:28px; cursor:pointer; }
+
+  @media(max-width:900px) {
+    nav { padding:16px 24px; }
+    .nav-links, .nav-cta { display:none; }
+    .hamburger { display:flex; }
+    section { padding:70px 24px; }
+    .who-grid, .why-grid { grid-template-columns:1fr; gap:40px; }
+    .mv-grid { grid-template-columns:1fr; }
+    .sectors-grid { grid-template-columns:1fr; }
+    .method-steps { grid-template-columns:1fr; }
+    .lang-grid { flex-wrap:wrap; }
+    .lang-card { flex:1 1 45%; }
+    .support-grid { grid-template-columns:1fr; }
+    .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+    .about-cta { padding:80px 24px; }
+    footer { padding:50px 24px 24px; }
+    .footer-bottom { flex-direction:column; gap:8px; text-align:center; }
+    .why-stats { grid-template-columns:1fr 1fr; }
+  }
+  @media(max-width:480px) {
+    .footer-grid { grid-template-columns:1fr; }
+    .lang-card { flex:1 1 100%; }
+    .why-stats { grid-template-columns:1fr; }
+  }
+
+  /* Lang switcher */
+  .lang-switcher { position:relative; display:flex; align-items:center; }
+  .lang-btn { background:none; border:1px solid rgba(200,150,42,0.3); color:var(--gold); padding:6px 14px; font-size:10px; letter-spacing:2px; cursor:pointer; font-family:'Josefin Sans',sans-serif; display:flex; align-items:center; gap:6px; transition:all 0.3s; }
+  .lang-btn:hover { border-color:var(--gold); background:rgba(200,150,42,0.1); }
+  .lang-btn img { height:14px; border-radius:2px; }
+  .lang-dropdown { display:none; position:absolute; top:calc(100% + 8px); right:0; background:var(--navy); border:1px solid rgba(200,150,42,0.3); min-width:165px; z-index:99999; box-shadow:0 8px 32px rgba(0,0,0,0.6); }
+  .lang-dropdown.open { display:block; }
+  .lang-option { display:flex; align-items:center; gap:10px; padding:10px 16px; cursor:pointer; transition:background 0.2s; font-size:11px; color:var(--white); letter-spacing:1px; border:none; background:none; width:100%; text-align:left; font-family:'Josefin Sans',sans-serif; }
+  .lang-option:hover { background:rgba(200,150,42,0.1); color:var(--gold); }
+  .lang-option img { height:16px; border-radius:2px; }
+  .lang-option.active { color:var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Big Energy">
+    <div class="nav-logo-text">
+      <span>BIG ENERGY & RESOURCES</span>
+      <span>Lusaka · Zambia</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="lang-switcher" id="langSwitcher">
+    <button class="lang-btn" id="langBtn" type="button">
+      <img src="https://flagcdn.com/w20/gb.png" alt="EN" id="currentFlag">
+      <span id="currentLang">EN</span> &#9662;
+    </button>
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-option active" type="button" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="EN"> English</button>
+      <button class="lang-option" type="button" data-lang="tr"><img src="https://flagcdn.com/w20/tr.png" alt="TR"> Türkçe</button>
+      <button class="lang-option" type="button" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR"> Français</button>
+      <button class="lang-option" type="button" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT"> Português</button>
+      <button class="lang-option" type="button" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR"> العربية</button>
+    </div>
+  </div>
+  <a href="contact.html" class="nav-cta" data-translate="nav_contact">Get In Touch</a>
+  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
+  <button class="mobile-close" onclick="this.closest('.mobile-menu').classList.remove('open')">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="index.html#services">Services</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="about-hero">
+  <div class="about-hero-lines"></div>
+  <div class="about-hero-glow"></div>
+  <div class="about-hero-content">
+    <span class="about-hero-label" data-translate="about_hero_label">Who We Are</span>
+    <h1 class="about-hero-title">
+      Your Corporate Base in<br>Southern Africa,<br><em>Your Trusted Trade Bridge.</em>
+    </h1>
+    <p class="about-hero-sub">Big Energy & Resources Limited · Lusaka, Zambia</p>
+  </div>
+  <div class="about-hero-scroll">Scroll</div>
+</div>
+
+<!-- WHO WE ARE -->
+<section>
+  <div class="who-grid">
+    <div class="who-text reveal">
+      <span class="section-label" data-translate="about_who_label">Who We Are</span>
+      <h2 class="section-title">Combining Turkey's Production Power<br>with Zambia's Potential<br><em>Under One Professional Roof</em></h2>
+      <div class="divider"></div>
+      <p>
+        <strong>Big Energy & Resources Limited</strong> is a PACRA-registered sourcing, consultancy and brokerage company headquartered in Lusaka, Zambia. We build a strong trade bridge between Turkey and Zambia, serving the business community of both countries.
+      </p>
+      <p>
+        We are not just a <strong>distributor</strong> — we offer a <strong>corporate unit</strong> in the heart of the capital Lusaka that carries your brand, speaks your language and runs toward your goals.
+      </p>
+      <p>
+        From mining to agriculture, energy infrastructure to industrial equipment — we connect Turkish manufacturers with Zambian buyers, sourcing <strong>the best quality products at the most competitive prices</strong>.
+      </p>
+
+    </div>
+    <div class="who-visual reveal reveal-delay-2">
+      <div class="who-card">
+        <p class="who-card-quote">
+          "Working only with a distributor in Southern Africa means accepting that your product sits on a shelf. <span>Working with Big Energy & Resources means being present in the market yourself.</span>"
+        </p>
+        <span class="who-card-attr">Big Energy & Resources · Our Core Philosophy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION / VALUES -->
+<div class="mv-section" style="padding:0;">
+  <div style="max-width:1300px; margin:0 auto;">
+    <div class="mv-grid">
+      <div class="mv-card reveal">
+        <img class="mv-card-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&q=80" alt="Mission">
+        <h3>Our Mission</h3>
+        <p>Türkiye başta olmak üzere küresel üreticileri Zambia ve Güney Afrika pazarlarıyla buluşturmak; tedarik, danışmanlık ve lojistik koordinasyonda güvenilir, şeffaf ve etkin bir köprü olmak. Müşterilerimizin %70'e varan operasyonel tasarruf sağlamasına aracılık etmek.</p>
+      </div>
+      <div class="mv-card reveal reveal-delay-1">
+        <img class="mv-card-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80" alt="Vision">
+        <h3>Our Vision</h3>
+        <p>Güney Afrika'nın yükselen ekonomisinde Türk ve uluslararası yatırımcılar için en güvenilir kurumsal üs olmak. Zambia'yı bölgesel ticaretin merkezi konumuna taşıyacak projelere öncülük etmek ve Afrika kıtasında sürdürülebilir büyümenin lokomotifi olmak.</p>
+      </div>
+      <div class="mv-card reveal reveal-delay-2">
+        <img class="mv-card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80" alt="Values">
+        <h3>Our Values</h3>
+        <p>Transparency and honesty at the core of every transaction. No step is taken without client approval. Accountability maintained through administrative discipline and daily reporting. Long-term partnership — not one-off transactions.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE DO — SECTORS -->
+<section>
+  <div class="sectors-intro reveal">
+    <span class="section-label">Areas of Activity</span>
+    <h2 class="section-title">What <strong>We Do</strong></h2>
+    <div class="divider"></div>
+    <p>Madencilikten tarıma, enerji sistemlerinden endüstriyel ekipmanlara kadar geniş bir sektör yelpazesinde tedarik, aracılık, danışmanlık ve lojistik koordinasyon hizmetleri sunuyoruz.</p>
+  </div>
+  <div class="sectors-grid">
+
+    <div class="sector-card reveal">
+      <img class="sector-card-img" src="img_mining.png" alt="Mining">
+      <span class="sector-num">01</span>
+      <h3>Mining Consultancy & Equipment Sourcing</h3>
+      <p>In Zambia's largest sector — mining — we source equipment, machinery, spare parts and consumables from Turkish and European manufacturers. We broker equipment leasing and purchase processes.</p>
+      <div class="sector-tags">
+        <span class="sector-tag">Equipment Sourcing</span>
+        <span class="sector-tag">Leasing</span>
+        <span class="sector-tag">Spare Parts</span>
+        <span class="sector-tag">Brokerage</span>
+      </div>
+    </div>
+
+    <div class="sector-card reveal reveal-delay-1">
+      <img class="sector-card-img" src="img_agri.webp" alt="Agriculture">
+      <span class="sector-num">02</span>
+      <h3>Agricultural Inputs & Machinery</h3>
+      <p>For large-scale farms and agricultural businesses, we source fertilizers, liquid fertilizers, pesticides and modern agricultural machinery. We connect Turkey's agri-tech capacity with Zambia's agricultural potential.</p>
+      <div class="sector-tags">
+        <span class="sector-tag">Fertilizers & Pesticides</span>
+        <span class="sector-tag">Agricultural Machinery</span>
+        <span class="sector-tag">Irrigation Systems</span>
+        <span class="sector-tag">Storage</span>
+      </div>
+    </div>
+
+    <div class="sector-card reveal reveal-delay-2">
+      <img class="sector-card-img" src="img_electric.jpg" alt="Electricity">
+      <span class="sector-num">03</span>
+      <h3>Electrical Infrastructure & Energy Projects</h3>
+      <p>We source transformers, distribution panels, switchgear and complete electrical infrastructure for industrial and commercial projects. Strong relationships with Turkish and European manufacturers for solar and off-grid energy systems.</p>
+      <div class="sector-tags">
+        <span class="sector-tag">Transformers</span>
+        <span class="sector-tag">Solar Systems</span>
+        <span class="sector-tag">Off-Grid</span>
+        <span class="sector-tag">Infrastructure</span>
+      </div>
+    </div>
+
+    <div class="sector-card reveal">
+      <img class="sector-card-img" src="img_oil.webp" alt="Oil">
+      <span class="sector-num">04</span>
+      <h3>Motor Oil & Industrial Lubricants</h3>
+      <p>We supply quality motor oils and industrial lubricants for mining fleets, agricultural machinery and transport companies across Zambia. Competitive pricing and reliable supply chain for uninterrupted field operations.</p>
+      <div class="sector-tags">
+        <span class="sector-tag">Motor Oil</span>
+        <span class="sector-tag">Industrial Oil</span>
+        <span class="sector-tag">Fleet Supply</span>
+        <span class="sector-tag">Bulk Orders</span>
+      </div>
+    </div>
+
+    <div class="sector-card reveal reveal-delay-1">
+      <img class="sector-card-img" src="img_mining.png" alt="Construction">
+      <span class="sector-num">05</span>
+      <h3>Construction & Industrial Materials</h3>
+      <p>We source building materials, steel profiles, pipe systems and industrial equipment from Turkey and Europe for construction projects and industrial facilities. Customized procurement solutions at any scale.</p>
+      <div class="sector-tags">
+        <span class="sector-tag">Building Materials</span>
+        <span class="sector-tag">Steel & Profiles</span>
+        <span class="sector-tag">Pipe Systems</span>
+        <span class="sector-tag">Project-Based</span>
+      </div>
+    </div>
+
+    <div class="sector-card reveal reveal-delay-2">
+      <img class="sector-card-img" src="img_electric.jpg" alt="Trade">
+      <span class="sector-num">06</span>
+      <h3>Trade Brokerage & General Consultancy</h3>
+      <p>General wholesale brokerage and trade consultancy. We represent your interests in international markets, handling supplier research, price negotiation, contract processes and import coordination.</p>
+      <div class="sector-tags">
+        <span class="sector-tag">Supplier Research</span>
+        <span class="sector-tag">Price Negotiation</span>
+        <span class="sector-tag">Import Coordination</span>
+        <span class="sector-tag">Market Analysis</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="method-section">
+  <div class="reveal">
+    <span class="section-label">Operational Methodology</span>
+    <h2 class="section-title">How <strong>We Work</strong></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="method-steps">
+    <div class="method-step reveal" data-num="1">
+      <span class="method-step-label">Step 1 — Selection</span>
+      <h3>We Find the Right People</h3>
+      <p>Sektörünüzle alakalı, nitelikli kişi ve şirketleri sizin için tespit ediyoruz. Sizinle görüştürüyoruz. Siz onay veriyorsunuz. Sizin personeliniz, bizim disiplinimiz.</p>
+      <ul>
+        <li>Sector-specific candidate and partner research</li>
+        <li>Pre-evaluation and shortlisting</li>
+        <li>No action taken without client approval</li>
+      </ul>
+    </div>
+    <div class="method-step reveal reveal-delay-1" data-num="2">
+      <span class="method-step-label">Step 2 — Management</span>
+      <h3>Administrative Responsibility is Ours</h3>
+      <p>Administrative responsibility at Big Energy; daily strategy and management entirely in your hands. Start with our ready infrastructure without company setup or office rental costs.</p>
+      <ul>
+        <li>Ready administrative and logistics infrastructure</li>
+        <li>Up to 70% operational cost savings</li>
+        <li>3-month pilot period option</li>
+      </ul>
+    </div>
+    <div class="method-step reveal" data-num="3">
+      <span class="method-step-label">Step 3 — Language & Communication</span>
+      <h3>We Speak Your Language</h3>
+      <p>With our multilingual team speaking Turkish, English, Portuguese and Arabic, we eliminate communication barriers. When you come to Africa, you feel at home, not a stranger.</p>
+      <ul>
+        <li>Professional communication in 4 languages</li>
+        <li>Interpretation and trade fair support</li>
+        <li>Airport reception and accommodation</li>
+      </ul>
+    </div>
+    <div class="method-step reveal reveal-delay-1" data-num="4">
+      <span class="method-step-label">Step 4 — Audit</span>
+      <h3>Transparent Reporting</h3>
+      <p>Next week's plan every Friday, instant digital reporting after every field visit. Daily, weekly and monthly reports keep your operations fully under control.</p>
+      <ul>
+        <li>Daily field reports</li>
+        <li>Weekly performance summary</li>
+        <li>Monthly comprehensive review</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY AFRICA NOW -->
+<section>
+  <div class="why-grid">
+    <div class="why-text reveal">
+      <span class="section-label">Why Now?</span>
+      <h2 class="section-title">The Rising Economy of<br><em>Southern Africa</em></h2>
+      <div class="divider"></div>
+      <p>
+        Zambia, as a <strong>copper-rich</strong> country, stands at the center of global mining investments. With its rapidly growing agricultural sector, expanding energy infrastructure and young population, it has become one of the most exciting markets on the continent.
+      </p>
+      <p>
+        <strong>Start today with minimum risk, shape tomorrow.</strong> Get the chance to gauge the market before long-term commitments. With Big Energy's guarantee and field strength, reduce the margin of error to zero.
+      </p>
+      <p>
+        Turkey's strong manufacturing capacity combined with Zambia's resource wealth and growth potential — when brought together with the <strong>right partner</strong> — creates an unparalleled opportunity.
+      </p>
+    </div>
+    <div class="why-stats reveal reveal-delay-1">
+      <div class="why-stat">
+        <div class="why-stat-num">%70</div>
+        <div class="why-stat-label">Operational Cost Savings</div>
+      </div>
+      <div class="why-stat">
+        <div class="why-stat-num">3 Ay</div>
+        <div class="why-stat-label">Pilot Period Option</div>
+      </div>
+      <div class="why-stat">
+        <div class="why-stat-num">4 Languages</div>
+        <div class="why-stat-label">Türkçe · İngilizce · Portekizce · Arapça</div>
+      </div>
+      <div class="why-stat">
+        <div class="why-stat-num">6+</div>
+        <div class="why-stat-label">Service Categories</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section class="lang-section">
+  <div class="reveal">
+    <span class="section-label">Multilingual Team</span>
+    <h2 class="section-title">Eliminating <strong>Communication Barriers</strong></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="lang-grid">
+    <div class="lang-card reveal">
+      <img class="lang-flag-img" src="https://flagcdn.com/w80/gb.png" alt="English">
+      <div class="lang-name">English</div>
+      <div class="lang-native">English</div>
+    </div>
+    <div class="lang-card reveal reveal-delay-1">
+      <img class="lang-flag-img" src="https://flagcdn.com/w80/tr.png" alt="Türkçe">
+      <div class="lang-name">Turkish</div>
+      <div class="lang-native">Turkish</div>
+    </div>
+    <div class="lang-card reveal reveal-delay-2">
+      <img class="lang-flag-img" src="https://flagcdn.com/w80/pt.png" alt="Portekizce">
+      <div class="lang-name">Portuguese</div>
+      <div class="lang-native">Português</div>
+    </div>
+    <div class="lang-card reveal reveal-delay-3">
+      <img class="lang-flag-img" src="https://flagcdn.com/w80/ae.png" alt="Arapça">
+      <div class="lang-name">Arabic</div>
+      <div class="lang-native">العربية</div>
+    </div>
+  </div>
+</section>
+
+<!-- AFRICA VISIT SUPPORT -->
+<section>
+  <div class="reveal">
+    <span class="section-label">Field Support</span>
+    <h2 class="section-title">We Are With You <em>During Your Africa Visits</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="support-grid">
+    <div class="support-card reveal">
+      <img class="support-card-img" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=80" alt="Airport">
+      <h3>Reception & Accommodation</h3>
+      <p>From airport transfers to safe accommodation, the entire process is under Big Energy & Resources management. When you come to Africa, you feel at home. Our Lusaka office is always at your service.</p>
+    </div>
+    <div class="support-card reveal reveal-delay-1">
+      <img class="support-card-img" src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=700&q=80" alt="Fair">
+      <h3>Trade Fair & Interpreter Support</h3>
+      <p>From stand preparation to professional interpreter support, we are with you at all trade fair organizations. We eliminate language barriers from business meetings to official gatherings.</p>
+    </div>
+    <div class="support-card reveal">
+      <img class="support-card-img" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=700&q=80" alt="Logistics">
+      <h3>Import & Customs Coordination</h3>
+      <p>We handle customs procedures, documentation and logistics coordination for imports to Zambia. The entire process from supplier to your warehouse is tracked; you are informed at every stage.</p>
+    </div>
+    <div class="support-card reveal reveal-delay-1">
+      <img class="support-card-img" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=700&q=80" alt="Strategy">
+      <h3>Market Entry Strategy</h3>
+      <p>We develop market entry strategies for Zambia and the region. Comprehensive consultancy on competitive analysis, pricing strategy and local business culture. Be the owner of the market, not a stranger.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="about-cta">
+  <h2>Looking for a Reliable<br><em>Business Partner in Zambia?</em></h2>
+  <p>Start with minimum risk. Get to know the market with our 3-month pilot period.</p>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn-primary">Let's Talk</a>
+    <a href="index.html#services" class="btn-outline">Our Services</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Big Energy">
+        <div class="footer-logo-text">
+          <span>BIG ENERGY & RESOURCES</span>
+          <span>Limited · Zambia</span>
+        </div>
+      </div>
+      <p class="footer-desc">Your trusted sourcing, brokerage and trade consultancy partner — connecting Zambia with global markets.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="index.html#services">Madencilik</a>
+      <a href="index.html#services">Tarım</a>
+      <a href="index.html#services">Enerji</a>
+      <a href="index.html#services">Elektrik</a>
+      <a href="index.html#services">Lubrikantlar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="index.html#how">Nasıl Çalışırız</a>
+      <a href="index.html#network">Ağımız</a>
+      <a href="contact.html">İletişim</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>bigenergyzambia@gmail.com</p>
+      <p>+260 973 723 566</p>
+      <p>+90 532 519 0312</p>
+      <p>Lusaka, Zambia</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© Big Energy & Resources Limited. All rights reserved.</span>
+    <span class="footer-reg">Incorporated in Zambia</span>
+  </div>
+</footer>
+
+<!-- scroll --><script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var btn = document.getElementById('langBtn');
+  var dropdown = document.getElementById('langDropdown');
+  if (btn && dropdown) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', function(e) {
+      if (!document.getElementById('langSwitcher').contains(e.target)) {
+        dropdown.classList.remove('open');
+      }
+    });
+    dropdown.querySelectorAll('.lang-option').forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        setLang(this.getAttribute('data-lang'));
+      });
+    });
+  }
+  try {
+    var saved = localStorage.getItem('bigEnergy_lang');
+    if (saved && translations[saved]) setLang(saved);
+  } catch(e) {}
+});
+
+
+// ── SHARED LANGUAGE SYSTEM ──
+var translations = {
+  en: {
+    // NAV
+    nav_home:'Home', nav_about:'About', nav_services:'Services', nav_contact_link:'Contact', nav_contact:'Get In Touch',
+    // HERO (index)
+    hero_title:'Your Trusted Partner<br><em>Across Africa</em>',
+    hero_sub:'Sourcing · Consulting · Brokerage · Trade',
+    hero_tagline:'We source the <strong>best quality products</strong> at the <strong>most competitive prices</strong> —<br>connecting Zambia with global suppliers, led by Turkey.',
+    btn_services:'Our Services', btn_about:'About Us',
+    // BRIDGE
+    bridge_research_title:'We Research', bridge_research_desc:'We identify the best global suppliers — primarily from Turkey — for every product your business needs in Zambia.',
+    bridge_connect_title:'We Connect', bridge_connect_desc:'We bridge Zambian businesses with international suppliers — handling negotiation, communication and brokerage.',
+    bridge_deliver_title:'We Deliver', bridge_deliver_desc:'From sourcing to logistics coordination — quality products reach you at the right price, at the right time.',
+    // STATS
+    stat_services:'Service Categories', stat_sectors:'Registered Sectors', stat_bridge:'Zambia — Turkey Bridge', stat_pacra:'PACRA Registered',
+    // SERVICES
+    label_services:'What We Do',
+    services_intro:'Big Energy & Resources Limited is a <strong>Zambian sourcing, consulting and brokerage company</strong>. We research, compare, and find the best quality products at the most competitive prices. Our main sourcing hub is <strong>Turkey</strong>, alongside Europe and Asia.',
+    s1_title:'Mining Consultancy', s1_desc:'We source and broker mining equipment, machinery and supplies for Zambian mining companies. Leasing arrangements and supplier negotiations handled on your behalf.',
+    s2_title:'Solar & Energy Systems', s2_desc:'We source solar panels, inverters and complete off-grid energy systems from leading Turkish and European manufacturers.',
+    s3_title:'Agricultural Inputs & Machinery', s3_desc:'Sourcing of fertilizers, liquid fertilizers and modern agricultural machinery for large-scale farms — primarily from Turkish manufacturers.',
+    s4_title:'Motor Oil & Lubricants', s4_desc:'Quality motor oils and industrial lubricants for mining fleets, agricultural machinery and transport companies across Zambia.',
+    s5_title:'Electrical Infrastructure', s5_desc:'Transformers, distribution panels, switchgear and complete electrical infrastructure for industrial and commercial projects.',
+    s6_title:'Trade & Wholesale Brokerage', s6_desc:'General wholesale brokerage and trade consultancy. We represent your interests in international markets and ensure the best deal.',
+    // HOW
+    label_approach:'Our Approach', how_title:'How We <strong>Work For You</strong>',
+    step1_title:'Understand Your Need', step1_desc:'We listen carefully to your requirements — product specifications, quantity, budget and timeline.',
+    step2_title:'Research & Source Globally', step2_desc:'We research suppliers in Turkey, Europe and Asia — comparing quality and pricing to find the best option.',
+    step3_title:'Negotiate on Your Behalf', step3_desc:'Using our international network, we negotiate the best prices and terms directly with manufacturers.',
+    step4_title:'Coordinate & Deliver', step4_desc:'We coordinate the entire import process — documentation, logistics and delivery.',
+    // NETWORK
+    label_network:'Our Network', countries_title:'Zambia Meets the <strong>World</strong>',
+    countries_desc:'Headquartered in Lusaka, Zambia — we source primarily through Turkey and Europe, and serve clients across sub-Saharan Africa.',
+    role_hq:'Headquarters', role_source:'Primary Sourcing', role_ops:'Operations', role_market:'Market',
+    // SOCIAL
+    social_title:'Connect With Us', social_sub:'Follow us for updates, sourcing insights and market news',
+    // CTA
+    cta_title:'Need a reliable sourcing partner in Zambia?', cta_btn:"Let's Talk",
+    // FOOTER
+    footer_desc:'Your trusted sourcing, brokerage and trade consultancy partner — connecting Zambia with global markets.',
+    footer_services:'Services', footer_company:'Company', footer_contact:'Contact', footer_copy:'© Big Energy & Resources Limited. All rights reserved.', footer_inc:'Incorporated in Zambia', footer_team:'Our Team',
+    // ABOUT PAGE
+    about_hero_label:'Who We Are',
+    about_hero_title:'Your Corporate Base in<br>Southern Africa,<br><em>Your Trusted Trade Bridge.</em>',
+    about_hero_sub:'Big Energy & Resources Limited · Lusaka, Zambia',
+    about_who_label:'Who We Are',
+    about_who_title:'Combining Turkey\'s Production Power<br>with Zambia\'s Potential<br><em>Under One Professional Roof</em>',
+    about_who_p1:'<strong>Big Energy & Resources Limited</strong> is a PACRA-registered sourcing, consultancy and brokerage company headquartered in Lusaka, Zambia. We build a strong trade bridge between Turkey and Zambia, serving the business community of both countries.',
+    about_who_p2:'We are not just a <strong>distributor</strong> — we offer a <strong>corporate unit</strong> in the heart of the capital Lusaka that carries your brand, speaks your language and runs toward your goals.',
+    about_who_p3:'From mining to agriculture, energy infrastructure to industrial equipment — we connect Turkish manufacturers with Zambian buyers, sourcing <strong>the best quality products at the most competitive prices</strong>.',
+    about_quote:'"Working only with a distributor in Southern Africa means accepting that your product sits on a shelf. <span>Working with Big Energy & Resources means being present in the market yourself.</span>"',
+    about_quote_attr:'Big Energy & Resources · Our Core Philosophy',
+    about_mission_label:'Mission, Vision & Values',
+    about_mission_title:'What <strong>Drives Us</strong>',
+    about_mv1_title:'Our Mission', about_mv1_desc:'To connect global manufacturers — primarily from Turkey — with Zambia and Southern Africa; to be a reliable, transparent and effective bridge in sourcing, consultancy and logistics. To help our clients achieve up to 70% operational savings.',
+    about_mv2_title:'Our Vision', about_mv2_desc:'To become the most trusted corporate base for Turkish and international investors in Southern Africa. To pioneer projects that position Zambia as the center of regional trade and to be the driver of sustainable growth across the African continent.',
+    about_mv3_title:'Our Values', about_mv3_desc:'Transparency and honesty at the core of every transaction. No step is taken without client approval. Accountability is maintained through administrative discipline and daily reporting. Long-term partnership — not one-off transactions.',
+    about_sectors_label:'Areas of Activity',
+    about_sectors_title:'What <strong>We Do</strong>',
+    about_sectors_intro:'From mining to agriculture, energy systems to industrial equipment — we offer sourcing, brokerage, consultancy and logistics coordination across a wide range of sectors.',
+    about_s1_title:'Mining Consultancy & Equipment', about_s1_desc:'In Zambia\'s largest sector — mining — we source equipment, machinery, spare parts and consumables from Turkish and European manufacturers. We broker equipment leasing and purchase processes.',
+    about_s1_t1:'Equipment Sourcing', about_s1_t2:'Leasing', about_s1_t3:'Spare Parts', about_s1_t4:'Brokerage',
+    about_s2_title:'Agricultural Inputs & Machinery', about_s2_desc:'For large-scale farms and agricultural businesses, we source fertilizers, liquid fertilizers, pesticides and modern agricultural machinery. We connect Turkey\'s strong agri-tech capacity with Zambia\'s agricultural potential.',
+    about_s2_t1:'Fertilizers & Pesticides', about_s2_t2:'Agricultural Machinery', about_s2_t3:'Irrigation Systems', about_s2_t4:'Storage',
+    about_s3_title:'Electrical Infrastructure & Energy', about_s3_desc:'We source transformers, distribution panels, switchgear and complete electrical infrastructure for industrial and commercial projects. Strong relationships with Turkish and European manufacturers for solar systems and off-grid energy.',
+    about_s3_t1:'Transformers', about_s3_t2:'Solar Systems', about_s3_t3:'Off-Grid', about_s3_t4:'Infrastructure',
+    about_s4_title:'Motor Oil & Industrial Lubricants', about_s4_desc:'We supply quality motor oils and industrial lubricants for mining fleets, agricultural machinery and transport companies across Zambia. Competitive pricing and reliable supply chain for uninterrupted field operations.',
+    about_s4_t1:'Motor Oil', about_s4_t2:'Industrial Oil', about_s4_t3:'Fleet Supply', about_s4_t4:'Bulk Orders',
+    about_s5_title:'Construction & Industrial Materials', about_s5_desc:'We source building materials, steel profiles, pipe systems and industrial equipment from Turkey and Europe for construction projects and industrial facilities. Customized procurement solutions at any scale.',
+    about_s5_t1:'Building Materials', about_s5_t2:'Steel & Profiles', about_s5_t3:'Pipe Systems', about_s5_t4:'Project-Based',
+    about_s6_title:'Trade Brokerage & Consultancy', about_s6_desc:'General wholesale brokerage and trade consultancy. We represent your interests in international markets, handle supplier research, price negotiation, contract processes and import coordination.',
+    about_s6_t1:'Supplier Research', about_s6_t2:'Price Negotiation', about_s6_t3:'Import Coordination', about_s6_t4:'Market Analysis',
+    about_method_label:'Operational Methodology',
+    about_method_title:'How <strong>We Work</strong>',
+    about_step1_label:'Step 1 — Selection', about_step1_title:'We Find the Right People', about_step1_desc:'We identify qualified individuals and companies relevant to your sector. We arrange meetings. You give the approval. Your personnel, our discipline.',
+    about_step1_li1:'Sector-specific candidate and partner research', about_step1_li2:'Pre-evaluation and shortlisting', about_step1_li3:'No action taken without client approval',
+    about_step2_label:'Step 2 — Management', about_step2_title:'Administrative Responsibility is Ours', about_step2_desc:'Administrative responsibility at Big Energy; daily strategy and management entirely in your hands. Start with our ready infrastructure without company setup or office rental costs.',
+    about_step2_li1:'Ready administrative and logistics infrastructure', about_step2_li2:'Up to 70% operational cost savings', about_step2_li3:'3-month pilot period option',
+    about_step3_label:'Step 3 — Language & Communication', about_step3_title:'We Speak Your Language', about_step3_desc:'With our multilingual team speaking Turkish, English, Portuguese and Arabic, we eliminate communication barriers. When you come to Africa, you feel at home, not a stranger.',
+    about_step3_li1:'Professional communication in 4 languages', about_step3_li2:'Interpretation and trade fair support', about_step3_li3:'Airport reception and accommodation',
+    about_step4_label:'Step 4 — Audit', about_step4_title:'Transparent Reporting', about_step4_desc:'Next week\'s plan every Friday, instant digital reporting after every field visit. Daily, weekly and monthly reports keep your operations fully under control.',
+    about_step4_li1:'Daily field reports', about_step4_li2:'Weekly performance summary', about_step4_li3:'Monthly comprehensive review',
+    about_why_label:'Why Now?',
+    about_why_title:'The Rising Economy of<br><em>Southern Africa</em>',
+    about_why_p1:'Zambia, as a <strong>copper-rich</strong> country, stands at the center of global mining investments. With its rapidly growing agricultural sector, expanding energy infrastructure and young population, it has become one of the most exciting markets on the continent.',
+    about_why_p2:'<strong>Start today with minimum risk, shape tomorrow.</strong> Get the chance to gauge the market before long-term commitments. With Big Energy\'s guarantee and field strength, reduce the margin of error to zero.',
+    about_why_p3:'Turkey\'s strong manufacturing capacity combined with Zambia\'s resource wealth and growth potential — when brought together with the <strong>right partner</strong> — creates an unparalleled opportunity.',
+    about_stat1:'70%', about_stat1_label:'Operational Cost Savings',
+    about_stat2:'3 Mo.', about_stat2_label:'Pilot Period Option',
+    about_stat3:'4 Lang', about_stat3_label:'EN · TR · PT · AR',
+    about_stat4:'6+', about_stat4_label:'Service Categories',
+    about_lang_label:'Multilingual Team',
+    about_lang_title:'Eliminating <strong>Communication Barriers</strong>',
+    about_lang1:'English', about_lang2:'Turkish', about_lang3:'Portuguese', about_lang4:'Arabic',
+    about_support_label:'Field Support',
+    about_support_title:'We Are With You <em>During Your Africa Visits</em>',
+    about_sup1_title:'Reception & Accommodation', about_sup1_desc:'From airport transfers to safe accommodation, the entire process is under Big Energy & Resources management. When you come to Africa, you feel at home. Our Lusaka office is always at your service.',
+    about_sup2_title:'Trade Fair & Interpreter Support', about_sup2_desc:'From stand preparation to professional interpreter support, we are with you at all trade fair organizations. We eliminate language barriers from business meetings to official gatherings.',
+    about_sup3_title:'Import & Customs Coordination', about_sup3_desc:'We handle customs procedures, documentation and logistics coordination for imports to Zambia. The entire process from supplier to your warehouse is tracked; you are informed at every stage.',
+    about_sup4_title:'Market Entry Strategy', about_sup4_desc:'We develop market entry strategies for Zambia and the region. Comprehensive consultancy on competitive analysis, pricing strategy and local business culture. Be the owner of the market, not a stranger.',
+    about_cta_title:'Looking for a Reliable<br><em>Business Partner in Zambia?</em>',
+    about_cta_sub:'Start with minimum risk. Get to know the market with our 3-month pilot period.',
+    about_cta_btn1:'Let\'s Talk', about_cta_btn2:'Our Services',
+    flag:'https://flagcdn.com/w20/gb.png', code:'EN', dir:'ltr'
+  },
+  tr: {
+    nav_home:'Ana Sayfa', nav_about:'Hakkımızda', nav_services:'Hizmetler', nav_contact_link:'İletişim', nav_contact:'İletişime Geç',
+    hero_title:'Afrika\'daki Güvenilir<br><em>İş Ortağınız</em>',
+    hero_sub:'Tedarik · Danışmanlık · Aracılık · Ticaret',
+    hero_tagline:'Zambia için <strong>en kaliteli ürünleri</strong> <strong>en rekabetçi fiyatlarla</strong> tedarik ediyoruz —<br>başta Türkiye olmak üzere küresel tedarikçilerle bağlantı kuruyoruz.',
+    btn_services:'Hizmetlerimiz', btn_about:'Hakkımızda',
+    bridge_research_title:'Araştırıyoruz', bridge_research_desc:'Zambia\'daki işletmenizin ihtiyaç duyduğu her ürün için — başta Türkiye olmak üzere — en iyi küresel tedarikçileri tespit ediyoruz.',
+    bridge_connect_title:'Bağlıyoruz', bridge_connect_desc:'Zambia\'lı işletmeleri uluslararası tedarikçilerle buluşturuyoruz — müzakere, iletişim ve aracılık süreçlerini yönetiyoruz.',
+    bridge_deliver_title:'Teslim Ediyoruz', bridge_deliver_desc:'Tedarikten lojistik koordinasyonuna — kaliteli ürünler doğru fiyat ve doğru zamanda size ulaşır.',
+    stat_services:'Hizmet Kategorisi', stat_sectors:'Kayıtlı Sektör', stat_bridge:'Zambia — Türkiye Köprüsü', stat_pacra:'PACRA Tescilli',
+    label_services:'Ne Yapıyoruz',
+    services_intro:'Big Energy & Resources Limited, Zambia merkezli bir <strong>tedarik, danışmanlık ve aracılık şirketidir</strong>. Sadece satmıyoruz — müşterilerimiz için en kaliteli ürünleri en rekabetçi fiyatlarla araştırıp buluyoruz. Ana tedarik merkezimiz <strong>Türkiye</strong>, Avrupa ve Asya\'dır.',
+    s1_title:'Madencilik Danışmanlığı', s1_desc:'Zambia\'lı maden şirketleri için madencilik ekipmanları, makineler ve malzeme temininde aracılık yapıyoruz. Kiralama düzenlemeleri ve tedarikçi müzakereleri adınıza yürütülür.',
+    s2_title:'Güneş & Enerji Sistemleri', s2_desc:'Önde gelen Türk ve Avrupalı üreticilerden güneş panelleri, invertörler ve eksiksiz şebeke dışı enerji sistemleri temin ediyoruz.',
+    s3_title:'Tarımsal Girdiler & Makineler', s3_desc:'Büyük çaplı çiftlikler için gübre, sıvı gübre ve modern tarım makineleri tedariği — ağırlıklı olarak Türk üreticilerden.',
+    s4_title:'Motor Yağı & Lubrikantlar', s4_desc:'Zambia genelinde madencilik filosu, tarım makineleri ve nakliye şirketleri için kaliteli motor yağları ve endüstriyel lubrikantlar.',
+    s5_title:'Elektrik Altyapısı', s5_desc:'Endüstriyel ve ticari projeler için trafo, dağıtım panosu, şaltör ve eksiksiz elektrik altyapısı temini.',
+    s6_title:'Ticaret & Toptan Aracılık', s6_desc:'Genel toptan aracılık ve ticaret danışmanlığı. Uluslararası pazarlarda çıkarlarınızı temsil ediyor, en iyi anlaşmayı sağlıyoruz.',
+    label_approach:'Yaklaşımımız', how_title:'Sizin İçin <strong>Nasıl Çalışırız</strong>',
+    step1_title:'İhtiyacınızı Anlıyoruz', step1_desc:'Gereksinimlerinizi dikkatle dinliyoruz — ürün özellikleri, miktar, bütçe ve zaman çizelgesi.',
+    step2_title:'Küresel Araştırma & Tedarik', step2_desc:'Türkiye, Avrupa ve Asya\'daki tedarikçileri araştırıyor, kalite ve fiyatı karşılaştırıyoruz.',
+    step3_title:'Adınıza Müzakere', step3_desc:'Uluslararası ağımızı kullanarak üreticilerle en iyi fiyat ve koşulları müzakere ediyoruz.',
+    step4_title:'Koordinasyon & Teslimat', step4_desc:'İthalat sürecinin tamamını koordine ediyoruz — belgeleme, lojistik ve teslimat.',
+    label_network:'Ağımız', countries_title:'Zambia Dünya ile <strong>Buluşuyor</strong>',
+    countries_desc:'Lusaka, Zambia merkezli — ağırlıklı olarak Türkiye ve Avrupa üzerinden tedarik yapıyor, Sahra Altı Afrika genelinde müşterilere hizmet veriyoruz.',
+    role_hq:'Merkez', role_source:'Ana Tedarik', role_ops:'Operasyon', role_market:'Pazar',
+    social_title:'Bize Ulaşın', social_sub:'Güncellemeler, tedarik içgörüleri ve piyasa haberleri için takip edin',
+    cta_title:'Zambia\'da güvenilir bir tedarik ortağı mı arıyorsunuz?', cta_btn:'Konuşalım',
+    footer_desc:'Güvenilir tedarik, aracılık ve ticaret danışmanlığı ortağınız — Zambia\'yı küresel pazarlarla buluşturuyoruz.',
+    footer_services:'Hizmetler', footer_company:'Şirket', footer_contact:'İletişim', footer_copy:'© Big Energy & Resources Limited. Tüm hakları saklıdır.', footer_inc:'Zambia\'da kurulmuştur', footer_team:'Ekibimiz',
+    about_hero_label:'Biz Kimiz',
+    about_hero_title:'Güney Afrika\'daki<br>Kurumsal Üssünüz,<br><em>Güvenli Ticaret Köprünüz.</em>',
+    about_hero_sub:'Big Energy & Resources Limited · Lusaka, Zambia',
+    about_who_label:'Biz Kimiz',
+    about_who_title:'Türkiye\'nin Üretim Gücü ile<br>Zambia\'nın Potansiyelini<br><em>Tek Çatıda Birleştiriyoruz</em>',
+    about_who_p1:'<strong>Big Energy & Resources Limited</strong>, Zambia\'nın başkenti Lusaka merkezli, PACRA tescilli bir tedarik, danışmanlık ve aracılık şirketidir. Türkiye ile Zambia arasında güçlü bir ticaret köprüsü kurarak her iki ülkenin iş dünyasına kapsamlı hizmet sunuyoruz.',
+    about_who_p2:'Biz size sadece bir <strong>distribütör</strong> değil; başkent Lusaka\'nın kalbinde markanızın tabelasını taşıyan, sizin dilinizi konuşan ve hedeflerinize koşan <strong>kurumsal bir birim</strong> sunuyoruz.',
+    about_who_p3:'Madenciliğinden tarıma, enerji altyapısından endüstriyel ekipmanlara kadar — Türk üreticileri ile Zambia\'lı alıcıları buluşturuyor, <strong>en kaliteli ürünleri en rekabetçi fiyatlarla</strong> temin ediyoruz.',
+    about_quote:'"Güney Afrika pazarında sadece bir distribütör ile çalışmak, ürününüzün bir rafta bekletilmesine razı olmaktır. <span>Big Energy & Resources ile çalışmak ise pazarda bizzat var olmaktır.</span>"',
+    about_quote_attr:'Big Energy & Resources · Temel Felsefemiz',
+    about_mission_label:'Misyon, Vizyon & Değerler',
+    about_mission_title:'Bizi <strong>Harekete Geçiren</strong>',
+    about_mv1_title:'Misyonumuz', about_mv1_desc:'Başta Türkiye olmak üzere küresel üreticileri Zambia ve Güney Afrika pazarlarıyla buluşturmak; tedarik, danışmanlık ve lojistikte güvenilir köprü olmak. Müşterilerimizin %70\'e varan operasyonel tasarruf sağlamasına aracılık etmek.',
+    about_mv2_title:'Vizyonumuz', about_mv2_desc:'Güney Afrika\'da Türk ve uluslararası yatırımcılar için en güvenilir kurumsal üs olmak. Zambia\'yı bölgesel ticaretin merkezi konumuna taşıyacak projelere öncülük etmek.',
+    about_mv3_title:'Değerlerimiz', about_mv3_desc:'Şeffaflık ve dürüstlük her işlemin temelinde. Müşteri onayı olmadan hiçbir adım atmıyoruz. İdari disiplin ve günlük raporlama ile hesap verebilirliği ön planda tutuyoruz.',
+    about_sectors_label:'Faaliyet Alanlarımız',
+    about_sectors_title:'Ne <strong>Yapıyoruz?</strong>',
+    about_sectors_intro:'Madenciliğinden tarıma, enerji sistemlerinden endüstriyel ekipmanlara kadar geniş bir yelpazede tedarik, aracılık, danışmanlık ve lojistik koordinasyon hizmetleri sunuyoruz.',
+    about_s1_title:'Madencilik Danışmanlığı & Ekipman', about_s1_desc:'Türk ve Avrupalı üreticilerden madencilik ekipmanları, makineler, yedek parçalar ve sarf malzemeleri temin ediyoruz.',
+    about_s1_t1:'Ekipman Temini', about_s1_t2:'Kiralama', about_s1_t3:'Yedek Parça', about_s1_t4:'Aracılık',
+    about_s2_title:'Tarımsal Girdiler & Makine', about_s2_desc:'Büyük ölçekli çiftlikler için gübre, tarım ilaçları ve modern tarım makineleri temin ediyoruz.',
+    about_s2_t1:'Gübre & İlaç', about_s2_t2:'Tarım Makineleri', about_s2_t3:'Sulama Sistemleri', about_s2_t4:'Depolama',
+    about_s3_title:'Elektrik Altyapısı & Enerji', about_s3_desc:'Endüstriyel ve ticari projeler için trafo, dağıtım panosu, şaltör ve güneş sistemleri temini yapıyoruz.',
+    about_s3_t1:'Trafo', about_s3_t2:'Güneş Sistemleri', about_s3_t3:'Şebeke Dışı', about_s3_t4:'Altyapı',
+    about_s4_title:'Motor Yağı & Lubrikantlar', about_s4_desc:'Madencilik filosu, tarım makineleri ve nakliye şirketleri için kaliteli motor yağları ve endüstriyel lubrikantlar tedarik ediyoruz.',
+    about_s4_t1:'Motor Yağı', about_s4_t2:'Endüstriyel Yağ', about_s4_t3:'Filo Tedarik', about_s4_t4:'Toplu Sipariş',
+    about_s5_title:'İnşaat & Endüstriyel Malzeme', about_s5_desc:'İnşaat projeleri ve endüstriyel tesisler için yapı malzemeleri, çelik profiller ve boru sistemleri temin ediyoruz.',
+    about_s5_t1:'Yapı Malzemesi', about_s5_t2:'Çelik & Profil', about_s5_t3:'Boru Sistemleri', about_s5_t4:'Proje Bazlı',
+    about_s6_title:'Ticaret Aracılığı & Danışmanlık', about_s6_desc:'Uluslararası pazarlarda çıkarlarınızı temsil ediyor, tedarikçi araştırması ve ithalat koordinasyonunda destek sağlıyoruz.',
+    about_s6_t1:'Tedarikçi Araştırma', about_s6_t2:'Fiyat Müzakeresi', about_s6_t3:'İthalat Koordinasyonu', about_s6_t4:'Pazar Analizi',
+    about_method_label:'Operasyonel Metodoloji',
+    about_method_title:'Nasıl <strong>Çalışıyoruz?</strong>',
+    about_step1_label:'Adım 1 — Seçim', about_step1_title:'Doğru İnsanları Buluyoruz', about_step1_desc:'Sektörünüzle alakalı, nitelikli kişi ve şirketleri tespit ediyoruz. Sizinle görüştürüyoruz. Siz onay veriyorsunuz.',
+    about_step1_li1:'Sektöre özel aday ve partner araştırması', about_step1_li2:'Ön değerlendirme ve kısa liste hazırlama', about_step1_li3:'Müşteri onayı alınmadan hiçbir adım atılmaz',
+    about_step2_label:'Adım 2 — Yönetim', about_step2_title:'İdari Sorumluluk Bizde', about_step2_desc:'İdari sorumluluk Big Energy\'de; günlük strateji ve yönetim tamamen sizin elinizde. Hazır altyapımızla başlayın.',
+    about_step2_li1:'Hazır idari ve lojistik altyapı', about_step2_li2:'%70 operasyonel maliyet tasarrufu', about_step2_li3:'3 aylık pilot dönem imkânı',
+    about_step3_label:'Adım 3 — Dil & İletişim', about_step3_title:'Dilinizi Konuşuyoruz', about_step3_desc:'Türkçe, İngilizce, Portekizce ve Arapça bilen çok dilli ekibimizle iletişim kopukluklarını ortadan kaldırıyoruz.',
+    about_step3_li1:'4 dilde profesyonel iletişim', about_step3_li2:'Tercümanlık ve fuar desteği', about_step3_li3:'Havalimanı karşılama ve konaklama organizasyonu',
+    about_step4_label:'Adım 4 — Denetim', about_step4_title:'Şeffaf Raporlama', about_step4_desc:'Her Cuma gelecek hafta planı, her saha ziyareti sonrası anlık dijital raporlama.',
+    about_step4_li1:'Günlük saha raporları', about_step4_li2:'Haftalık performans özeti', about_step4_li3:'Aylık kapsamlı değerlendirme',
+    about_why_label:'Neden Şimdi?',
+    about_why_title:'Güney Afrika\'nın<br><em>Yükselen Ekonomisi</em>',
+    about_why_p1:'Zambia, <strong>bakır zengini</strong> bir ülke olarak küresel madencilik yatırımlarının odak noktasında yer alıyor. Hızla büyüyen tarım sektörü ve genç nüfusuyla kıtanın en heyecan verici pazarlarından biri.',
+    about_why_p2:'<strong>En az riskle bugün başlayın, yarını şekillendirin.</strong> Big Energy\'nin garantörlüğü ve saha gücüyle hata payını sıfıra indirin.',
+    about_why_p3:'Türkiye\'nin üretim kapasitesi ile Zambia\'nın potansiyeli; <strong>doğru ortakla buluştuğunda</strong> benzersiz bir fırsat yaratıyor.',
+    about_stat1:'%70', about_stat1_label:'Operasyonel Maliyet Tasarrufu',
+    about_stat2:'3 Ay', about_stat2_label:'Pilot Dönem İmkânı',
+    about_stat3:'4 Dil', about_stat3_label:'TR · EN · PT · AR',
+    about_stat4:'6+', about_stat4_label:'Hizmet Kategorisi',
+    about_lang_label:'Çok Dilli Ekip',
+    about_lang_title:'İletişim <strong>Kopukluklarını</strong> Ortadan Kaldırıyoruz',
+    about_lang1:'İngilizce', about_lang2:'Türkçe', about_lang3:'Portekizce', about_lang4:'Arapça',
+    about_support_label:'Saha Desteği',
+    about_support_title:'Afrika Ziyaretlerinizde <em>Yanınızdayız</em>',
+    about_sup1_title:'Karşılama & Konaklama', about_sup1_desc:'Havalimanı transferlerinden güvenli konaklamaya kadar tüm süreç Big Energy yönetimindedir. Lusaka\'daki ofisimiz her zaman emrinizde.',
+    about_sup2_title:'Fuar & Tercüman Desteği', about_sup2_desc:'Stand hazırlığından profesyonel tercüman desteğine kadar tüm fuar organizasyonlarında yanınızdayız.',
+    about_sup3_title:'İthalat & Gümrük Koordinasyonu', about_sup3_desc:'Zambia\'ya ithalat süreçlerinde gümrük prosedürleri ve lojistik koordinasyonunu üstleniyoruz.',
+    about_sup4_title:'Pazar Giriş Stratejisi', about_sup4_desc:'Zambia ve bölge pazarına giriş stratejisi geliştiriyoruz. Rekabet analizi ve yerel iş kültürü danışmanlığı sunuyoruz.',
+    about_cta_title:'Zambia\'da Güvenilir Bir<br><em>İş Ortağı mı Arıyorsunuz?</em>',
+    about_cta_sub:'En az riskle başlayın. 3 aylık pilot dönemimizle pazarı tanıyın.',
+    about_cta_btn1:'Konuşalım', about_cta_btn2:'Hizmetlerimiz',
+    flag:'https://flagcdn.com/w20/tr.png', code:'TR', dir:'ltr'
+  },
+  fr: {
+    nav_home:'Accueil', nav_about:'À Propos', nav_services:'Services', nav_contact_link:'Contact', nav_contact:'Nous Contacter',
+    hero_title:'Votre Partenaire de Confiance<br><em>en Afrique</em>',
+    hero_sub:'Approvisionnement · Conseil · Courtage · Commerce',
+    hero_tagline:'Nous fournissons les <strong>meilleurs produits</strong> aux <strong>prix les plus compétitifs</strong> —<br>connectant la Zambie aux fournisseurs mondiaux via la Turquie.',
+    btn_services:'Nos Services', btn_about:'Qui Sommes-Nous',
+    bridge_research_title:'Nous Recherchons', bridge_research_desc:'Nous identifions les meilleurs fournisseurs mondiaux pour chaque produit dont votre entreprise a besoin en Zambie.',
+    bridge_connect_title:'Nous Connectons', bridge_connect_desc:'Nous mettons en relation les entreprises zambiennes avec des fournisseurs internationaux.',
+    bridge_deliver_title:'Nous Livrons', bridge_deliver_desc:'De l\'approvisionnement à la coordination logistique — des produits de qualité vous parviennent au bon prix.',
+    stat_services:'Catégories de Services', stat_sectors:'Secteurs Enregistrés', stat_bridge:'Zambie — Pont Turquie', stat_pacra:'Enregistré PACRA',
+    label_services:'Ce Que Nous Faisons',
+    services_intro:'Big Energy & Resources Limited est une <strong>société zambienne d\'approvisionnement, de conseil et de courtage</strong>. Nous trouvons les meilleurs produits aux meilleurs prix pour nos clients.',
+    s1_title:'Conseil Minier', s1_desc:'Approvisionnement et courtage d\'équipements miniers pour les sociétés minières zambiennes.',
+    s2_title:'Systèmes Solaires & Énergie', s2_desc:'Panneaux solaires, onduleurs et systèmes d\'énergie hors réseau de fabricants turcs et européens.',
+    s3_title:'Intrants Agricoles & Machines', s3_desc:'Engrais, pesticides et machines agricoles modernes pour les grandes exploitations.',
+    s4_title:'Huile Moteur & Lubrifiants', s4_desc:'Huiles moteur et lubrifiants industriels de qualité pour les flottes minières et agricoles.',
+    s5_title:'Infrastructure Électrique', s5_desc:'Transformateurs, tableaux de distribution et infrastructure électrique complète pour projets industriels.',
+    s6_title:'Courtage Commercial', s6_desc:'Courtage en gros et conseil commercial. Nous représentons vos intérêts sur les marchés internationaux.',
+    label_approach:'Notre Approche', how_title:'Comment Nous <strong>Travaillons Pour Vous</strong>',
+    step1_title:'Comprendre Vos Besoins', step1_desc:'Nous écoutons attentivement vos exigences — spécifications, quantité, budget et délais.',
+    step2_title:'Recherche & Approvisionnement', step2_desc:'Nous recherchons des fournisseurs en Turquie, Europe et Asie — comparant qualité et prix.',
+    step3_title:'Négociation en Votre Nom', step3_desc:'Grâce à notre réseau international, nous négocions les meilleurs prix avec les fabricants.',
+    step4_title:'Coordination & Livraison', step4_desc:'Nous coordonnons l\'ensemble du processus d\'importation — documentation, logistique et livraison.',
+    label_network:'Notre Réseau', countries_title:'La Zambie Rencontre le <strong>Monde</strong>',
+    countries_desc:'Basés à Lusaka, Zambie — nous approvisionnons principalement via la Turquie et l\'Europe.',
+    role_hq:'Siège Social', role_source:'Approvisionnement Principal', role_ops:'Opérations', role_market:'Marché',
+    social_title:'Connectez-Vous Avec Nous', social_sub:'Suivez-nous pour les mises à jour et les nouvelles du marché',
+    cta_title:'Besoin d\'un partenaire fiable en Zambie?', cta_btn:'Parlons-En',
+    footer_desc:'Votre partenaire de confiance en approvisionnement et conseil commercial.',
+    footer_services:'Services', footer_company:'Société', footer_contact:'Contact', footer_copy:'© Big Energy & Resources Limited. Tous droits réservés.', footer_inc:'Constituée en Zambie', footer_team:'Notre Équipe',
+    about_hero_label:'Qui Sommes-Nous', about_hero_title:'Votre Base Corporative<br>en Afrique Australe,<br><em>Votre Pont Commercial.</em>', about_hero_sub:'Big Energy & Resources Limited · Lusaka, Zambie',
+    about_who_label:'Qui Sommes-Nous', about_who_title:'Unir la Puissance de Production<br>de la Turquie avec le Potentiel<br><em>de la Zambie</em>',
+    about_who_p1:'<strong>Big Energy & Resources Limited</strong> est une société d\'approvisionnement, de conseil et de courtage enregistrée au PACRA, dont le siège est à Lusaka, Zambie.',
+    about_who_p2:'Nous ne sommes pas seulement un <strong>distributeur</strong> — nous offrons une <strong>unité corporative</strong> au cœur de Lusaka qui porte votre marque et court vers vos objectifs.',
+    about_who_p3:'De l\'exploitation minière à l\'agriculture, de l\'infrastructure énergétique aux équipements industriels — nous connectons les fabricants turcs aux acheteurs zambiens.',
+    about_quote:'"Travailler uniquement avec un distributeur en Afrique australe, c\'est accepter que votre produit reste sur une étagère. <span>Travailler avec Big Energy & Resources, c\'est être présent sur le marché vous-même.</span>"',
+    about_quote_attr:'Big Energy & Resources · Notre Philosophie',
+    about_mission_label:'Mission, Vision & Valeurs', about_mission_title:'Ce Qui <strong>Nous Anime</strong>',
+    about_mv1_title:'Notre Mission', about_mv1_desc:'Connecter les fabricants mondiaux avec la Zambie et l\'Afrique australe; être un pont fiable et transparent dans l\'approvisionnement, le conseil et la logistique.',
+    about_mv2_title:'Notre Vision', about_mv2_desc:'Devenir la base corporative la plus fiable pour les investisseurs turcs et internationaux en Afrique australe.',
+    about_mv3_title:'Nos Valeurs', about_mv3_desc:'Transparence et honnêteté au cœur de chaque transaction. Aucune étape sans approbation du client. Partenariat à long terme.',
+    about_sectors_label:'Domaines d\'Activité', about_sectors_title:'Ce Que <strong>Nous Faisons</strong>',
+    about_sectors_intro:'De l\'exploitation minière à l\'agriculture, des systèmes énergétiques aux équipements industriels — services d\'approvisionnement, de courtage et de logistique.',
+    about_s1_title:'Conseil Minier & Équipement', about_s1_desc:'Équipements miniers, machines et pièces détachées de fabricants turcs et européens.',
+    about_s1_t1:'Approvisionnement', about_s1_t2:'Location', about_s1_t3:'Pièces Détachées', about_s1_t4:'Courtage',
+    about_s2_title:'Intrants Agricoles & Machines', about_s2_desc:'Engrais, pesticides et machines agricoles modernes pour grandes exploitations.',
+    about_s2_t1:'Engrais & Pesticides', about_s2_t2:'Machines Agricoles', about_s2_t3:'Irrigation', about_s2_t4:'Stockage',
+    about_s3_title:'Infrastructure Électrique & Énergie', about_s3_desc:'Transformateurs, tableaux de distribution et systèmes solaires.',
+    about_s3_t1:'Transformateurs', about_s3_t2:'Systèmes Solaires', about_s3_t3:'Hors Réseau', about_s3_t4:'Infrastructure',
+    about_s4_title:'Huile Moteur & Lubrifiants', about_s4_desc:'Huiles moteur et lubrifiants industriels pour flottes minières et agricoles.',
+    about_s4_t1:'Huile Moteur', about_s4_t2:'Huile Industrielle', about_s4_t3:'Flotte', about_s4_t4:'Commandes en Gros',
+    about_s5_title:'Construction & Matériaux Industriels', about_s5_desc:'Matériaux de construction, profilés en acier et systèmes de tuyauterie.',
+    about_s5_t1:'Matériaux', about_s5_t2:'Acier & Profilés', about_s5_t3:'Tuyauterie', about_s5_t4:'Par Projet',
+    about_s6_title:'Courtage Commercial & Conseil', about_s6_desc:'Courtage en gros et conseil commercial international.',
+    about_s6_t1:'Recherche Fournisseur', about_s6_t2:'Négociation', about_s6_t3:'Import', about_s6_t4:'Analyse Marché',
+    about_method_label:'Méthodologie Opérationnelle', about_method_title:'Comment <strong>Nous Travaillons</strong>',
+    about_step1_label:'Étape 1 — Sélection', about_step1_title:'Nous Trouvons les Bonnes Personnes', about_step1_desc:'Nous identifions des personnes et entreprises qualifiées. Vous donnez l\'approbation.',
+    about_step1_li1:'Recherche de candidats sectoriels', about_step1_li2:'Pré-évaluation et présélection', about_step1_li3:'Aucune action sans approbation client',
+    about_step2_label:'Étape 2 — Gestion', about_step2_title:'Responsabilité Administrative Chez Nous', about_step2_desc:'Responsabilité administrative chez Big Energy; stratégie quotidienne entre vos mains.',
+    about_step2_li1:'Infrastructure administrative prête', about_step2_li2:'Jusqu\'à 70% d\'économies opérationnelles', about_step2_li3:'Option de période pilote de 3 mois',
+    about_step3_label:'Étape 3 — Langue', about_step3_title:'Nous Parlons Votre Langue', about_step3_desc:'Notre équipe multilingue élimine les barrières de communication.',
+    about_step3_li1:'Communication professionnelle en 4 langues', about_step3_li2:'Interprétation et soutien aux salons', about_step3_li3:'Accueil à l\'aéroport et hébergement',
+    about_step4_label:'Étape 4 — Audit', about_step4_title:'Rapports Transparents', about_step4_desc:'Plan de la semaine suivante chaque vendredi, rapports numériques instantanés.',
+    about_step4_li1:'Rapports de terrain quotidiens', about_step4_li2:'Résumé hebdomadaire', about_step4_li3:'Révision mensuelle complète',
+    about_why_label:'Pourquoi Maintenant?', about_why_title:'L\'Économie en Plein Essor<br><em>d\'Afrique Australe</em>',
+    about_why_p1:'La Zambie, pays riche en <strong>cuivre</strong>, est au centre des investissements miniers mondiaux.',
+    about_why_p2:'<strong>Commencez aujourd\'hui avec un risque minimal.</strong> Avec la garantie de Big Energy, réduisez la marge d\'erreur à zéro.',
+    about_why_p3:'La capacité de production turque combinée au potentiel de la Zambie crée une opportunité sans précédent.',
+    about_stat1:'70%', about_stat1_label:'Économies Opérationnelles',
+    about_stat2:'3 Mois', about_stat2_label:'Option Période Pilote',
+    about_stat3:'4 Langues', about_stat3_label:'EN · TR · PT · AR',
+    about_stat4:'6+', about_stat4_label:'Catégories de Services',
+    about_lang_label:'Équipe Multilingue', about_lang_title:'Éliminer les <strong>Barrières de Communication</strong>',
+    about_lang1:'Anglais', about_lang2:'Turc', about_lang3:'Portugais', about_lang4:'Arabe',
+    about_support_label:'Support Terrain', about_support_title:'Nous Sommes Avec Vous <em>Lors de Vos Visites en Afrique</em>',
+    about_sup1_title:'Accueil & Hébergement', about_sup1_desc:'Des transferts aéroportuaires à l\'hébergement sécurisé, tout est géré par Big Energy.',
+    about_sup2_title:'Foires & Interprètes', about_sup2_desc:'De la préparation du stand au soutien professionnel en interprétation.',
+    about_sup3_title:'Import & Douanes', about_sup3_desc:'Procédures douanières et coordination logistique pour les importations en Zambie.',
+    about_sup4_title:'Stratégie d\'Entrée sur le Marché', about_sup4_desc:'Développement de stratégies d\'entrée pour le marché zambien et régional.',
+    about_cta_title:'Vous Cherchez un Partenaire<br><em>Fiable en Zambie?</em>',
+    about_cta_sub:'Commencez avec un risque minimal. Découvrez le marché avec notre période pilote de 3 mois.',
+    about_cta_btn1:'Parlons-En', about_cta_btn2:'Nos Services',
+    flag:'https://flagcdn.com/w20/fr.png', code:'FR', dir:'ltr'
+  },
+  pt: {
+    nav_home:'Início', nav_about:'Sobre Nós', nav_services:'Serviços', nav_contact_link:'Contacto', nav_contact:'Contacte-Nos',
+    hero_title:'O Seu Parceiro de Confiança<br><em>em África</em>',
+    hero_sub:'Fornecimento · Consultoria · Corretagem · Comércio',
+    hero_tagline:'Fornecemos os <strong>melhores produtos</strong> aos <strong>preços mais competitivos</strong> —<br>conectando a Zâmbia com fornecedores globais liderados pela Turquia.',
+    btn_services:'Os Nossos Serviços', btn_about:'Sobre Nós',
+    bridge_research_title:'Pesquisamos', bridge_research_desc:'Identificamos os melhores fornecedores globais para cada produto de que o seu negócio precisa na Zâmbia.',
+    bridge_connect_title:'Conectamos', bridge_connect_desc:'Ligamos empresas zambianas a fornecedores internacionais — negociação e corretagem incluídas.',
+    bridge_deliver_title:'Entregamos', bridge_deliver_desc:'Do fornecimento à coordenação logística — produtos de qualidade chegam até si no preço certo.',
+    stat_services:'Categorias de Serviços', stat_sectors:'Setores Registados', stat_bridge:'Zâmbia — Ponte Turquia', stat_pacra:'Registado PACRA',
+    label_services:'O Que Fazemos',
+    services_intro:'Big Energy & Resources Limited é uma <strong>empresa zambiana de fornecimento, consultoria e corretagem</strong>. Encontramos os melhores produtos aos melhores preços para os nossos clientes.',
+    s1_title:'Consultoria Mineira', s1_desc:'Fornecimento e corretagem de equipamentos mineiros para empresas mineiras zambianas.',
+    s2_title:'Sistemas Solares & Energia', s2_desc:'Painéis solares, inversores e sistemas de energia off-grid de fabricantes turcos e europeus.',
+    s3_title:'Insumos Agrícolas & Máquinas', s3_desc:'Fertilizantes, pesticidas e máquinas agrícolas modernas para grandes explorações.',
+    s4_title:'Óleo Motor & Lubrificantes', s4_desc:'Óleos motor e lubrificantes industriais de qualidade para frotas mineiras e agrícolas.',
+    s5_title:'Infraestrutura Elétrica', s5_desc:'Transformadores, quadros de distribuição e infraestrutura elétrica completa para projetos industriais.',
+    s6_title:'Corretagem Comercial', s6_desc:'Corretagem por grosso e consultoria comercial. Representamos os seus interesses nos mercados internacionais.',
+    label_approach:'A Nossa Abordagem', how_title:'Como <strong>Trabalhamos Para Si</strong>',
+    step1_title:'Compreender as Suas Necessidades', step1_desc:'Ouvimos atentamente os seus requisitos — especificações, quantidade, orçamento e prazo.',
+    step2_title:'Pesquisa & Fornecimento Global', step2_desc:'Pesquisamos fornecedores na Turquia, Europa e Ásia — comparando qualidade e preços.',
+    step3_title:'Negociação em Seu Nome', step3_desc:'Usando a nossa rede internacional, negociamos os melhores preços com fabricantes.',
+    step4_title:'Coordenação & Entrega', step4_desc:'Coordenamos todo o processo de importação — documentação, logística e entrega.',
+    label_network:'A Nossa Rede', countries_title:'A Zâmbia Encontra o <strong>Mundo</strong>',
+    countries_desc:'Sediados em Lusaka, Zâmbia — fornecemos principalmente através da Turquia e Europa.',
+    role_hq:'Sede', role_source:'Fornecimento Principal', role_ops:'Operações', role_market:'Mercado',
+    social_title:'Conecte-Se Connosco', social_sub:'Siga-nos para atualizações e notícias do mercado',
+    cta_title:'Precisa de um parceiro de fornecimento fiável na Zâmbia?', cta_btn:'Vamos Falar',
+    footer_desc:'O seu parceiro de confiança em fornecimento e consultoria comercial.',
+    footer_services:'Serviços', footer_company:'Empresa', footer_contact:'Contacto', footer_copy:'© Big Energy & Resources Limited. Todos os direitos reservados.', footer_inc:'Constituída na Zâmbia', footer_team:'A Nossa Equipa',
+    about_hero_label:'Quem Somos', about_hero_title:'A Sua Base Corporativa<br>na África Austral,<br><em>A Sua Ponte Comercial.</em>', about_hero_sub:'Big Energy & Resources Limited · Lusaka, Zâmbia',
+    about_who_label:'Quem Somos', about_who_title:'Combinando o Poder de Produção<br>da Turquia com o Potencial<br><em>da Zâmbia</em>',
+    about_who_p1:'<strong>Big Energy & Resources Limited</strong> é uma empresa registada no PACRA, sediada em Lusaka, Zâmbia.',
+    about_who_p2:'Não somos apenas um <strong>distribuidor</strong> — oferecemos uma <strong>unidade corporativa</strong> no coração de Lusaka.',
+    about_who_p3:'Da mineração à agricultura — conectamos fabricantes turcos a compradores zambianos.',
+    about_quote:'"Trabalhar apenas com um distribuidor na África Austral significa aceitar que o seu produto fique numa prateleira. <span>Trabalhar com Big Energy & Resources significa estar presente no mercado.</span>"',
+    about_quote_attr:'Big Energy & Resources · A Nossa Filosofia',
+    about_mission_label:'Missão, Visão & Valores', about_mission_title:'O Que Nos <strong>Motiva</strong>',
+    about_mv1_title:'A Nossa Missão', about_mv1_desc:'Conectar fabricantes globais com a Zâmbia e a África Austral; ser uma ponte fiável no fornecimento e logística.',
+    about_mv2_title:'A Nossa Visão', about_mv2_desc:'Tornar-nos a base corporativa mais confiável para investidores turcos e internacionais na África Austral.',
+    about_mv3_title:'Os Nossos Valores', about_mv3_desc:'Transparência e honestidade em cada transação. Nenhuma ação sem aprovação do cliente. Parceria a longo prazo.',
+    about_sectors_label:'Áreas de Atividade', about_sectors_title:'O Que <strong>Fazemos</strong>',
+    about_sectors_intro:'Da mineração à agricultura, sistemas energéticos a equipamentos industriais — serviços de fornecimento, corretagem e logística.',
+    about_s1_title:'Consultoria Mineira & Equipamento', about_s1_desc:'Equipamentos mineiros, máquinas e peças sobressalentes de fabricantes turcos e europeus.',
+    about_s1_t1:'Fornecimento', about_s1_t2:'Arrendamento', about_s1_t3:'Peças', about_s1_t4:'Corretagem',
+    about_s2_title:'Insumos Agrícolas & Máquinas', about_s2_desc:'Fertilizantes, pesticidas e máquinas agrícolas modernas para grandes explorações.',
+    about_s2_t1:'Fertilizantes', about_s2_t2:'Máquinas Agrícolas', about_s2_t3:'Irrigação', about_s2_t4:'Armazenamento',
+    about_s3_title:'Infraestrutura Elétrica & Energia', about_s3_desc:'Transformadores, quadros de distribuição e sistemas solares.',
+    about_s3_t1:'Transformadores', about_s3_t2:'Sistemas Solares', about_s3_t3:'Off-Grid', about_s3_t4:'Infraestrutura',
+    about_s4_title:'Óleo Motor & Lubrificantes', about_s4_desc:'Óleos motor e lubrificantes industriais para frotas mineiras e agrícolas.',
+    about_s4_t1:'Óleo Motor', about_s4_t2:'Óleo Industrial', about_s4_t3:'Frota', about_s4_t4:'Encomendas em Massa',
+    about_s5_title:'Construção & Materiais Industriais', about_s5_desc:'Materiais de construção, perfis de aço e sistemas de tubagem.',
+    about_s5_t1:'Materiais', about_s5_t2:'Aço & Perfis', about_s5_t3:'Tubagem', about_s5_t4:'Por Projeto',
+    about_s6_title:'Corretagem Comercial & Consultoria', about_s6_desc:'Corretagem por grosso e consultoria comercial internacional.',
+    about_s6_t1:'Pesquisa Fornecedor', about_s6_t2:'Negociação', about_s6_t3:'Importação', about_s6_t4:'Análise Mercado',
+    about_method_label:'Metodologia Operacional', about_method_title:'Como <strong>Trabalhamos</strong>',
+    about_step1_label:'Passo 1 — Seleção', about_step1_title:'Encontramos as Pessoas Certas', about_step1_desc:'Identificamos pessoas e empresas qualificadas. Você dá a aprovação.',
+    about_step1_li1:'Pesquisa de candidatos sectoriais', about_step1_li2:'Pré-avaliação e lista restrita', about_step1_li3:'Nenhuma ação sem aprovação do cliente',
+    about_step2_label:'Passo 2 — Gestão', about_step2_title:'Responsabilidade Administrativa Connosco', about_step2_desc:'Responsabilidade administrativa na Big Energy; estratégia diária nas suas mãos.',
+    about_step2_li1:'Infraestrutura administrativa pronta', about_step2_li2:'Até 70% de poupanças operacionais', about_step2_li3:'Opção de período piloto de 3 meses',
+    about_step3_label:'Passo 3 — Língua', about_step3_title:'Falamos a Sua Língua', about_step3_desc:'A nossa equipa multilíngue elimina as barreiras de comunicação.',
+    about_step3_li1:'Comunicação profissional em 4 línguas', about_step3_li2:'Interpretação e apoio a feiras', about_step3_li3:'Receção no aeroporto e alojamento',
+    about_step4_label:'Passo 4 — Auditoria', about_step4_title:'Relatórios Transparentes', about_step4_desc:'Plano da semana seguinte todas as sextas, relatórios digitais instantâneos.',
+    about_step4_li1:'Relatórios de campo diários', about_step4_li2:'Resumo semanal', about_step4_li3:'Revisão mensal completa',
+    about_why_label:'Porquê Agora?', about_why_title:'A Economia em Crescimento<br><em>da África Austral</em>',
+    about_why_p1:'A Zâmbia, país rico em <strong>cobre</strong>, está no centro dos investimentos mineiros globais.',
+    about_why_p2:'<strong>Comece hoje com risco mínimo.</strong> Com a garantia da Big Energy, reduza a margem de erro a zero.',
+    about_why_p3:'A capacidade de produção turca combinada com o potencial da Zâmbia cria uma oportunidade única.',
+    about_stat1:'70%', about_stat1_label:'Poupanças Operacionais',
+    about_stat2:'3 Meses', about_stat2_label:'Opção Período Piloto',
+    about_stat3:'4 Línguas', about_stat3_label:'EN · TR · PT · AR',
+    about_stat4:'6+', about_stat4_label:'Categorias de Serviços',
+    about_lang_label:'Equipa Multilíngue', about_lang_title:'Eliminar <strong>Barreiras de Comunicação</strong>',
+    about_lang1:'Inglês', about_lang2:'Turco', about_lang3:'Português', about_lang4:'Árabe',
+    about_support_label:'Apoio no Terreno', about_support_title:'Estamos Consigo <em>Durante as Suas Visitas a África</em>',
+    about_sup1_title:'Receção & Alojamento', about_sup1_desc:'Das transferências do aeroporto ao alojamento seguro, tudo gerido pela Big Energy.',
+    about_sup2_title:'Feiras & Intérpretes', about_sup2_desc:'Da preparação do stand ao apoio profissional de interpretação.',
+    about_sup3_title:'Importação & Alfândega', about_sup3_desc:'Procedimentos aduaneiros e coordenação logística para importações para a Zâmbia.',
+    about_sup4_title:'Estratégia de Entrada no Mercado', about_sup4_desc:'Desenvolvimento de estratégias de entrada para o mercado zambiano e regional.',
+    about_cta_title:'Procura um Parceiro<br><em>Confiável na Zâmbia?</em>',
+    about_cta_sub:'Comece com risco mínimo. Conheça o mercado com o nosso período piloto de 3 meses.',
+    about_cta_btn1:'Vamos Falar', about_cta_btn2:'Os Nossos Serviços',
+    flag:'https://flagcdn.com/w20/pt.png', code:'PT', dir:'ltr'
+  },
+  ar: {
+    nav_home:'الرئيسية', nav_about:'من نحن', nav_services:'الخدمات', nav_contact_link:'اتصل بنا', nav_contact:'تواصل معنا',
+    hero_title:'شريكك الموثوق<br><em>عبر أفريقيا</em>',
+    hero_sub:'التوريد · الاستشارة · الوساطة · التجارة',
+    hero_tagline:'نوفر <strong>أفضل المنتجات</strong> بـ<strong>أكثر الأسعار تنافسية</strong> —<br>نربط زامبيا بالموردين العالميين بقيادة تركيا.',
+    btn_services:'خدماتنا', btn_about:'من نحن',
+    bridge_research_title:'نبحث', bridge_research_desc:'نحدد أفضل الموردين العالميين لكل منتج تحتاجه شركتك في زامبيا.',
+    bridge_connect_title:'نربط', bridge_connect_desc:'نربط الشركات الزامبية بالموردين الدوليين — مع التفاوض والوساطة.',
+    bridge_deliver_title:'نسلم', bridge_deliver_desc:'من التوريد إلى التنسيق اللوجستي — منتجات عالية الجودة تصلك بالسعر المناسب.',
+    stat_services:'فئات الخدمات', stat_sectors:'القطاعات المسجلة', stat_bridge:'زامبيا — جسر تركيا', stat_pacra:'مسجل في PACRA',
+    label_services:'ماذا نفعل',
+    services_intro:'Big Energy & Resources Limited شركة زامبية متخصصة في <strong>التوريد والاستشارة والوساطة التجارية</strong>. نجد أفضل المنتجات بأفضل الأسعار لعملائنا.',
+    s1_title:'استشارات التعدين', s1_desc:'توريد ووساطة معدات التعدين للشركات الزامبية.',
+    s2_title:'أنظمة الطاقة الشمسية', s2_desc:'ألواح شمسية وعواكس وأنظمة طاقة من مصنعين أتراك وأوروبيين.',
+    s3_title:'المدخلات الزراعية والمعدات', s3_desc:'أسمدة ومبيدات وآلات زراعية حديثة للمزارع الكبيرة.',
+    s4_title:'زيت المحرك والمزلقات', s4_desc:'زيوت محرك ومزلقات صناعية عالية الجودة لأساطيل التعدين والزراعة.',
+    s5_title:'البنية التحتية الكهربائية', s5_desc:'محولات ولوحات توزيع وبنية تحتية كهربائية كاملة للمشاريع الصناعية.',
+    s6_title:'وساطة تجارية', s6_desc:'وساطة بالجملة واستشارات تجارية. نمثل مصالحك في الأسواق الدولية.',
+    label_approach:'نهجنا', how_title:'كيف <strong>نعمل من أجلك</strong>',
+    step1_title:'فهم احتياجاتك', step1_desc:'نستمع بعناية إلى متطلباتك — المواصفات والكمية والميزانية والجدول الزمني.',
+    step2_title:'البحث والتوريد العالمي', step2_desc:'نبحث عن موردين في تركيا وأوروبا وآسيا — نقارن الجودة والأسعار.',
+    step3_title:'التفاوض نيابةً عنك', step3_desc:'باستخدام شبكتنا الدولية، نتفاوض على أفضل الأسعار مع المصنعين.',
+    step4_title:'التنسيق والتسليم', step4_desc:'ننسق عملية الاستيراد بالكامل — التوثيق واللوجستيات والتسليم.',
+    label_network:'شبكتنا', countries_title:'زامبيا تلتقي بـ<strong>العالم</strong>',
+    countries_desc:'مقرنا في لوساكا، زامبيا — نورد بشكل رئيسي عبر تركيا وأوروبا.',
+    role_hq:'المقر الرئيسي', role_source:'التوريد الرئيسي', role_ops:'العمليات', role_market:'السوق',
+    social_title:'تواصل معنا', social_sub:'تابعنا للحصول على التحديثات وأخبار السوق',
+    cta_title:'هل تحتاج إلى شريك توريد موثوق في زامبيا؟', cta_btn:'لنتحدث',
+    footer_desc:'شريكك الموثوق في التوريد والوساطة التجارية.',
+    footer_services:'الخدمات', footer_company:'الشركة', footer_contact:'اتصل بنا', footer_copy:'© Big Energy & Resources Limited. جميع الحقوق محفوظة.', footer_inc:'مؤسسة في زامبيا', footer_team:'فريقنا',
+    about_hero_label:'من نحن', about_hero_title:'قاعدتك المؤسسية<br>في جنوب أفريقيا،<br><em>جسرك التجاري الموثوق.</em>', about_hero_sub:'Big Energy & Resources Limited · لوساكا، زامبيا',
+    about_who_label:'من نحن', about_who_title:'الجمع بين قوة الإنتاج التركية<br>وإمكانات زامبيا<br><em>تحت سقف واحد</em>',
+    about_who_p1:'<strong>Big Energy & Resources Limited</strong> شركة مسجلة في PACRA مقرها لوساكا، زامبيا.',
+    about_who_p2:'نحن لسنا مجرد <strong>موزع</strong> — نقدم <strong>وحدة مؤسسية</strong> في قلب لوساكا تحمل علامتك التجارية.',
+    about_who_p3:'من التعدين إلى الزراعة — نربط المصنعين الأتراك بالمشترين الزامبيين.',
+    about_quote:'"العمل مع موزع فقط في جنوب أفريقيا يعني قبول أن منتجك يبقى على رف. <span>العمل مع Big Energy & Resources يعني أن تكون حاضراً في السوق بنفسك.</span>"',
+    about_quote_attr:'Big Energy & Resources · فلسفتنا الأساسية',
+    about_mission_label:'المهمة والرؤية والقيم', about_mission_title:'ما الذي <strong>يحركنا</strong>',
+    about_mv1_title:'مهمتنا', about_mv1_desc:'ربط المصنعين العالميين بزامبيا وجنوب أفريقيا؛ أن نكون جسراً موثوقاً في التوريد والاستشارة والخدمات اللوجستية.',
+    about_mv2_title:'رؤيتنا', about_mv2_desc:'أن نصبح القاعدة المؤسسية الأكثر موثوقية للمستثمرين الأتراك والدوليين في جنوب أفريقيا.',
+    about_mv3_title:'قيمنا', about_mv3_desc:'الشفافية والأمانة في جوهر كل معاملة. لا خطوة دون موافقة العميل. شراكة طويلة الأمد.',
+    about_sectors_label:'مجالات النشاط', about_sectors_title:'ماذا <strong>نفعل</strong>',
+    about_sectors_intro:'من التعدين إلى الزراعة، من أنظمة الطاقة إلى المعدات الصناعية — خدمات التوريد والوساطة واللوجستيات.',
+    about_s1_title:'استشارات التعدين والمعدات', about_s1_desc:'معدات تعدين وآلات وقطع غيار من مصنعين أتراك وأوروبيين.',
+    about_s1_t1:'التوريد', about_s1_t2:'الإيجار', about_s1_t3:'قطع الغيار', about_s1_t4:'الوساطة',
+    about_s2_title:'المدخلات الزراعية والآلات', about_s2_desc:'أسمدة ومبيدات وآلات زراعية حديثة.',
+    about_s2_t1:'الأسمدة', about_s2_t2:'الآلات الزراعية', about_s2_t3:'الري', about_s2_t4:'التخزين',
+    about_s3_title:'البنية التحتية الكهربائية والطاقة', about_s3_desc:'محولات ولوحات توزيع وأنظمة طاقة شمسية.',
+    about_s3_t1:'المحولات', about_s3_t2:'الطاقة الشمسية', about_s3_t3:'خارج الشبكة', about_s3_t4:'البنية التحتية',
+    about_s4_title:'زيت المحرك والمزلقات', about_s4_desc:'زيوت محرك ومزلقات صناعية لأساطيل التعدين والزراعة.',
+    about_s4_t1:'زيت المحرك', about_s4_t2:'الزيت الصناعي', about_s4_t3:'الأسطول', about_s4_t4:'طلبات بالجملة',
+    about_s5_title:'مواد البناء والصناعة', about_s5_desc:'مواد بناء وملفات فولاذية وأنظمة أنابيب.',
+    about_s5_t1:'مواد البناء', about_s5_t2:'الفولاذ', about_s5_t3:'الأنابيب', about_s5_t4:'حسب المشروع',
+    about_s6_title:'الوساطة التجارية والاستشارات', about_s6_desc:'وساطة بالجملة واستشارات تجارية دولية.',
+    about_s6_t1:'البحث عن موردين', about_s6_t2:'التفاوض', about_s6_t3:'الاستيراد', about_s6_t4:'تحليل السوق',
+    about_method_label:'المنهجية التشغيلية', about_method_title:'كيف <strong>نعمل</strong>',
+    about_step1_label:'الخطوة 1 — الاختيار', about_step1_title:'نجد الأشخاص المناسبين', about_step1_desc:'نحدد أفراداً وشركات مؤهلة. أنت تعطي الموافقة.',
+    about_step1_li1:'بحث عن مرشحين قطاعيين', about_step1_li2:'التقييم المسبق والقائمة المختصرة', about_step1_li3:'لا إجراء دون موافقة العميل',
+    about_step2_label:'الخطوة 2 — الإدارة', about_step2_title:'المسؤولية الإدارية علينا', about_step2_desc:'المسؤولية الإدارية في Big Energy؛ الاستراتيجية اليومية بين يديك.',
+    about_step2_li1:'بنية تحتية إدارية جاهزة', about_step2_li2:'ما يصل إلى 70% وفورات تشغيلية', about_step2_li3:'خيار فترة تجريبية 3 أشهر',
+    about_step3_label:'الخطوة 3 — اللغة', about_step3_title:'نتحدث لغتك', about_step3_desc:'فريقنا متعدد اللغات يزيل حواجز التواصل.',
+    about_step3_li1:'تواصل مهني بـ4 لغات', about_step3_li2:'الترجمة ودعم المعارض', about_step3_li3:'الاستقبال في المطار والإقامة',
+    about_step4_label:'الخطوة 4 — المراجعة', about_step4_title:'تقارير شفافة', about_step4_desc:'خطة الأسبوع التالي كل جمعة، تقارير رقمية فورية.',
+    about_step4_li1:'تقارير ميدانية يومية', about_step4_li2:'ملخص أسبوعي', about_step4_li3:'مراجعة شهرية شاملة',
+    about_why_label:'لماذا الآن؟', about_why_title:'الاقتصاد المتنامي<br><em>لجنوب أفريقيا</em>',
+    about_why_p1:'زامبيا، دولة <strong>غنية بالنحاس</strong>، في مركز الاستثمارات التعدينية العالمية.',
+    about_why_p2:'<strong>ابدأ اليوم بأقل مخاطرة.</strong> مع ضمان Big Energy، اخفض هامش الخطأ إلى الصفر.',
+    about_why_p3:'القدرة الإنتاجية التركية مع إمكانات زامبيا تخلق فرصة لا مثيل لها.',
+    about_stat1:'70%', about_stat1_label:'وفورات تشغيلية',
+    about_stat2:'3 أشهر', about_stat2_label:'خيار فترة تجريبية',
+    about_stat3:'4 لغات', about_stat3_label:'EN · TR · PT · AR',
+    about_stat4:'+6', about_stat4_label:'فئات الخدمات',
+    about_lang_label:'فريق متعدد اللغات', about_lang_title:'القضاء على <strong>حواجز التواصل</strong>',
+    about_lang1:'الإنجليزية', about_lang2:'التركية', about_lang3:'البرتغالية', about_lang4:'العربية',
+    about_support_label:'دعم ميداني', about_support_title:'نحن معك <em>خلال زياراتك لأفريقيا</em>',
+    about_sup1_title:'الاستقبال والإقامة', about_sup1_desc:'من نقل المطار إلى الإقامة الآمنة، كل شيء تحت إدارة Big Energy.',
+    about_sup2_title:'المعارض والمترجمون', about_sup2_desc:'من تحضير الجناح إلى دعم الترجمة الاحترافية.',
+    about_sup3_title:'الاستيراد والجمارك', about_sup3_desc:'إجراءات جمركية وتنسيق لوجستي لاستيراد البضائع إلى زامبيا.',
+    about_sup4_title:'استراتيجية دخول السوق', about_sup4_desc:'تطوير استراتيجيات دخول للسوق الزامبي والإقليمي.',
+    about_cta_title:'تبحث عن شريك<br><em>موثوق في زامبيا؟</em>',
+    about_cta_sub:'ابدأ بأقل مخاطرة. تعرف على السوق مع فترتنا التجريبية لمدة 3 أشهر.',
+    about_cta_btn1:'لنتحدث', about_cta_btn2:'خدماتنا',
+    flag:'https://flagcdn.com/w20/sa.png', code:'AR', dir:'rtl'
+  }
+};
+
+function setLang(lang) {
+  var t = translations[lang];
+  if (!t) return;
+  document.querySelectorAll('[data-translate]').forEach(function(el) {
+    var key = el.getAttribute('data-translate');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.body.style.direction = t.dir;
+  document.documentElement.setAttribute('lang', lang);
+  document.getElementById('currentFlag').src = t.flag;
+  document.getElementById('currentLang').textContent = t.code;
+  document.querySelectorAll('.lang-option').forEach(function(opt) {
+    opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
+  });
+  document.getElementById('langDropdown').classList.remove('open');
+  try { localStorage.setItem('bigEnergy_lang', lang); } catch(e) {}
+}
+
+
+</script>
+</body>
+</html>
