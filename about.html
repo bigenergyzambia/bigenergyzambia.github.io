@@ -238,19 +238,128 @@ footer{background:#1A2B1F;padding:65px 60px 28px;}
     </div>
   </div>
   <div class="hero-visual reveal d2">
-    <svg class="africa-svg" viewBox="0 0 420 500" xmlns="http://www.w3.org/2000/svg">
-      <defs><radialGradient id="ag" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3D7A57"/><stop offset="100%" stop-color="#2A5C3F"/></radialGradient></defs>
-      <path d="M180,22 L210,18 L245,22 L272,34 L295,52 L312,74 L320,98 L318,124 L306,146 L304,168 L314,190 L328,212 L336,238 L332,265 L318,288 L304,308 L298,330 L302,354 L300,378 L288,400 L270,418 L248,432 L222,440 L196,438 L170,428 L148,412 L130,392 L118,368 L116,342 L124,316 L132,290 L130,264 L118,240 L108,214 L106,188 L112,162 L122,138 L120,112 L110,88 L112,64 L126,44 L148,30 Z" fill="url(#ag)" stroke="rgba(42,92,63,0.2)" stroke-width="1.5"/>
-      <ellipse cx="222" cy="318" rx="46" ry="36" fill="#B8862A" opacity="0.18"/>
-      <path d="M196,300 L210,292 L226,290 L240,294 L252,306 L254,320 L246,332 L230,340 L212,340 L196,332 L188,320 Z" fill="#B8862A" opacity="0.65"/>
-      <circle cx="222" cy="316" r="5" fill="#B8862A"/>
-      <circle cx="222" cy="316" r="10" fill="none" stroke="#B8862A" stroke-width="1.5" opacity="0.5"/>
-      <circle cx="222" cy="316" r="18" fill="none" stroke="#B8862A" stroke-width="0.8" opacity="0.22"/>
-      <text x="236" y="309" font-family="DM Sans,sans-serif" font-size="10" fill="#B8862A" font-weight="500" letter-spacing="1">ZAMBIA</text>
-      <line x1="222" y1="307" x2="234" y2="302" stroke="#B8862A" stroke-width="0.8" opacity="0.6"/>
-      <circle cx="222" cy="323" r="2.5" fill="white" opacity="0.85"/>
-      <text x="228" y="327" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.6)">Lusaka</text>
-    </svg>
+    <div style="position:relative;width:100%;max-width:460px;margin:0 auto;">
+      <svg viewBox="0 0 460 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;filter:drop-shadow(0 20px 60px rgba(42,92,63,0.18));">
+        <defs>
+          <radialGradient id="ag" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3D7A57"/><stop offset="100%" stop-color="#2A5C3F"/></radialGradient>
+          <radialGradient id="zg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#D4A84B" stop-opacity="0.35"/><stop offset="100%" stop-color="#B8862A" stop-opacity="0"/></radialGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="softglow"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <!-- Africa continent -->
+        <path d="M200,28 L228,22 L262,26 L290,40 L314,58 L330,82 L338,108 L336,136 L322,160 L318,184 L330,208 L346,232 L354,260 L350,290 L334,316 L318,338 L310,362 L314,388 L312,414 L298,438 L278,456 L254,470 L226,478 L198,476 L170,464 L146,446 L126,424 L112,398 L110,370 L118,342 L128,314 L126,286 L112,260 L100,232 L98,204 L106,176 L118,150 L116,122 L104,96 L108,70 L124,50 L148,36 Z" fill="url(#ag)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+
+        <!-- Country borders (subtle) -->
+        <path d="M200,28 L170,35 L148,36" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+        <path d="M262,26 L290,40 L300,60" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+        <path d="M98,204 L110,195 L125,200" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none"/>
+        <path d="M354,260 L365,255 L370,268" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none"/>
+
+        <!-- Zambia region glow -->
+        <ellipse cx="238" cy="355" rx="62" ry="50" fill="url(#zg)"/>
+
+        <!-- Zambia highlighted region -->
+        <path d="M200,328 L216,318 L236,314 L256,318 L272,330 L278,346 L274,364 L260,376 L240,382 L218,380 L202,368 L194,352 Z" fill="#B8862A" opacity="0.75" filter="url(#glow)"/>
+
+        <!-- Zambia border outline -->
+        <path d="M200,328 L216,318 L236,314 L256,318 L272,330 L278,346 L274,364 L260,376 L240,382 L218,380 L202,368 L194,352 Z" fill="none" stroke="#D4A84B" stroke-width="1.5" opacity="0.9"/>
+
+        <!-- Lusaka dot -->
+        <circle cx="238" cy="350" r="5" fill="#D4A84B" filter="url(#glow)"/>
+        <circle cx="238" cy="350" r="10" fill="none" stroke="#D4A84B" stroke-width="1.2" opacity="0.6"/>
+        <circle cx="238" cy="350" r="18" fill="none" stroke="#D4A84B" stroke-width="0.6" opacity="0.3"/>
+
+        <!-- ZAMBIA label -->
+        <text x="253" y="344" font-family="DM Sans,sans-serif" font-size="10" fill="#D4A84B" font-weight="600" letter-spacing="2">ZAMBIA</text>
+        <line x1="238" y1="341" x2="251" y2="337" stroke="#D4A84B" stroke-width="0.8" opacity="0.7"/>
+
+        <!-- Lusaka label -->
+        <circle cx="238" cy="358" r="2.5" fill="white" opacity="0.9"/>
+        <text x="244" y="362" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.7)" letter-spacing="0.5">Lusaka</text>
+
+        <!-- RESOURCE ICONS around Zambia -->
+
+        <!-- COPPER MINE icon (top-left of Zambia - Copperbelt) -->
+        <g transform="translate(170, 298)">
+          <circle r="20" fill="rgba(184,134,42,0.15)" stroke="#B8862A" stroke-width="1" opacity="0.8"/>
+          <!-- Mine shaft icon -->
+          <rect x="-7" y="-2" width="14" height="10" rx="1" fill="none" stroke="#D4A84B" stroke-width="1.5"/>
+          <line x1="-7" y1="4" x2="7" y2="4" stroke="#D4A84B" stroke-width="1"/>
+          <line x1="0" y1="-8" x2="0" y2="-2" stroke="#D4A84B" stroke-width="1.5"/>
+          <line x1="-5" y1="-6" x2="0" y2="-8" stroke="#D4A84B" stroke-width="1"/>
+          <line x1="5" y1="-6" x2="0" y2="-8" stroke="#D4A84B" stroke-width="1"/>
+          <text y="18" font-family="DM Sans,sans-serif" font-size="7" fill="#D4A84B" text-anchor="middle" font-weight="500" letter-spacing="0.5">COPPER</text>
+        </g>
+
+        <!-- AGRICULTURE icon (bottom of Zambia) -->
+        <g transform="translate(238, 408)">
+          <circle r="20" fill="rgba(42,92,63,0.2)" stroke="#2A5C3F" stroke-width="1" opacity="0.9"/>
+          <!-- Wheat/crop icon -->
+          <line x1="0" y1="8" x2="0" y2="-4" stroke="#3D7A57" stroke-width="1.5"/>
+          <ellipse cx="-5" cy="-2" rx="4" ry="6" fill="none" stroke="#3D7A57" stroke-width="1.2" transform="rotate(-20,-5,-2)"/>
+          <ellipse cx="5" cy="-2" rx="4" ry="6" fill="none" stroke="#3D7A57" stroke-width="1.2" transform="rotate(20,5,-2)"/>
+          <ellipse cx="0" cy="-7" rx="3.5" ry="5" fill="none" stroke="#3D7A57" stroke-width="1.2"/>
+          <text y="18" font-family="DM Sans,sans-serif" font-size="7" fill="#3D7A57" text-anchor="middle" font-weight="500" letter-spacing="0.5">AGRI</text>
+        </g>
+
+        <!-- ENERGY/SOLAR icon (right of Zambia) -->
+        <g transform="translate(308, 345)">
+          <circle r="20" fill="rgba(212,168,75,0.12)" stroke="#D4A84B" stroke-width="1" opacity="0.8"/>
+          <!-- Sun icon -->
+          <circle cx="0" cy="0" r="6" fill="#D4A84B" opacity="0.8"/>
+          <line x1="0" y1="-10" x2="0" y2="-14" stroke="#D4A84B" stroke-width="1.5"/>
+          <line x1="0" y1="10" x2="0" y2="14" stroke="#D4A84B" stroke-width="1.5"/>
+          <line x1="-10" y1="0" x2="-14" y2="0" stroke="#D4A84B" stroke-width="1.5"/>
+          <line x1="10" y1="0" x2="14" y2="0" stroke="#D4A84B" stroke-width="1.5"/>
+          <line x1="-7" y1="-7" x2="-10" y2="-10" stroke="#D4A84B" stroke-width="1.2"/>
+          <line x1="7" y1="-7" x2="10" y2="-10" stroke="#D4A84B" stroke-width="1.2"/>
+          <line x1="-7" y1="7" x2="-10" y2="10" stroke="#D4A84B" stroke-width="1.2"/>
+          <line x1="7" y1="7" x2="10" y2="10" stroke="#D4A84B" stroke-width="1.2"/>
+          <text y="18" font-family="DM Sans,sans-serif" font-size="7" fill="#D4A84B" text-anchor="middle" font-weight="500" letter-spacing="0.5">ENERGY</text>
+        </g>
+
+        <!-- TRADE/EXPORT icon (top-right) -->
+        <g transform="translate(298, 298)">
+          <circle r="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <!-- Box/trade icon -->
+          <rect x="-6" y="-4" width="12" height="10" rx="1" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.3"/>
+          <line x1="-6" y1="0" x2="6" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+          <line x1="0" y1="-8" x2="0" y2="-4" stroke="rgba(255,255,255,0.6)" stroke-width="1.3"/>
+          <polyline points="-3,-10 0,-13 3,-10" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.2"/>
+          <text y="16" font-family="DM Sans,sans-serif" font-size="6.5" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="0.3">TRADE</text>
+        </g>
+
+        <!-- Connecting lines from icons to Zambia center -->
+        <line x1="190" y1="298" x2="210" y2="332" stroke="#B8862A" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+        <line x1="238" y1="388" x2="238" y2="382" stroke="#2A5C3F" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+        <line x1="290" y1="345" x2="278" y2="348" stroke="#D4A84B" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+
+        <!-- Decorative dots for other African countries -->
+        <circle cx="150" cy="120" r="2" fill="rgba(255,255,255,0.2)"/>
+        <circle cx="290" cy="150" r="2" fill="rgba(255,255,255,0.2)"/>
+        <circle cx="320" cy="220" r="2" fill="rgba(255,255,255,0.2)"/>
+        <circle cx="180" cy="430" r="2" fill="rgba(255,255,255,0.2)"/>
+        <circle cx="140" cy="300" r="2" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="300" cy="420" r="2" fill="rgba(255,255,255,0.15)"/>
+      </svg>
+
+      <!-- Legend below map -->
+      <div style="display:flex;gap:16px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-mid);letter-spacing:1px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#B8862A;"></div>
+          <span>Copper Mining</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-mid);letter-spacing:1px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#2A5C3F;"></div>
+          <span>Agriculture</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-mid);letter-spacing:1px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#D4A84B;"></div>
+          <span>Energy</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </div>

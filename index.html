@@ -246,11 +246,127 @@ footer{background:#1A2B1F;padding:65px 60px 28px;}
     </div>
   </div>
   <div class="hero-visual reveal d2">
-    <div class="hero-img-wrap">
-      <img src="img_mining.png" alt="Zambia Operations">
-      <div class="hero-img-badge">
-        <p data-translate="badge_p">PACRA Registered</p>
-        <span data-translate="badge_s">Lusaka, Zambia &middot; Reg. No. 11045170</span>
+    <div style="position:relative;width:100%;max-width:480px;margin:0 auto;">
+      <svg id="tradeGlobe" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <defs>
+          <radialGradient id="globeGrad" cx="42%" cy="38%" r="58%">
+            <stop offset="0%" stop-color="#3D7A57"/>
+            <stop offset="60%" stop-color="#2A5C3F"/>
+            <stop offset="100%" stop-color="#1A3D2A"/>
+          </radialGradient>
+          <radialGradient id="glowCenter" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#D4A84B" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#D4A84B" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="arrowGlow"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="dotGlow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <marker id="arrowEN" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,1 L0,5 L5,3 Z" fill="#D4A84B" opacity="0.9"/>
+          </marker>
+          <marker id="arrowCN" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,1 L0,5 L5,3 Z" fill="#B8C4D4" opacity="0.7"/>
+          </marker>
+          <marker id="arrowTR" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,1 L0,5 L5,3 Z" fill="#E8A84B" opacity="0.9"/>
+          </marker>
+          <marker id="arrowEU" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,1 L0,5 L5,3 Z" fill="#9BB4D4" opacity="0.8"/>
+          </marker>
+          <marker id="arrowAS" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,1 L0,5 L5,3 Z" fill="#C4A4E8" opacity="0.7"/>
+          </marker>
+        </defs>
+
+        <!-- Globe background circle -->
+        <circle cx="240" cy="240" r="200" fill="url(#globeGrad)" opacity="0.12"/>
+        <circle cx="240" cy="240" r="200" fill="none" stroke="rgba(42,92,63,0.2)" stroke-width="1.5"/>
+
+        <!-- Latitude lines -->
+        <ellipse cx="240" cy="240" rx="200" ry="50" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <ellipse cx="240" cy="200" rx="185" ry="40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <ellipse cx="240" cy="280" rx="185" ry="40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <!-- Longitude lines -->
+        <ellipse cx="240" cy="240" rx="60" ry="200" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <ellipse cx="240" cy="240" rx="130" ry="200" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="240" y1="40" x2="240" y2="440" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+        <!-- ZAMBIA - CENTER (highlighted) -->
+        <circle cx="240" cy="272" r="26" fill="url(#glowCenter)"/>
+        <circle cx="240" cy="272" r="14" fill="#B8862A" opacity="0.9" filter="url(#dotGlow)"/>
+        <circle cx="240" cy="272" r="20" fill="none" stroke="#D4A84B" stroke-width="1.5" opacity="0.7"/>
+        <circle cx="240" cy="272" r="28" fill="none" stroke="#D4A84B" stroke-width="0.8" opacity="0.35">
+          <animate attributeName="r" values="28;34;28" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.35;0.1;0.35" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <text x="240" y="302" font-family="DM Sans,sans-serif" font-size="10" fill="#D4A84B" font-weight="600" text-anchor="middle" letter-spacing="2">ZAMBIA</text>
+        <text x="240" y="314" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(212,168,75,0.6)" text-anchor="middle" letter-spacing="1">Lusaka</text>
+
+        <!-- TURKEY -->
+        <circle cx="295" cy="128" r="8" fill="#E8A84B" opacity="0.85" filter="url(#dotGlow)"/>
+        <text x="295" y="116" font-family="DM Sans,sans-serif" font-size="9" fill="#E8A84B" text-anchor="middle" font-weight="500" letter-spacing="1">TURKEY</text>
+
+        <!-- EUROPE -->
+        <circle cx="195" cy="100" r="7" fill="#9BB4D4" opacity="0.8" filter="url(#dotGlow)"/>
+        <text x="195" y="88" font-family="DM Sans,sans-serif" font-size="9" fill="#9BB4D4" text-anchor="middle" font-weight="500" letter-spacing="1">EUROPE</text>
+
+        <!-- UK/GLOBAL -->
+        <circle cx="150" cy="130" r="6" fill="#D4A84B" opacity="0.75" filter="url(#dotGlow)"/>
+        <text x="150" y="118" font-family="DM Sans,sans-serif" font-size="8" fill="#D4A84B" text-anchor="middle" letter-spacing="0.5">GLOBAL</text>
+
+        <!-- ASIA -->
+        <circle cx="370" cy="150" r="7" fill="#C4A4E8" opacity="0.75" filter="url(#dotGlow)"/>
+        <text x="370" y="138" font-family="DM Sans,sans-serif" font-size="9" fill="#C4A4E8" text-anchor="middle" font-weight="500" letter-spacing="1">ASIA</text>
+
+        <!-- SOUTH AFRICA -->
+        <circle cx="240" cy="395" r="6" fill="rgba(255,255,255,0.5)" filter="url(#dotGlow)"/>
+        <text x="240" y="415" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="0.5">S. AFRICA</text>
+
+        <!-- TRADE ARROWS — animated dashed paths to Zambia -->
+
+        <!-- Turkey → Zambia -->
+        <path d="M295,136 Q285,200 240,260" fill="none" stroke="#E8A84B" stroke-width="1.8" stroke-dasharray="6,4" marker-end="url(#arrowTR)" opacity="0.8" filter="url(#arrowGlow)">
+          <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="2.2s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Europe → Zambia -->
+        <path d="M199,107 Q220,180 238,258" fill="none" stroke="#9BB4D4" stroke-width="1.6" stroke-dasharray="6,4" marker-end="url(#arrowEU)" opacity="0.75">
+          <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="2.8s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Global/UK → Zambia -->
+        <path d="M155,135 Q190,200 238,260" fill="none" stroke="#D4A84B" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrowEN)" opacity="0.7">
+          <animate attributeName="stroke-dashoffset" from="0" to="-36" dur="3.2s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Asia → Zambia -->
+        <path d="M364,156 Q330,210 254,264" fill="none" stroke="#C4A4E8" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowAS)" opacity="0.65">
+          <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="3.6s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Zambia → S.Africa (export) -->
+        <path d="M240,286 Q240,338 240,385" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2" stroke-dasharray="4,4" marker-end="url(#arrowCN)" opacity="0.5">
+          <animate attributeName="stroke-dashoffset" from="0" to="-32" dur="4s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Decorative country dots -->
+        <circle cx="135" cy="220" r="3" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="310" cy="310" r="3" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="175" cy="340" r="3" fill="rgba(255,255,255,0.12)"/>
+        <circle cx="180" cy="180" r="2.5" fill="rgba(255,255,255,0.12)"/>
+        <circle cx="345" cy="250" r="2.5" fill="rgba(255,255,255,0.12)"/>
+        <circle cx="120" cy="310" r="2" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="360" cy="340" r="2" fill="rgba(255,255,255,0.1)"/>
+      </svg>
+
+      <!-- Badge -->
+      <div style="background:var(--white);border:1px solid var(--border);border-left:3px solid var(--green);padding:16px 20px;margin-top:20px;display:flex;align-items:center;gap:14px;">
+        <div style="width:36px;height:36px;background:var(--green-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5C3F" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div>
+          <p style="font-family:'Playfair Display',serif;font-size:13px;font-weight:600;color:var(--green);margin-bottom:2px;" data-translate="badge_p">PACRA Registered</p>
+          <span style="font-size:10px;letter-spacing:1px;color:var(--text-light);" data-translate="badge_s">Lusaka, Zambia &middot; Reg. No. 11045170</span>
+        </div>
       </div>
     </div>
   </div>
@@ -306,7 +422,7 @@ footer{background:#1A2B1F;padding:65px 60px 28px;}
       </div>
     </div>
     <div class="svc-card reveal d2">
-      <img src="img_electric.jpg" alt="Solar Energy">
+      <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80" alt="Solar Energy">
       <div class="svc-card-body">
         <div class="svc-num">03</div>
         <h3 data-translate="sv3t">Solar Energy &amp; Off-Grid Systems</h3>
