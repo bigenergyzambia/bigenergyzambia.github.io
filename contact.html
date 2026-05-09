@@ -4,190 +4,214 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Big Energy & Resources Limited</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#F7F3EC;--cream-dark:#EDE8DF;--green:#2A5C3F;--green-light:#3D7A57;--green-pale:#EAF2EC;--gold:#B8862A;--gold-light:#D4A84B;--text:#1A2B1F;--text-mid:#4A5E52;--text-light:#7A9080;--white:#FFFFFF;--border:rgba(42,92,63,0.12);}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+  :root{--gold:#C8962A;--gold-light:#E8B84B;--gold-pale:#F5E6C0;--navy:#0D1B3E;--navy-mid:#152347;--black:#060C18;--white:#F8F5EE;--gray:#8A8F9A;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--black);color:var(--white);font-family:'Josefin Sans',sans-serif;font-weight:300;overflow-x:hidden;}
 
-/* NAV */
-nav{position:fixed;top:0;width:100%;z-index:200;padding:16px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(247,243,236,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.nav-logo img{height:48px;width:48px;object-fit:contain;}
-.nav-logo-text span:first-child{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--green);letter-spacing:1px;display:block;}
-.nav-logo-text span:last-child{font-size:9px;letter-spacing:3px;color:var(--text-light);text-transform:uppercase;display:block;}
-.nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
-.nav-links a{text-decoration:none;color:var(--text-mid);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:400;transition:color 0.2s;position:relative;padding-bottom:3px;}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--green);transition:width 0.3s;}
-.nav-links a:hover,.nav-links a.active{color:var(--green);}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
-.nav-right{display:flex;align-items:center;gap:14px;}
-.nav-cta{padding:9px 22px;background:var(--green);color:var(--white);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-weight:500;transition:background 0.3s;font-family:'DM Sans',sans-serif;}
-.nav-cta:hover{background:var(--green-light);}
-.lang-switcher{position:relative;}
-.lang-btn{background:none;border:1px solid var(--border);color:var(--green);padding:7px 14px;font-size:10px;letter-spacing:2px;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:6px;text-transform:uppercase;}
-.lang-btn img{height:13px;border-radius:2px;}
-.lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--white);border:1px solid var(--border);min-width:155px;z-index:9999;box-shadow:0 8px 32px rgba(42,92,63,0.1);}
-.lang-dropdown.open{display:block;}
-.lang-option{display:flex;align-items:center;gap:10px;padding:10px 16px;cursor:pointer;font-size:11px;color:var(--text-mid);border:none;background:none;width:100%;text-align:left;font-family:'DM Sans',sans-serif;transition:background 0.2s;}
-.lang-option:hover{background:var(--green-pale);color:var(--green);}
-.lang-option.active{color:var(--green);font-weight:500;}
-.lang-option img{height:14px;border-radius:2px;}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
-.hamburger span{display:block;width:22px;height:1px;background:var(--text);}
-.mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--text);text-decoration:none;}
-.mobile-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--text);}
+  nav{position:fixed;top:0;width:100%;z-index:1000;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,12,24,0.97);border-bottom:1px solid rgba(200,150,42,0.15);backdrop-filter:blur(8px);}
+  .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+  .nav-logo img{height:52px;width:52px;object-fit:contain;filter:drop-shadow(0 0 10px rgba(200,150,42,0.3));}
+  .nav-logo-text{display:flex;flex-direction:column;line-height:1.1;}
+  .nav-logo-text span:first-child{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--gold-light);letter-spacing:2px;}
+  .nav-logo-text span:last-child{font-size:9px;letter-spacing:4px;color:var(--gray);text-transform:uppercase;}
+  .nav-links{display:flex;gap:40px;list-style:none;}
+  .nav-links a{text-decoration:none;color:var(--white);font-size:11px;letter-spacing:3px;text-transform:uppercase;opacity:0.75;transition:all 0.3s;}
+  .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--gold-light);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+  .nav-cta{padding:10px 24px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+  .nav-cta:hover{background:var(--gold);color:var(--black);}
 
-/* HERO */
-.hero{padding:140px 60px 80px;background:var(--cream);border-bottom:1px solid var(--border);}
-.hero-inner{max-width:1400px;margin:0 auto;}
-.hero-label{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
-.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold);}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,80px);font-weight:400;line-height:1.05;margin-bottom:20px;}
-.hero-title em{color:var(--green);font-style:italic;}
-.hero-desc{font-size:15px;line-height:1.85;color:var(--text-mid);max-width:560px;}
+  .lang-switcher{position:relative;}
+  .lang-btn{background:none;border:1px solid rgba(200,150,42,0.3);color:var(--gold);padding:7px 14px;font-size:10px;letter-spacing:2px;cursor:pointer;font-family:'Josefin Sans',sans-serif;display:flex;align-items:center;gap:7px;transition:all 0.3s;}
+  .lang-btn:hover{border-color:var(--gold);background:rgba(200,150,42,0.1);}
+  .lang-btn img{height:14px;border-radius:2px;}
+  .lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--navy);border:1px solid rgba(200,150,42,0.3);min-width:170px;z-index:9999;box-shadow:0 12px 40px rgba(0,0,0,0.7);}
+  .lang-dropdown.open{display:block;}
+  .lang-option{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;transition:background 0.2s;font-size:11px;color:var(--white);letter-spacing:1px;border:none;background:none;width:100%;text-align:left;font-family:'Josefin Sans',sans-serif;}
+  .lang-option:hover{background:rgba(200,150,42,0.1);color:var(--gold);}
+  .lang-option img{height:16px;border-radius:2px;}
+  .lang-option.active{color:var(--gold);}
 
-/* MAIN */
-.contact-main{padding:90px 60px;max-width:1400px;margin:0 auto;}
-.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+  .hamburger span{width:24px;height:2px;background:var(--white);display:block;}
+  .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,12,24,0.99);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:var(--white);text-decoration:none;font-size:22px;letter-spacing:5px;text-transform:uppercase;font-family:'Cormorant Garamond',serif;transition:color 0.3s;}
+  .mobile-menu a:hover{color:var(--gold-light);}
+  .mobile-menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:32px;cursor:pointer;}
 
-/* INFO */
-.info-label-top{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:32px;display:flex;align-items:center;gap:10px;}
-.info-label-top::before{content:'';display:block;width:22px;height:1px;background:var(--gold);}
-.info-block{padding:24px 0;border-bottom:1px solid var(--border);}
-.info-block:last-of-type{border-bottom:none;}
-.info-lbl{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-.info-val{font-family:'Playfair Display',serif;font-size:18px;color:var(--text);line-height:1.5;}
-.info-val a{color:var(--text);text-decoration:none;transition:color 0.2s;}
-.info-val a:hover{color:var(--green);}
-.info-sub{font-size:12px;color:var(--text-light);margin-top:4px;letter-spacing:0.3px;}
-.wa-btn{display:inline-flex;align-items:center;gap:12px;padding:14px 28px;margin-top:32px;background:#25D366;color:#fff;text-decoration:none;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:500;transition:all 0.3s;font-family:'DM Sans',sans-serif;}
-.wa-btn:hover{background:#1ebe59;transform:translateY(-2px);}
-.wa-icon{width:20px;height:20px;}
+  .page-hero{padding:180px 60px 100px;background:linear-gradient(135deg,var(--navy) 0%,var(--black) 60%);position:relative;overflow:hidden;border-bottom:1px solid rgba(200,150,42,0.2);}
+  .page-hero::before{content:'CONTACT';position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Cormorant Garamond',serif;font-size:200px;font-weight:700;color:rgba(200,150,42,0.04);line-height:1;white-space:nowrap;pointer-events:none;}
+  .page-hero-grid{position:absolute;inset:0;opacity:0.03;background-image:linear-gradient(rgba(200,150,42,1) 1px,transparent 1px),linear-gradient(90deg,rgba(200,150,42,1) 1px,transparent 1px);background-size:60px 60px;}
+  .section-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:16px;margin-bottom:20px;}
+  .section-label::before{content:'';width:40px;height:1px;background:var(--gold);}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;}
+  .section-title strong{color:var(--gold-light);font-weight:600;}
+  .page-hero p{font-size:15px;line-height:1.9;color:rgba(248,245,238,0.65);max-width:580px;margin-top:24px;}
 
-/* FORM */
-.contact-form{background:var(--white);border:1px solid var(--border);padding:52px;}
-.form-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--text);margin-bottom:6px;}
-.form-sub{font-size:13px;color:var(--text-light);margin-bottom:36px;letter-spacing:0.3px;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
-.form-group{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;}
-.form-group label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--green);}
-.form-group input,.form-group select,.form-group textarea{background:var(--cream);border:1px solid var(--border);color:var(--text);padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;appearance:none;border-radius:0;}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green);}
-.form-group textarea{resize:vertical;min-height:120px;}
-.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232A5C3F' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;}
-.btn-submit{width:100%;padding:15px;background:var(--green);color:var(--white);font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;border:none;cursor:pointer;transition:background 0.3s;}
-.btn-submit:hover{background:var(--green-light);}
-.form-success{display:none;text-align:center;padding:48px 20px;}
-.form-success h3{font-family:'Playfair Display',serif;font-size:28px;color:var(--green);margin-bottom:12px;}
-.form-success p{font-size:13px;color:var(--text-mid);line-height:1.8;}
-.success-icon{width:56px;height:56px;background:var(--green-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
-.success-icon svg{width:28px;height:28px;}
+  /* CONTACT MAIN */
+  .contact-main{padding:100px 60px;background:var(--black);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;}
 
-/* MAP */
-.map-section{background:var(--cream-dark);padding:0 60px 90px;}
-.map-inner{max-width:1400px;margin:0 auto;}
-.map-box{background:var(--white);border:1px solid var(--border);padding:52px;display:flex;align-items:center;gap:48px;}
-.map-pin{width:64px;height:64px;background:var(--green-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.map-pin svg{width:28px;height:28px;}
-.map-text h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--green);margin-bottom:8px;}
-.map-text p{font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:14px;}
-.map-link{color:var(--green);font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--green);padding-bottom:2px;transition:opacity 0.2s;}
-.map-link:hover{opacity:0.7;}
+  /* INFO */
+  .contact-info{display:flex;flex-direction:column;}
+  .info-block{padding:32px 0;border-bottom:1px solid rgba(200,150,42,0.12);}
+  .info-block:last-of-type{border-bottom:none;}
+  .info-label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .info-value{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white);line-height:1.5;}
+  .info-value a{color:var(--white);text-decoration:none;transition:color 0.3s;}
+  .info-value a:hover{color:var(--gold-light);}
+  .info-sub{font-size:11px;color:var(--gray);margin-top:4px;letter-spacing:0.5px;}
 
-/* FOOTER */
-footer{background:#1A2B1F;padding:65px 60px 28px;}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px;}
-.footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-.footer-logo img{height:42px;width:42px;object-fit:contain;}
-.footer-logo .t1{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--gold-light);letter-spacing:1px;display:block;}
-.footer-logo .t2{font-size:8px;letter-spacing:3px;color:rgba(255,255,255,0.25);text-transform:uppercase;display:block;}
-.footer-desc{color:rgba(255,255,255,0.38);font-size:13px;line-height:1.8;max-width:240px;}
-.footer-col h4{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;}
-.footer-col a,.footer-col p{display:block;color:rgba(255,255,255,0.38);font-size:12px;text-decoration:none;margin-bottom:9px;transition:color 0.2s;}
-.footer-col a:hover{color:var(--gold-light);}
-.footer-bot{border-top:1px solid rgba(255,255,255,0.07);padding-top:22px;display:flex;justify-content:space-between;align-items:center;}
-.footer-copy{font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;}
-.footer-reg{font-size:10px;color:rgba(255,255,255,0.18);letter-spacing:2px;}
+  .whatsapp-btn{display:inline-flex;align-items:center;gap:12px;padding:16px 32px;margin-top:40px;background:#25D366;color:#fff;text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:600;transition:all 0.3s;width:100%;justify-content:center;}
+  .whatsapp-btn:hover{background:#1ebe59;transform:translateY(-2px);}
+  .whatsapp-btn span{font-size:20px;}
 
-.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.d1{transition-delay:0.1s;}
+  /* FORM */
+  .contact-form{background:var(--navy-mid);border:1px solid rgba(200,150,42,0.15);padding:56px;}
+  .form-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin-bottom:8px;}
+  .form-sub{font-size:11px;color:var(--gray);letter-spacing:1px;margin-bottom:40px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+  .form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+  .form-group label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
+  .form-group input,.form-group select,.form-group textarea{background:rgba(13,27,62,0.6);border:1px solid rgba(200,150,42,0.2);color:var(--white);padding:14px 18px;font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:0.5px;outline:none;transition:border-color 0.3s;appearance:none;-webkit-appearance:none;}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
+  .form-group textarea{resize:vertical;min-height:120px;}
+  .form-group select option{background:var(--navy);}
+  .btn-submit{width:100%;padding:16px;background:var(--gold);color:var(--black);font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;font-weight:600;border:none;cursor:pointer;transition:all 0.3s;}
+  .btn-submit:hover{background:var(--gold-light);}
+  .form-success{display:none;text-align:center;padding:60px 20px;}
+  .form-success .check{font-size:56px;margin-bottom:16px;display:block;}
+  .form-success h3{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold-light);margin-bottom:12px;}
+  .form-success p{font-size:12px;color:var(--gray);line-height:1.8;}
 
-@media(max-width:1024px){
-  nav{padding:14px 24px;}
-  .hero,.contact-main{padding-left:24px;padding-right:24px;}
-  .contact-grid{grid-template-columns:1fr;gap:40px;}
-  .form-row{grid-template-columns:1fr;}
-  .contact-form{padding:32px 24px;}
-  .map-section{padding:0 24px 60px;}
-  .map-box{flex-direction:column;gap:24px;padding:36px 24px;text-align:center;}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:28px;}
-  footer{padding:50px 24px 22px;}
-}
-@media(max-width:768px){
-  .nav-links,.nav-cta{display:none;}
-  .hamburger{display:flex;}
-  .footer-grid{grid-template-columns:1fr;}
-  .footer-bot{flex-direction:column;gap:8px;text-align:center;}
-}
+  /* MAP */
+  .map-section{padding:0 60px 100px;background:var(--black);}
+  .map-embed{width:100%;height:380px;border:1px solid rgba(200,150,42,0.2);filter:grayscale(50%) invert(90%) hue-rotate(160deg);opacity:0.85;}
+
+  /* CONNECT STRIPS */
+  .connect-strip{background:var(--navy-mid);border-top:1px solid rgba(200,150,42,0.15);border-bottom:1px solid rgba(200,150,42,0.15);display:grid;grid-template-columns:repeat(3,1fr);}
+  .connect-item{padding:40px;text-align:center;border-right:1px solid rgba(200,150,42,0.1);transition:background 0.3s;}
+  .connect-item:last-child{border-right:none;}
+  .connect-item:hover{background:rgba(200,150,42,0.05);}
+  .connect-icon{font-size:32px;margin-bottom:12px;display:block;}
+  .connect-item h4{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold-light);margin-bottom:6px;}
+  .connect-item p{font-size:11px;color:var(--gray);line-height:1.7;}
+  .connect-item a{color:var(--white);text-decoration:none;transition:color 0.3s;font-size:13px;display:block;margin-top:8px;}
+  .connect-item a:hover{color:var(--gold);}
+
+  footer{background:var(--navy);padding:80px 60px 40px;border-top:1px solid rgba(200,150,42,0.2);}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;}
+  .footer-brand img{height:70px;margin-bottom:20px;filter:drop-shadow(0 0 8px rgba(200,150,42,0.2));}
+  .footer-brand p{font-size:12px;line-height:1.9;color:var(--gray);max-width:280px;}
+  .footer-brand .reg{margin-top:20px;font-size:9px;letter-spacing:2px;color:rgba(138,143,154,0.6);text-transform:uppercase;}
+  .footer-col h4{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:12px;}
+  .footer-col a{text-decoration:none;color:var(--gray);font-size:12px;transition:color 0.3s;}
+  .footer-col a:hover{color:var(--gold-light);}
+  .footer-bottom{border-top:1px solid rgba(200,150,42,0.1);padding-top:30px;display:flex;justify-content:space-between;align-items:center;}
+  .footer-bottom p{font-size:10px;color:rgba(138,143,154,0.6);letter-spacing:1px;}
+
+  @media(max-width:900px){
+    nav{padding:14px 20px;}
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .nav-right .nav-cta{display:none;}
+    .page-hero{padding:120px 20px 60px;}
+    .page-hero::before{display:none;}
+    .contact-main{padding:70px 20px;}
+    .contact-grid{grid-template-columns:1fr;gap:40px;}
+    .form-row{grid-template-columns:1fr;}
+    .contact-form{padding:28px 20px;}
+    .map-section{padding:0 20px 70px;}
+    .connect-strip{grid-template-columns:1fr;}
+    .connect-item{border-right:none;border-bottom:1px solid rgba(200,150,42,0.1);}
+    .connect-item:last-child{border-bottom:none;}
+    .footer-top{grid-template-columns:1fr 1fr;gap:30px;}
+    .footer-bottom{flex-direction:column;text-align:center;gap:8px;}
+  }
+  @media(max-width:500px){
+    .footer-top{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
 
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="index.html#services" onclick="toggleMenu()">Services</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+</div>
+
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="Big Energy">
+    <img src="logo_son3.png" alt="Big Energy Logo">
     <div class="nav-logo-text">
-      <span>BIG ENERGY &amp; RESOURCES</span>
-      <span>Lusaka &middot; Zambia</span>
+      <span>Big Energy &amp; Resources</span>
+      <span>Limited — Zambia</span>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html" data-translate="nav_home">Home</a></li>
-    <li><a href="about.html" data-translate="nav_about">About</a></li>
-    <li><a href="index.html#services" data-translate="nav_services">Services</a></li>
-    <li><a href="contact.html" class="active" data-translate="nav_contact_link">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <div class="lang-switcher" id="langSwitcher">
-      <button class="lang-btn" id="langBtn" type="button">
-        <img src="https://flagcdn.com/w20/gb.png" alt="EN" id="currentFlag">
-        <span id="currentLang">EN</span> &#9662;
+    <div class="lang-switcher">
+      <button class="lang-btn" id="langBtn">
+        <img src="https://flagcdn.com/w20/gb.png" id="currentFlag" alt="">
+        <span id="currentLang">EN</span> ▾
       </button>
       <div class="lang-dropdown" id="langDropdown">
-        <button class="lang-option active" type="button" data-lang="en" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png" alt="EN"> English</button>
-        <button class="lang-option" type="button" data-lang="tr" onclick="setLang('tr')"><img src="https://flagcdn.com/w20/tr.png" alt="TR"> T&#252;rk&#231;e</button>
-        <button class="lang-option" type="button" data-lang="fr" onclick="setLang('fr')"><img src="https://flagcdn.com/w20/fr.png" alt="FR"> Fran&#231;ais</button>
-        <button class="lang-option" type="button" data-lang="pt" onclick="setLang('pt')"><img src="https://flagcdn.com/w20/pt.png" alt="PT"> Portugu&#234;s</button>
-        <button class="lang-option" type="button" data-lang="ar" onclick="setLang('ar')"><img src="https://flagcdn.com/w20/sa.png" alt="AR"> &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</button>
+        <button class="lang-option active" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png" alt=""> English</button>
+        <button class="lang-option" onclick="setLang('tr')"><img src="https://flagcdn.com/w20/tr.png" alt=""> Türkçe</button>
+        <button class="lang-option" onclick="setLang('fr')"><img src="https://flagcdn.com/w20/fr.png" alt=""> Français</button>
+        <button class="lang-option" onclick="setLang('pt')"><img src="https://flagcdn.com/w20/pt.png" alt=""> Português</button>
+        <button class="lang-option" onclick="setLang('ar')"><img src="https://flagcdn.com/w20/sa.png" alt=""> العربية</button>
       </div>
     </div>
-    <a href="contact.html" class="nav-cta" data-translate="nav_contact">Get In Touch</a>
+    <a href="contact.html" class="nav-cta">Get In Touch</a>
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
-<div class="mobile-menu">
-  <button class="mobile-close" onclick="this.closest('.mobile-menu').classList.remove('open')">&#10005;</button>
-  <a href="index.html" data-translate="nav_home">Home</a>
-  <a href="about.html" data-translate="nav_about">About</a>
-  <a href="index.html#services" data-translate="nav_services">Services</a>
-  <a href="contact.html" data-translate="nav_contact_link">Contact</a>
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="section-label" data-translate="label_contact">Get In Touch</div>
+  <h1 class="section-title">Contact <strong>Us</strong></h1>
+  <p data-translate="contact_hero_p">Ready to discuss your project? Whether you need mining equipment, energy solutions, fertilizers, or trade brokerage — we're here to help.</p>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-inner">
-    <p class="hero-label reveal" data-translate="ct_lbl">Get In Touch</p>
-    <h1 class="hero-title reveal" data-translate="ct_title">Let's Talk<br><em>Business.</em></h1>
-    <p class="hero-desc reveal" data-translate="ct_desc">Ready to discuss your project? Whether you need mining equipment, energy solutions, fertilizers or trade brokerage &mdash; we're here to help.</p>
+<!-- CONNECT STRIP -->
+<div class="connect-strip">
+  <div class="connect-item">
+    <span class="connect-icon">📞</span>
+    <h4>Call Us</h4>
+    <p>Zambia &amp; International</p>
+    <a href="tel:+260973723566">+260 973 723 566</a>
+    <a href="tel:+905325190312">+90 532 519 0312</a>
+  </div>
+  <div class="connect-item">
+    <span class="connect-icon">✉️</span>
+    <h4>Email Us</h4>
+    <p>We respond within 24 hours</p>
+    <a href="mailto:bigenergyzambia@gmail.com">bigenergyzambia@gmail.com</a>
+  </div>
+  <div class="connect-item">
+    <span class="connect-icon">💬</span>
+    <h4>WhatsApp</h4>
+    <p>Quick responses via WhatsApp</p>
+    <a href="https://wa.me/260973723566" target="_blank">Chat Now →</a>
   </div>
 </div>
 
@@ -195,99 +219,92 @@ footer{background:#1A2B1F;padding:65px 60px 28px;}
 <div class="contact-main">
   <div class="contact-grid">
 
-    <!-- INFO -->
-    <div class="reveal">
-      <p class="info-label-top" data-translate="ct_direct">Direct Contact</p>
+    <div class="contact-info">
+      <div class="section-label" style="margin-bottom:40px" data-translate="label_direct">Direct Contact</div>
 
       <div class="info-block">
-        <div class="info-lbl" data-translate="ct_phone_lbl">Phone</div>
-        <div class="info-val"><a href="tel:+260973723566">+260 973 723 566</a></div>
-        <div class="info-sub" data-translate="ct_phone_sub">Available during business hours (CAT)</div>
+        <div class="info-label">Phone — Zambia</div>
+        <div class="info-value"><a href="tel:+260973723566">+260 973 723 566</a></div>
+        <div class="info-sub">Available during business hours (CAT)</div>
       </div>
 
       <div class="info-block">
-        <div class="info-lbl" data-translate="ct_turkey_lbl">Turkey Office</div>
-        <div class="info-val"><a href="tel:+905325190312">+90 532 519 0312</a></div>
-        <div class="info-sub" data-translate="ct_turkey_sub">Turkish sourcing & partnerships</div>
+        <div class="info-label">Phone — Turkey</div>
+        <div class="info-value"><a href="tel:+905325190312">+90 532 519 0312</a></div>
+        <div class="info-sub">Turkish &amp; European inquiries</div>
       </div>
 
       <div class="info-block">
-        <div class="info-lbl" data-translate="ct_email_lbl">Email</div>
-        <div class="info-val"><a href="mailto:bigenergyzambia@gmail.com">bigenergyzambia@gmail.com</a></div>
-        <div class="info-sub" data-translate="ct_email_sub">We respond within 24 hours</div>
+        <div class="info-label">Email</div>
+        <div class="info-value"><a href="mailto:bigenergyzambia@gmail.com">bigenergyzambia@gmail.com</a></div>
+        <div class="info-sub">We respond within 24 hours</div>
       </div>
 
       <div class="info-block">
-        <div class="info-lbl" data-translate="ct_office_lbl">Registered Office</div>
-        <div class="info-val">Plot No. 25468/M<br>Chelstone Obama, Lusaka</div>
-        <div class="info-sub" data-translate="ct_office_sub">Lusaka Province, Zambia</div>
+        <div class="info-label">Registered Office</div>
+        <div class="info-value">Plot No. 25468/M<br>Chelstone Obama, Lusaka</div>
+        <div class="info-sub">Lusaka Province, Zambia 🇿🇲</div>
       </div>
 
       <div class="info-block">
-        <div class="info-lbl" data-translate="ct_hours_lbl">Business Hours</div>
-        <div class="info-val" data-translate="ct_hours_val">Monday &mdash; Friday</div>
-        <div class="info-sub" data-translate="ct_hours_sub">08:00 &mdash; 17:00 Central Africa Time</div>
+        <div class="info-label">Business Hours</div>
+        <div class="info-value">Monday — Friday</div>
+        <div class="info-sub">08:00 — 17:00 Central Africa Time (CAT)</div>
       </div>
 
-      <a href="https://wa.me/260973723566" target="_blank" class="wa-btn">
-        <svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.824L0 24l6.335-1.498A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.882.936-3.618-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
-        <span data-translate="ct_wa">Chat on WhatsApp</span>
+      <a href="https://wa.me/260973723566" target="_blank" class="whatsapp-btn">
+        <span>💬</span> Chat on WhatsApp
       </a>
     </div>
 
     <!-- FORM -->
-    <div class="contact-form reveal d1" id="contact-form-wrap">
-      <h2 class="form-title" data-translate="form_title">Send Us a Message</h2>
-      <p class="form-sub" data-translate="form_sub">Fill in the form below and we'll get back to you shortly.</p>
+    <div class="contact-form" id="contact-form-wrap">
+      <div id="formContent">
+        <h2 class="form-title" data-translate="form_title">Send Us a Message</h2>
+        <p class="form-sub" data-translate="form_sub">Fill in the form below and we'll get back to you shortly.</p>
 
-      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="hidden" name="_replyto" value="bigenergyzambia@gmail.com">
-        <input type="hidden" name="_subject" value="New inquiry from Big Energy website">
         <div class="form-row">
           <div class="form-group">
-            <label data-translate="form_fname">First Name</label>
-            <input type="text" name="first_name" placeholder="John" required>
+            <label for="fname" data-translate="field_fname">First Name</label>
+            <input type="text" id="fname" placeholder="John" required>
           </div>
           <div class="form-group">
-            <label data-translate="form_lname">Last Name</label>
-            <input type="text" name="last_name" placeholder="Doe" required>
+            <label for="lname" data-translate="field_lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Doe" required>
           </div>
         </div>
         <div class="form-group">
-          <label data-translate="form_email">Email Address</label>
-          <input type="email" name="email" placeholder="john@company.com" required>
+          <label for="email" data-translate="field_email">Email Address</label>
+          <input type="email" id="email" placeholder="john@company.com" required>
         </div>
         <div class="form-group">
-          <label data-translate="form_phone">Phone Number</label>
-          <input type="tel" name="phone" placeholder="+1 234 567 8900">
+          <label for="phone" data-translate="field_phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+1 234 567 8900">
         </div>
         <div class="form-group">
-          <label data-translate="form_service">Service of Interest</label>
-          <select name="service">
-            <option value="" data-translate="form_select">&#8212; Select a service &#8212;</option>
-            <option data-translate="form_s1">Mining Equipment &amp; Brokerage</option>
-            <option data-translate="form_s2">Solar Energy &amp; Power Systems</option>
-            <option data-translate="form_s3">Agricultural Inputs &amp; Machinery</option>
-            <option data-translate="form_s4">Motor Oil &amp; Lubricants</option>
-            <option data-translate="form_s5">Electrical Infrastructure</option>
-            <option data-translate="form_s6">Industrial Cleaning Equipment</option>
-            <option data-translate="form_s7">SME Office &amp; Market Entry</option>
-            <option data-translate="form_s8">General Inquiry</option>
+          <label for="service" data-translate="field_service">Service of Interest</label>
+          <select id="service">
+            <option value="">— Select a service —</option>
+            <option>Mining Equipment Leasing &amp; Brokerage</option>
+            <option>Solar Energy &amp; Power Systems</option>
+            <option>Agricultural Fertilizers &amp; Inputs</option>
+            <option>Motor Oil &amp; Lubricants</option>
+            <option>Electrical Infrastructure &amp; Panels</option>
+            <option>Trade Brokerage &amp; Wholesale</option>
+            <option>General Inquiry</option>
           </select>
         </div>
         <div class="form-group">
-          <label data-translate="form_msg">Message</label>
-          <textarea name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
+          <label for="message" data-translate="field_message">Message</label>
+          <textarea id="message" placeholder="Tell us about your project or inquiry..." required></textarea>
         </div>
-        <button type="submit" class="btn-submit" data-translate="form_btn">Send Message &#8594;</button>
-      </form>
+        <button type="button" class="btn-submit" onclick="handleSubmit()" data-translate="btn_send">Send Message →</button>
+      </div>
 
       <div class="form-success" id="formSuccess">
-        <div class="success-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#2A5C3F" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <h3 data-translate="success_title">Message Sent!</h3>
-        <p data-translate="success_desc">Thank you for reaching out. Our team will review your message and get back to you within 24 hours.</p>
+        <span class="check">✅</span>
+        <h3>Message Sent!</h3>
+        <p>Thank you for reaching out. Our team will review your message and get back to you within 24 hours.</p>
       </div>
     </div>
 
@@ -296,110 +313,100 @@ footer{background:#1A2B1F;padding:65px 60px 28px;}
 
 <!-- MAP -->
 <div class="map-section">
-  <div class="map-inner">
-    <div class="map-box reveal">
-      <div class="map-pin">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#2A5C3F" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-      </div>
-      <div class="map-text">
-        <h3 data-translate="map_title">Lusaka, Zambia</h3>
-        <p data-translate="map_desc">Plot No. 25468/M Chelstone Obama, Lusaka, Lusaka Province, Zambia &middot; Reg. No. 11045170</p>
-        <a href="https://maps.google.com/?q=Chelstone+Obama+Lusaka+Zambia" target="_blank" class="map-link" data-translate="map_link">Open in Google Maps &#8594;</a>
-      </div>
-    </div>
-  </div>
+  <iframe
+    class="map-embed"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15467.76!2d28.3228!3d-15.4166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408b6c2d2e4c77%3A0x1234!2sChelstone%2C%20Lusaka%2C%20Zambia!5e0!3m2!1sen!2szm!4v1700000000"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Big Energy Zambia Location">
+  </iframe>
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-logo"><img src="logo.png" alt="Big Energy"><div><span class="t1">BIG ENERGY &amp; RESOURCES</span><span class="t2">Limited &middot; Zambia</span></div></div>
-      <p class="footer-desc" data-translate="ft_desc">Your trusted sourcing, brokerage and trade consultancy partner &mdash; connecting Zambia with global markets.</p>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="logo_son3.png" alt="Big Energy Logo">
+      <p>Big Energy &amp; Resources Limited — Mining, Energy &amp; Trade solutions across Africa.</p>
+      <div class="reg">Reg. No. 11045170 · PACRA · Zambia</div>
     </div>
     <div class="footer-col">
-      <h4 data-translate="ft_svc">Services</h4>
-      <a href="index.html#services" data-translate="sv1">Mining Consultancy</a>
-      <a href="index.html#services" data-translate="sv2">Agricultural Inputs</a>
-      <a href="index.html#services" data-translate="sv3">Solar Energy</a>
-      <a href="index.html#services" data-translate="sv4">Electrical Infrastructure</a>
-      <a href="index.html#services" data-translate="sv5">Motor Oil &amp; Lubricants</a>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="index.html#services">Mining &amp; Equipment</a></li>
+        <li><a href="index.html#services">Solar &amp; Power</a></li>
+        <li><a href="index.html#services">Agricultural Trade</a></li>
+        <li><a href="index.html#services">Lubricants &amp; Oil</a></li>
+        <li><a href="index.html#services">Electrical Systems</a></li>
+        <li><a href="index.html#services">Trade Brokerage</a></li>
+      </ul>
     </div>
     <div class="footer-col">
-      <h4 data-translate="ft_co">Company</h4>
-      <a href="about.html" data-translate="nav_about">About Us</a>
-      <a href="index.html#how" data-translate="ft_method">Our Methodology</a>
-      <a href="contact.html" data-translate="nav_contact_link">Contact</a>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#team">Our Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
     <div class="footer-col">
-      <h4 data-translate="ft_ct">Contact</h4>
-      <p>bigenergyzambia@gmail.com</p>
-      <p>+260 973 723 566</p>
-      <p>+90 532 519 0312</p>
-      <p>Lusaka, Zambia</p>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+260973723566">+260 973 723 566</a></li>
+        <li><a href="tel:+905325190312">+90 532 519 0312</a></li>
+        <li><a href="mailto:bigenergyzambia@gmail.com">bigenergyzambia@gmail.com</a></li>
+        <li>Lusaka, Zambia 🇿🇲</li>
+      </ul>
     </div>
   </div>
-  <div class="footer-bot">
-    <span class="footer-copy" data-translate="ft_copy">&#169; Big Energy &amp; Resources Limited. All rights reserved.</span>
-    <span class="footer-reg" data-translate="ft_inc">Incorporated in Zambia &middot; Reg. No. 11045170</span>
+  <div class="footer-bottom">
+    <p>© Big Energy &amp; Resources Limited. All rights reserved.</p>
+    <p>Incorporated in Zambia · Reg. No. 11045170</p>
   </div>
 </footer>
 
 <script>
-var observer=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add("visible");observer.unobserve(x.target);}});},{threshold:0.08});
-document.querySelectorAll(".reveal").forEach(function(el){observer.observe(el);});
-document.getElementById("langBtn").addEventListener("click",function(e){e.stopPropagation();document.getElementById("langDropdown").classList.toggle("open");});
-document.addEventListener("click",function(e){if(!document.getElementById("langSwitcher").contains(e.target))document.getElementById("langDropdown").classList.remove("open");});
-
-document.getElementById("contactForm").addEventListener("submit",function(e){
-  e.preventDefault();
-  var form=this;
-  var btn=form.querySelector(".btn-submit");
-  btn.textContent="Sending...";
-  btn.disabled=true;
-  fetch(form.action,{method:"POST",body:new FormData(form),headers:{"Accept":"application/json"}})
-  .then(function(r){
-    if(r.ok){
-      form.style.display="none";
-      document.getElementById("formSuccess").style.display="block";
-    } else {
-      btn.textContent="Send Message \u2192";
-      btn.disabled=false;
-      alert("Something went wrong. Please email us directly at bigenergyzambia@gmail.com");
-    }
-  })
-  .catch(function(){
-    btn.textContent="Send Message \u2192";
-    btn.disabled=false;
-    alert("Something went wrong. Please email us directly at bigenergyzambia@gmail.com");
-  });
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function handleSubmit(){
+  const f=document.getElementById('fname').value;
+  const e=document.getElementById('email').value;
+  const m=document.getElementById('message').value;
+  if(!f||!e||!m){alert('Please fill in all required fields.');return;}
+  document.getElementById('formContent').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.getElementById('langBtn');
+  var dd=document.getElementById('langDropdown');
+  btn.addEventListener('click',function(e){e.stopPropagation();dd.classList.toggle('open');});
+  document.addEventListener('click',function(e){if(!btn.contains(e.target))dd.classList.remove('open');});
+  try{const s=localStorage.getItem('bigEnergy_lang');if(s)setLang(s);}catch(e){}
 });
 
-var T={
-en:{nav_home:"Home",nav_about:"About",nav_services:"Services",nav_contact_link:"Contact",nav_contact:"Get In Touch",ct_lbl:"Get In Touch",ct_title:"Let's Talk<br><em>Business.</em>",ct_desc:"Ready to discuss your project? Whether you need mining equipment, energy solutions, fertilizers or trade brokerage \u2014 we're here to help.",ct_direct:"Direct Contact",ct_phone_lbl:"Phone",ct_phone_sub:"Available during business hours (CAT)",ct_turkey_lbl:"Turkey Office",ct_turkey_sub:"Turkish sourcing & partnerships",ct_email_lbl:"Email",ct_email_sub:"We respond within 24 hours",ct_office_lbl:"Registered Office",ct_office_sub:"Lusaka Province, Zambia",ct_hours_lbl:"Business Hours",ct_hours_val:"Monday \u2014 Friday",ct_hours_sub:"08:00 \u2014 17:00 Central Africa Time",ct_wa:"Chat on WhatsApp",form_title:"Send Us a Message",form_sub:"Fill in the form below and we'll get back to you shortly.",form_fname:"First Name",form_lname:"Last Name",form_email:"Email Address",form_phone:"Phone Number",form_service:"Service of Interest",form_select:"\u2014 Select a service \u2014",form_s1:"Mining Equipment & Brokerage",form_s2:"Solar Energy & Power Systems",form_s3:"Agricultural Inputs & Machinery",form_s4:"Motor Oil & Lubricants",form_s5:"Electrical Infrastructure",form_s6:"Industrial Cleaning Equipment",form_s7:"SME Office & Market Entry",form_s8:"General Inquiry",form_msg:"Message",form_btn:"Send Message \u2192",success_title:"Message Sent!",success_desc:"Thank you for reaching out. Our team will review your message and get back to you within 24 hours.",map_title:"Lusaka, Zambia",map_desc:"Plot No. 25468/M Chelstone Obama, Lusaka, Lusaka Province, Zambia \u00b7 Reg. No. 11045170",map_link:"Open in Google Maps \u2192",ft_desc:"Your trusted sourcing, brokerage and trade consultancy partner \u2014 connecting Zambia with global markets.",ft_svc:"Services",ft_co:"Company",ft_ct:"Contact",ft_method:"Our Methodology",ft_copy:"\u00a9 Big Energy & Resources Limited. All rights reserved.",ft_inc:"Incorporated in Zambia \u00b7 Reg. No. 11045170",sv1:"Mining Consultancy",sv2:"Agricultural Inputs",sv3:"Solar Energy",sv4:"Electrical Infrastructure",sv5:"Motor Oil & Lubricants",flag:"https://flagcdn.com/w20/gb.png",code:"EN",dir:"ltr"},
-tr:{nav_home:"Ana Sayfa",nav_about:"Hakk\u0131m\u0131zda",nav_services:"Hizmetler",nav_contact_link:"\u0130leti\u015fim",nav_contact:"\u0130leti\u015fime Ge\u00e7",ct_lbl:"Bize Ula\u015f\u0131n",ct_title:"Konu\u015falım<br><em>Birlikte.</em>",ct_desc:"Projenizi konu\u015fmaya haz\u0131r m\u0131s\u0131n\u0131z? Madencilik ekipmanlar\u0131, enerji \u00e7\u00f6z\u00fcmleri, g\u00fcbre veya ticaret arac\u0131l\u0131\u011f\u0131 \u2014 yard\u0131m etmeye haz\u0131r\u0131z.",ct_direct:"Do\u011frudan \u0130leti\u015fim",ct_phone_lbl:"Telefon",ct_phone_sub:"\u0130\u015f saatleri i\u00e7inde ula\u015f\u0131labilir (CAT)",ct_turkey_lbl:"T\u00fcrkiye Ofisi",ct_turkey_sub:"T\u00fcrk tedarik ve ortakl\u0131klar",ct_email_lbl:"E-posta",ct_email_sub:"24 saat i\u00e7inde yan\u0131t veririz",ct_office_lbl:"Tescilli Ofis",ct_office_sub:"Lusaka Eyaleti, Zambia",ct_hours_lbl:"\u00c7al\u0131\u015fma Saatleri",ct_hours_val:"Pazartesi \u2014 Cuma",ct_hours_sub:"08:00 \u2014 17:00 Orta Afrika Saati",ct_wa:"WhatsApp\u2019tan Yaz\u0131n",form_title:"Mesaj G\u00f6nderin",form_sub:"A\u015fa\u011f\u0131daki formu doldurun, en k\u0131sa s\u00fcrede size d\u00f6nelim.",form_fname:"Ad",form_lname:"Soyad",form_email:"E-posta Adresi",form_phone:"Telefon Numaras\u0131",form_service:"\u0130lgilenilen Hizmet",form_select:"\u2014 Hizmet Se\u00e7in \u2014",form_s1:"Madencilik Ekipman\u0131 & Arac\u0131l\u0131k",form_s2:"G\u00fcne\u015f Enerjisi & G\u00fc\u00e7 Sistemleri",form_s3:"Tar\u0131msal Girdiler & Makine",form_s4:"Motor Ya\u011f\u0131 & Lubrikant",form_s5:"Elektrik Altyap\u0131s\u0131",form_s6:"End\u00fcstriyel Temizlik",form_s7:"KOB\u0130 Ofis & Pazar Giri\u015fi",form_s8:"Genel Soru",form_msg:"Mesaj",form_btn:"Mesaj G\u00f6nder \u2192",success_title:"Mesaj G\u00f6nderildi!",success_desc:"Bize ula\u015ft\u0131\u011f\u0131n\u0131z i\u00e7in te\u015fekk\u00fcr ederiz. Ekibimiz 24 saat i\u00e7inde size d\u00f6necek.",map_title:"Lusaka, Zambia",map_desc:"Plot No. 25468/M Chelstone Obama, Lusaka, Zambia \u00b7 Tescil No. 11045170",map_link:"Google Haritalarda A\u00e7 \u2192",ft_desc:"G\u00fcvenilir tedarik, arac\u0131l\u0131k ve ticaret dan\u0131\u015fmanl\u0131\u011f\u0131 orta\u011f\u0131n\u0131z.",ft_svc:"Hizmetler",ft_co:"\u015eirket",ft_ct:"\u0130leti\u015fim",ft_method:"Metodolojimiz",ft_copy:"\u00a9 Big Energy & Resources Limited. T\u00fcm haklar\u0131 sakl\u0131d\u0131r.",ft_inc:"Zambia\u2019da kurulmu\u015ftur",sv1:"Madencilik Dan\u0131\u015fmanl\u0131\u011f\u0131",sv2:"Tar\u0131msal Girdiler",sv3:"G\u00fcne\u015f Enerjisi",sv4:"Elektrik Altyap\u0131s\u0131",sv5:"Motor Ya\u011f\u0131",flag:"https://flagcdn.com/w20/tr.png",code:"TR",dir:"ltr"},
-fr:{nav_home:"Accueil",nav_about:"\u00c0 Propos",nav_services:"Services",nav_contact_link:"Contact",nav_contact:"Nous Contacter",ct_lbl:"Nous Contacter",ct_title:"Parlons<br><em>Affaires.</em>",ct_desc:"Pr\u00eat \u00e0 discuter de votre projet? Qu'il s'agisse d'\u00e9quipements miniers, d'\u00e9nergie ou de courtage commercial \u2014 nous sommes l\u00e0.",ct_direct:"Contact Direct",ct_phone_lbl:"T\u00e9l\u00e9phone",ct_phone_sub:"Disponible pendant les heures ouvrables (CAT)",ct_turkey_lbl:"Bureau Turquie",ct_turkey_sub:"Sourcing et partenariats turcs",ct_email_lbl:"Email",ct_email_sub:"R\u00e9ponse sous 24 heures",ct_office_lbl:"Bureau Enregistr\u00e9",ct_office_sub:"Province de Lusaka, Zambie",ct_hours_lbl:"Heures d'Ouverture",ct_hours_val:"Lundi \u2014 Vendredi",ct_hours_sub:"08:00 \u2014 17:00 Heure d'Afrique Centrale",ct_wa:"Chatter sur WhatsApp",form_title:"Envoyez-nous un Message",form_sub:"Remplissez le formulaire et nous vous r\u00e9pondrons rapidement.",form_fname:"Pr\u00e9nom",form_lname:"Nom",form_email:"Adresse Email",form_phone:"Num\u00e9ro de T\u00e9l\u00e9phone",form_service:"Service Souhait\u00e9",form_select:"\u2014 S\u00e9lectionnez un service \u2014",form_s1:"Equipement Minier & Courtage",form_s2:"Energie Solaire & Syst\u00e8mes",form_s3:"Intrants Agricoles & Machines",form_s4:"Huile Moteur & Lubrifiants",form_s5:"Infrastructure \u00c9lectrique",form_s6:"Nettoyage Industriel",form_s7:"Bureau PME & Entr\u00e9e March\u00e9",form_s8:"Demande G\u00e9n\u00e9rale",form_msg:"Message",form_btn:"Envoyer le Message \u2192",success_title:"Message Envoy\u00e9!",success_desc:"Merci de nous avoir contact\u00e9. Notre \u00e9quipe vous r\u00e9pondra sous 24 heures.",map_title:"Lusaka, Zambie",map_desc:"Plot No. 25468/M Chelstone Obama, Lusaka, Zambie \u00b7 No. 11045170",map_link:"Ouvrir dans Google Maps \u2192",ft_desc:"Votre partenaire de confiance en approvisionnement et conseil commercial.",ft_svc:"Services",ft_co:"Soci\u00e9t\u00e9",ft_ct:"Contact",ft_method:"Notre M\u00e9thodologie",ft_copy:"\u00a9 Big Energy & Resources Limited. Tous droits r\u00e9serv\u00e9s.",ft_inc:"Constitu\u00e9e en Zambie",sv1:"Conseil Minier",sv2:"Intrants Agricoles",sv3:"\u00c9nergie Solaire",sv4:"Infrastructure \u00c9lectrique",sv5:"Huile Moteur",flag:"https://flagcdn.com/w20/fr.png",code:"FR",dir:"ltr"},
-pt:{nav_home:"In\u00edcio",nav_about:"Sobre N\u00f3s",nav_services:"Servi\u00e7os",nav_contact_link:"Contacto",nav_contact:"Contacte-Nos",ct_lbl:"Contacte-Nos",ct_title:"Vamos Falar<br><em>Neg\u00f3cios.</em>",ct_desc:"Pronto para discutir o seu projeto? Seja equipamento mineiro, energia ou corretagem \u2014 estamos aqui para ajudar.",ct_direct:"Contacto Direto",ct_phone_lbl:"Telefone",ct_phone_sub:"Dispon\u00edvel durante o hor\u00e1rio comercial (CAT)",ct_turkey_lbl:"Escrit\u00f3rio Turquia",ct_turkey_sub:"Sourcing e parcerias turcas",ct_email_lbl:"Email",ct_email_sub:"Respondemos em 24 horas",ct_office_lbl:"Escrit\u00f3rio Registado",ct_office_sub:"Prov\u00edncia de Lusaka, Z\u00e2mbia",ct_hours_lbl:"Hor\u00e1rio",ct_hours_val:"Segunda \u2014 Sexta",ct_hours_sub:"08:00 \u2014 17:00 Hora da \u00c1frica Central",ct_wa:"Conversar no WhatsApp",form_title:"Envie-nos uma Mensagem",form_sub:"Preencha o formul\u00e1rio e entraremos em contacto brevemente.",form_fname:"Primeiro Nome",form_lname:"Apelido",form_email:"Endere\u00e7o de Email",form_phone:"N\u00famero de Telefone",form_service:"Servi\u00e7o de Interesse",form_select:"\u2014 Selecione um servi\u00e7o \u2014",form_s1:"Equipamento Mineiro & Corretagem",form_s2:"Energia Solar & Sistemas",form_s3:"Insumos Agr\u00edcolas & M\u00e1quinas",form_s4:"\u00d3leo Motor & Lubrificantes",form_s5:"Infraestrutura El\u00e9trica",form_s6:"Limpeza Industrial",form_s7:"Escrit\u00f3rio PME & Entrada Mercado",form_s8:"Consulta Geral",form_msg:"Mensagem",form_btn:"Enviar Mensagem \u2192",success_title:"Mensagem Enviada!",success_desc:"Obrigado pelo seu contacto. A nossa equipa responder\u00e1 em 24 horas.",map_title:"Lusaka, Z\u00e2mbia",map_desc:"Plot No. 25468/M Chelstone Obama, Lusaka, Z\u00e2mbia \u00b7 Reg. No. 11045170",map_link:"Abrir no Google Maps \u2192",ft_desc:"O seu parceiro de confian\u00e7a em sourcing e consultoria comercial.",ft_svc:"Servi\u00e7os",ft_co:"Empresa",ft_ct:"Contacto",ft_method:"A Nossa Metodologia",ft_copy:"\u00a9 Big Energy & Resources Limited. Todos os direitos reservados.",ft_inc:"Constitu\u00edda na Z\u00e2mbia",sv1:"Consultoria Mineira",sv2:"Insumos Agr\u00edcolas",sv3:"Energia Solar",sv4:"Infraestrutura El\u00e9trica",sv5:"\u00d3leo Motor",flag:"https://flagcdn.com/w20/pt.png",code:"PT",dir:"ltr"},
-ar:{nav_home:"\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629",nav_about:"\u0645\u0646 \u0646\u062d\u0646",nav_services:"\u062e\u062f\u0645\u0627\u062a",nav_contact_link:"\u0627\u062a\u0635\u0644 \u0628\u0646\u0627",nav_contact:"\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627",ct_lbl:"\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627",ct_title:"\u0644\u0646\u062a\u062d\u062f\u062b<br><em>\u0639\u0646 \u0627\u0644\u0623\u0639\u0645\u0627\u0644.</em>",ct_desc:"\u0647\u0644 \u0623\u0646\u062a \u0645\u0633\u062a\u0639\u062f \u0644\u0645\u0646\u0627\u0642\u0634\u0629 \u0645\u0634\u0631\u0648\u0639\u0643\u061f \u0633\u0648\u0627\u0621 \u0627\u062d\u062a\u062c\u062c\u062a \u0645\u0639\u062f\u0627\u062a \u062a\u0639\u062f\u064a\u0646 \u0623\u0648 \u0637\u0627\u0642\u0629 \u0623\u0648 \u0648\u0633\u0627\u0637\u0629 \u2014 \u0646\u062d\u0646 \u0647\u0646\u0627.",ct_direct:"\u062a\u0648\u0627\u0635\u0644 \u0645\u0628\u0627\u0634\u0631",ct_phone_lbl:"\u0647\u0627\u062a\u0641",ct_phone_sub:"\u0645\u062a\u0627\u062d \u062e\u0644\u0627\u0644 \u0633\u0627\u0639\u0627\u062a \u0627\u0644\u0639\u0645\u0644",ct_turkey_lbl:"\u0645\u0643\u062a\u0628 \u062a\u0631\u0643\u064a\u0627",ct_turkey_sub:"\u0627\u0644\u062a\u0648\u0631\u064a\u062f \u0648\u0627\u0644\u0634\u0631\u0627\u0643\u0627\u062a \u0627\u0644\u062a\u0631\u0643\u064a\u0629",ct_email_lbl:"\u0628\u0631\u064a\u062f \u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a",ct_email_sub:"\u0646\u0631\u062f \u062e\u0644\u0627\u0644 24 \u0633\u0627\u0639\u0629",ct_office_lbl:"\u0627\u0644\u0645\u0643\u062a\u0628 \u0627\u0644\u0645\u0633\u062c\u0644",ct_office_sub:"\u0645\u062d\u0627\u0641\u0638\u0629 \u0644\u0648\u0633\u0627\u0643\u0627\u060c \u0632\u0627\u0645\u0628\u064a\u0627",ct_hours_lbl:"\u0633\u0627\u0639\u0627\u062a \u0627\u0644\u0639\u0645\u0644",ct_hours_val:"\u0627\u0644\u0627\u062b\u0646\u064a\u0646 \u2014 \u0627\u0644\u062c\u0645\u0639\u0629",ct_hours_sub:"08:00 \u2014 17:00 \u062a\u0648\u0642\u064a\u062a \u0648\u0633\u0637 \u0623\u0641\u0631\u064a\u0642\u064a\u0627",ct_wa:"\u062a\u062d\u062f\u062b \u0639\u0628\u0631 \u0648\u0627\u062a\u0633\u0622\u0628",form_title:"\u0623\u0631\u0633\u0644 \u0644\u0646\u0627 \u0631\u0633\u0627\u0644\u0629",form_sub:"\u0627\u0645\u0644\u0623 \u0627\u0644\u0646\u0645\u0648\u0630\u062c \u0648\u0633\u0646\u0639\u0648\u062f \u0625\u0644\u064a\u0643 \u0642\u0631\u064a\u0628\u0627\u064b.",form_fname:"\u0627\u0644\u0627\u0633\u0645 \u0627\u0644\u0623\u0648\u0644",form_lname:"\u0627\u0633\u0645 \u0627\u0644\u0639\u0627\u0626\u0644\u0629",form_email:"\u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0628\u0631\u064a\u062f",form_phone:"\u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641",form_service:"\u0627\u0644\u062e\u062f\u0645\u0629 \u0627\u0644\u0645\u0637\u0644\u0648\u0628\u0629",form_select:"\u2014 \u0627\u062e\u062a\u0631 \u062e\u062f\u0645\u0629 \u2014",form_s1:"\u0645\u0639\u062f\u0627\u062a \u0627\u0644\u062a\u0639\u062f\u064a\u0646",form_s2:"\u0637\u0627\u0642\u0629 \u0634\u0645\u0633\u064a\u0629",form_s3:"\u0645\u062f\u062e\u0644\u0627\u062a \u0632\u0631\u0627\u0639\u064a\u0629",form_s4:"\u0632\u064a\u062a \u0627\u0644\u0645\u062d\u0631\u0643",form_s5:"\u0628\u0646\u064a\u0629 \u0643\u0647\u0631\u0628\u0627\u0626\u064a\u0629",form_s6:"\u062a\u0646\u0638\u064a\u0641 \u0635\u0646\u0627\u0639\u064a",form_s7:"\u0645\u0643\u062a\u0628 \u0634\u0631\u0643\u0627\u062a \u0635\u063a\u064a\u0631\u0629",form_s8:"\u0627\u0633\u062a\u0641\u0633\u0627\u0631 \u0639\u0627\u0645",form_msg:"\u0631\u0633\u0627\u0644\u0629",form_btn:"\u0625\u0631\u0633\u0627\u0644 \u0627\u0644\u0631\u0633\u0627\u0644\u0629 \u2192",success_title:"\u062a\u0645 \u0627\u0644\u0625\u0631\u0633\u0627\u0644!",success_desc:"\u0634\u0643\u0631\u0627\u064b \u0644\u062a\u0648\u0627\u0635\u0644\u0643. \u0633\u064a\u0631\u062f \u0641\u0631\u064a\u0642\u0646\u0627 \u062e\u0644\u0627\u0644 24 \u0633\u0627\u0639\u0629.",map_title:"\u0644\u0648\u0633\u0627\u0643\u0627\u060c \u0632\u0627\u0645\u0628\u064a\u0627",map_desc:"Plot No. 25468/M Chelstone Obama\u060c \u0644\u0648\u0633\u0627\u0643\u0627\u060c \u0632\u0627\u0645\u0628\u064a\u0627",map_link:"\u0641\u062a\u062d \u0641\u064a \u062e\u0631\u0627\u0626\u0637 \u062c\u0648\u062c\u0644 \u2192",ft_desc:"\u0634\u0631\u064a\u0643\u0643 \u0627\u0644\u0645\u0648\u062b\u0648\u0642 \u0641\u064a \u0627\u0644\u062a\u0648\u0631\u064a\u062f \u0648\u0627\u0644\u0648\u0633\u0627\u0637\u0629.",ft_svc:"\u0627\u0644\u062e\u062f\u0645\u0627\u062a",ft_co:"\u0627\u0644\u0634\u0631\u0643\u0629",ft_ct:"\u0627\u062a\u0635\u0644 \u0628\u0646\u0627",ft_method:"\u0645\u0646\u0647\u062c\u064a\u062a\u0646\u0627",ft_copy:"\u00a9 Big Energy & Resources Limited. \u062c\u0645\u064a\u0639 \u0627\u0644\u062d\u0642\u0648\u0642 \u0645\u062d\u0641\u0648\u0638\u0629.",ft_inc:"\u0645\u0633\u062c\u0644\u0629 \u0641\u064a \u0632\u0627\u0645\u0628\u064a\u0627",sv1:"\u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a \u0627\u0644\u062a\u0639\u062f\u064a\u0646",sv2:"\u0645\u062f\u062e\u0644\u0627\u062a \u0632\u0631\u0627\u0639\u064a\u0629",sv3:"\u0637\u0627\u0642\u0629 \u0634\u0645\u0633\u064a\u0629",sv4:"\u0628\u0646\u064a\u0629 \u0643\u0647\u0631\u0628\u0627\u0626\u064a\u0629",sv5:"\u0632\u064a\u062a \u0627\u0644\u0645\u062d\u0631\u0643",flag:"https://flagcdn.com/w20/sa.png",code:"AR",dir:"rtl"}
+const translations={
+  en:{label_contact:'Get In Touch',label_direct:'Direct Contact',form_title:'Send Us a Message',form_sub:"Fill in the form below and we'll get back to you shortly.",field_fname:'First Name',field_lname:'Last Name',field_email:'Email Address',field_phone:'Phone Number',field_service:'Service of Interest',field_message:'Message',btn_send:'Send Message →',contact_hero_p:"Ready to discuss your project? Whether you need mining equipment, energy solutions, fertilizers, or trade brokerage — we're here to help.",flag:'https://flagcdn.com/w20/gb.png',code:'EN',dir:'ltr'},
+  tr:{label_contact:'İletişime Geçin',label_direct:'Doğrudan İletişim',form_title:'Bize Mesaj Gönderin',form_sub:'Aşağıdaki formu doldurun, en kısa sürede size döneceğiz.',field_fname:'Ad',field_lname:'Soyad',field_email:'E-posta Adresi',field_phone:'Telefon Numarası',field_service:'İlgilenilen Hizmet',field_message:'Mesajınız',btn_send:'Gönder →',contact_hero_p:'Projenizi görüşmeye hazır mısınız? Madencilik ekipmanı, enerji çözümleri, gübre veya ticaret aracılığı — size yardımcı olmak için buradayız.',flag:'https://flagcdn.com/w20/tr.png',code:'TR',dir:'ltr'},
+  fr:{label_contact:'Nous Contacter',label_direct:'Contact Direct',form_title:'Envoyez-nous un Message',form_sub:'Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.',field_fname:'Prénom',field_lname:'Nom',field_email:'Adresse Email',field_phone:'Numéro de Téléphone',field_service:'Service Souhaité',field_message:'Message',btn_send:'Envoyer →',contact_hero_p:"Prêt à discuter de votre projet ? Que vous ayez besoin d'équipements miniers, de solutions énergétiques, d'engrais ou de courtage commercial — nous sommes là pour vous aider.",flag:'https://flagcdn.com/w20/fr.png',code:'FR',dir:'ltr'},
+  pt:{label_contact:'Contacte-Nos',label_direct:'Contacto Direto',form_title:'Envie-nos uma Mensagem',form_sub:'Preencha o formulário abaixo e entraremos em contacto brevemente.',field_fname:'Nome',field_lname:'Apelido',field_email:'Endereço de Email',field_phone:'Número de Telefone',field_service:'Serviço de Interesse',field_message:'Mensagem',btn_send:'Enviar →',contact_hero_p:'Pronto para discutir o seu projeto? Seja para equipamentos mineiros, soluções energéticas, fertilizantes ou corretagem comercial — estamos aqui para ajudar.',flag:'https://flagcdn.com/w20/pt.png',code:'PT',dir:'ltr'},
+  ar:{label_contact:'تواصل معنا',label_direct:'اتصال مباشر',form_title:'أرسل لنا رسالة',form_sub:'أكمل النموذج أدناه وسنرد عليك في أقرب وقت.',field_fname:'الاسم الأول',field_lname:'اسم العائلة',field_email:'البريد الإلكتروني',field_phone:'رقم الهاتف',field_service:'الخدمة المطلوبة',field_message:'رسالتك',btn_send:'إرسال →',contact_hero_p:'هل أنت مستعد لمناقشة مشروعك؟ سواء كنت تحتاج إلى معدات تعدين أو حلول طاقة أو أسمدة أو وساطة تجارية — نحن هنا للمساعدة.',flag:'https://flagcdn.com/w20/sa.png',code:'AR',dir:'rtl'}
 };
 
 function setLang(lang){
-  var t=T[lang];
+  const t=translations[lang];
   if(!t)return;
-  document.querySelectorAll("[data-translate]").forEach(function(el){
-    var k=el.getAttribute("data-translate");
-    if(t[k]!==undefined)el.innerHTML=t[k];
+  document.querySelectorAll('[data-translate]').forEach(el=>{
+    const key=el.getAttribute('data-translate');
+    if(t[key])el.innerHTML=t[key];
   });
   document.body.style.direction=t.dir;
-  document.documentElement.setAttribute("lang",lang);
-  document.getElementById("currentFlag").src=t.flag;
-  document.getElementById("currentLang").textContent=t.code;
-  document.querySelectorAll(".lang-option").forEach(function(o){o.classList.toggle("active",o.getAttribute("data-lang")===lang);});
-  document.getElementById("langDropdown").classList.remove("open");
-  try{localStorage.setItem("bigEnergy_lang",lang);}catch(e){}
+  document.getElementById('currentFlag').src=t.flag;
+  document.getElementById('currentLang').textContent=t.code;
+  document.querySelectorAll('.lang-option').forEach(o=>o.classList.remove('active'));
+  const target=document.querySelector(`.lang-option[onclick="setLang('${lang}')"]`);
+  if(target)target.classList.add('active');
+  document.getElementById('langDropdown').classList.remove('open');
+  try{localStorage.setItem('bigEnergy_lang',lang);}catch(e){}
 }
-
-try{var s=localStorage.getItem("bigEnergy_lang");if(s&&T[s])setLang(s);}catch(e){}
 </script>
 </body>
 </html>
