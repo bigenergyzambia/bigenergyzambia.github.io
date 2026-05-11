@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construction Materials — Big Energy & Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#C8962A;--gold-light:#E8B84B;--gold-pale:#F5E6C0;--navy:#0D1B3E;--navy-mid:#152347;--black:#060C18;--white:#F8F5EE;--gray:#8A8F9A;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--black);color:var(--white);font-family:'Josefin Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+  nav{position:fixed;top:0;width:100%;z-index:1000;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,12,24,0.97);border-bottom:1px solid rgba(200,150,42,0.15);backdrop-filter:blur(8px);}
+  .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+  .nav-logo img{height:52px;width:52px;object-fit:contain;filter:drop-shadow(0 0 10px rgba(200,150,42,0.3));mix-blend-mode:lighten;}
+  .nav-logo-text{display:flex;flex-direction:column;line-height:1.1;}
+  .nav-logo-text span:first-child{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--gold-light);letter-spacing:2px;}
+  .nav-logo-text span:last-child{font-size:9px;letter-spacing:4px;color:var(--gray);text-transform:uppercase;}
+  .nav-links{display:flex;gap:40px;list-style:none;}
+  .nav-links a{text-decoration:none;color:var(--white);font-size:11px;letter-spacing:3px;text-transform:uppercase;opacity:0.75;transition:all 0.3s;}
+  .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--gold-light);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+  .nav-cta{padding:10px 24px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:3px;text-decoration:none;transition:all 0.3s;}
+  .nav-cta:hover{background:var(--gold);color:var(--black);}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+  .hamburger span{width:24px;height:2px;background:var(--white);display:block;}
+  .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,12,24,0.99);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:var(--white);text-decoration:none;font-size:22px;letter-spacing:5px;text-transform:uppercase;font-family:'Cormorant Garamond',serif;}
+  .mobile-menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:32px;cursor:pointer;}
+  .page-hero{padding:180px 60px 100px;background:linear-gradient(135deg,var(--navy) 0%,var(--black) 60%);position:relative;border-bottom:1px solid rgba(200,150,42,0.2);background-image:url('img_construction.jpg');background-size:cover;background-position:center;}
+  .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,12,24,0.9) 0%,rgba(13,27,62,0.7) 100%);}
+  .section-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:16px;margin-bottom:20px;position:relative;z-index:2;}
+  .section-label::before{content:'';width:40px;height:1px;background:var(--gold);}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;position:relative;z-index:2;}
+  .section-title strong{color:var(--gold-light);font-weight:600;}
+  .page-hero p{font-size:15px;line-height:1.9;color:rgba(248,245,238,0.65);max-width:680px;margin-top:24px;position:relative;z-index:2;}
+  section{padding:80px 60px;}
+  .sub-sector-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin-top:50px;}
+  .sub-sector-card{background:var(--navy-mid);border:1px solid rgba(200,150,42,0.15);padding:35px;transition:all 0.3s;}
+  .sub-sector-card:hover{transform:translateY(-5px);border-color:rgba(200,150,42,0.4);}
+  .sub-sector-icon{font-size:48px;margin-bottom:20px;display:block;}
+  .sub-sector-card h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--gold-light);margin-bottom:15px;}
+  .sub-sector-card p{font-size:13px;line-height:1.8;color:rgba(248,245,238,0.65);margin-bottom:20px;}
+  .product-list{list-style:none;margin-top:15px;}
+  .product-list li{font-size:12px;padding:8px 0;border-bottom:1px solid rgba(200,150,42,0.1);color:var(--gray);}
+  .product-list li::before{content:'✓ ';color:var(--gold);}
+  .data-table{width:100%;border-collapse:collapse;margin:30px 0;background:rgba(6,12,24,0.6);}
+  .data-table th,.data-table td{padding:12px 15px;text-align:left;border:1px solid rgba(200,150,42,0.2);}
+  .data-table th{background:rgba(200,150,42,0.15);color:var(--gold-light);font-size:11px;letter-spacing:2px;font-weight:600;}
+  .data-table td{font-size:13px;color:rgba(248,245,238,0.75);}
+  footer{background:var(--navy);padding:80px 60px 40px;border-top:1px solid rgba(200,150,42,0.2);}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;}
+  .footer-brand img{height:70px;margin-bottom:20px;filter:drop-shadow(0 0 8px rgba(200,150,42,0.2));mix-blend-mode:lighten;}
+  .footer-brand p{font-size:12px;line-height:1.9;color:var(--gray);max-width:280px;}
+  .footer-col h4{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:12px;}
+  .footer-col a{text-decoration:none;color:var(--gray);font-size:12px;transition:color 0.3s;}
+  .footer-col a:hover{color:var(--gold-light);}
+  .footer-bottom{border-top:1px solid rgba(200,150,42,0.1);padding-top:30px;display:flex;justify-content:space-between;align-items:center;}
+  .footer-bottom p{font-size:10px;color:rgba(138,143,154,0.6);}
+  @media(max-width:900px){
+    nav{padding:14px 20px;}
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .nav-right .nav-cta{display:none;}
+    .page-hero{padding:120px 20px 60px;}
+    section{padding:60px 20px;}
+    .sub-sector-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr 1fr;gap:30px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="sectors.html">Sectors</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo_son3.png" alt="Big Energy Logo">
+    <div class="nav-logo-text">
+      <span>Big Energy &amp; Resources</span>
+      <span>Limited — Zambia</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="sectors.html" class="active">Sectors</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="contact.html" class="nav-cta">Get In Touch</a>
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="section-label">Construction</div>
+  <h1 class="section-title">Construction <strong>Materials</strong></h1>
+  <p>Ceramics, plumbing, paint, electrical fittings — complete construction solutions for Zambia's booming building sector.</p>
+</div>
+
+<!-- MARKET OVERVIEW -->
+<section>
+  <div class="section-label">Market Overview</div>
+  <h2 class="section-title" style="font-size:36px;margin-bottom:30px">Zambia's <strong>Construction Market</strong></h2>
+  <p style="margin-bottom:30px">Zambia's construction sector is booming due to rapid urbanization, mining expansion, and infrastructure development. Lusaka and Copperbelt cities are experiencing unprecedented growth in residential, commercial, and industrial construction. Most building materials are imported, creating significant opportunities for Turkish manufacturers.</p>
+  
+  <table class="data-table">
+    <tr><th>Indicator</th><th>Value</th></tr>
+    <tr><th>Construction Sector Growth (2024)</th><td>~8-10% annually</th></tr>
+    <tr><th>Major Drivers</th><td>Mining expansions, housing demand, commercial real estate, infrastructure projects</th></tr>
+    <tr><th>Key Import Categories</th><td>Ceramics, sanitary ware, paint, electrical fittings, steel, cement</th></tr>
+    <tr><th>Top Suppliers</th><td>China, South Africa, India, Turkey, UAE</th></tr>
+    <tr><th>Urban Population (2025)</th>以来~\45% (rapidly growing)</th></tr>
+  </table>
+</section>
+
+<!-- SUB-SECTORS -->
+<section style="background:var(--navy);">
+  <div class="section-label">Our Solutions</div>
+  <h2 class="section-title" style="margin-bottom:20px"><strong>What We Supply</strong></h2>
+  <p style="margin-bottom:40px">Complete construction material solutions for residential, commercial, and industrial projects.</p>
+  
+  <div class="sub-sector-grid">
+    
+    <!-- CERAMICS -->
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🪩</span>
+      <h3>Ceramics & Tiles</h3>
+      <p>Premium ceramic products from leading Turkish manufacturers.</p>
+      <ul class="product-list">
+        <li>Floor tiles (various sizes: 60x60, 45x45, 30x60)</li>
+        <li>Wall tiles (kitchen, bathroom, decorative)</li>
+        <li>Porcelain tiles (high durability, low absorption)</li>
+        <li>Terrazzo tiles (commercial use)</li>
+        <li>Mosaic tiles (glass, stone, ceramic)</li>
+        <li>Tile adhesives and grouts</li>
+        <li>Skirting boards and trims</li>
+      </ul>
+    </div>
+
+    <!-- PLUMBING -->
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🚰</span>
+      <h3>Plumbing & Sanitary</h3>
+      <p>Complete plumbing systems and sanitary ware.</p>
+      <ul class="product-list">
+        <li>PPRC pipes and fittings (hot/cold water)</li>
+        <li>PVC pipes (drainage, sewer, electrical conduit)</li>
+        <li>HDPE pipes (water supply)</li>
+        <li>Water tanks (plastic, steel, concrete)</li>
+        <li>Water pumps (submersible, jet, centrifugal)</li>
+        <li>Valves (ball, gate, check, pressure reducing)</li>
+      </ul>
+    </div>
+
+    <!-- PAINT -->
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🎨</span>
+      <h3>Paint & Coatings</h3>
+      <p>High-quality paints for interior and exterior applications.</p>
+      <ul class="product-list">
+        <li>Interior wall paints (matte, satin, washable)</li>
+        <li>Exterior wall paints (weather resistant)</li>
+        <li>Industrial coatings (epoxy, polyurethane)</li>
+        <li>Anti-corrosion paints (metal structures)</li>
+        <li>Wood paints and varnishes</li>
+        <li>Waterproofing membranes and liquids</li>
+        <li>Primers, sealers, and thinners</li>
+      </ul>
+    </div>
+
+    <!-- ELECTRICAL FITTINGS -->
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">⚡</span>
+      <h3>Electrical Fittings</h3>
+      <p>Complete electrical installation materials for buildings.</p>
+      <ul class="product-list">
+        <li>Wiring accessories (switches, sockets, dimmers)</li>
+        <li>Circuit breakers and distribution boards</li>
+        <li>Electrical wires and cables (building wire)</li>
+        <li>Conduits (PVC, flexible, metal)</li>
+        <li>Lighting fixtures (LED, decorative, industrial)</li>
+        <li>Ceiling fans and exhaust fans</li>
+        <li>Consumer units and enclosures</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ADDITIONAL CONSTRUCTION MATERIALS -->
+<section>
+  <div class="section-label">Additional Materials</div>
+  <h2 class="section-title" style="margin-bottom:20px">Other <strong>Construction Products</strong></h2>
+  <div class="sub-sector-grid">
+    
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🪟</span>
+      <h3>Doors & Windows</h3>
+      <ul class="product-list">
+        <li>Steel doors (security, fire-rated)</li>
+        <li>PVC and aluminum windows</li>
+        <li>Wooden doors (interior, exterior)</li>
+        <li>Sliding doors and folding systems</li>
+        <li>Door frames and hardware</li>
+      </ul>
+    </div>
+
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🪚</span>
+      <h3>Steel & Metal Products</h3>
+      <ul class="product-list">
+        <li>Reinforcement bars (rebar)</li>
+        <li>Steel profiles (angles, channels, beams)</li>
+        <li>Roofing sheets (galvanized, color-coated)</li>
+        <li>Wire mesh and nails</li>
+        <li>Pre-fabricated steel structures</li>
+      </ul>
+    </div>
+
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🧱</span>
+      <h3>Cement & Aggregates</h3>
+      <ul class="product-list">
+        <li>Portland cement (42.5, 52.5 grades)</li>
+        <li>Ready-mix concrete (through partners)</li>
+        <li>Concrete blocks and pavers</li>
+        <li>Plaster and mortar mixes</li>
+      </ul>
+    </div>
+
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🛠️</span>
+      <h3>Tools & Hardware</h3>
+      <ul class="product-list">
+        <li>Power tools (drills, grinders, saws)</li>
+        <li>Hand tools (hammers, wrenches, screwdrivers)</li>
+        <li>Measuring tools (laser levels, tape measures)</li>
+        <li>Safety equipment (helmets, gloves, boots)</li>
+        <li>Construction accessories (scaffolding, formwork)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TURKEY -->
+<section style="background:linear-gradient(135deg,var(--navy) 0%,var(--black) 100%);">
+  <div class="section-label">Why Turkey?</div>
+  <h2 class="section-title" style="font-size:36px;margin-bottom:20px"><strong>Turkish Construction Materials</strong> — Global Quality</h2>
+  <p style="margin-bottom:20px">Turkey is one of the world's largest producers of construction materials, with a strong reputation for quality and competitive pricing. Turkish ceramics, plumbing, paint, and electrical products are exported worldwide and trusted by global contractors.</p>
+  <table class="data-table">
+    <tr><th>Product Category</th><th>Turkish Advantage</th></tr>
+    <tr><td>Ceramics</td><td>Turkey is the 5th largest ceramic producer globally. 30-40% cheaper than European brands with comparable quality.</td></tr>
+    <tr><td>Plumbing</td><td>World-class PPRC and PVC pipe manufacturing. ISO and CE certified products.</td></tr>
+    <tr><td>Paint</td><td>European standard paints at Asian prices. Excellent weather resistance for African climates.</td></tr>
+    <tr><td>Electrical</td><td>IEC certified products. Affordable pricing compared to European alternatives.</td></tr>
+    <tr><td>Shipping</td><td>Established logistics routes from Turkish ports to Dar es Salaam (3-4 weeks).</td></tr>
+  </table>
+</section>
+
+<!-- MARKET OPPORTUNITY -->
+<section>
+  <div class="section-label">Opportunity</div>
+  <h2 class="section-title" style="margin-bottom:20px">Why <strong>Now?</strong></h2>
+  <div class="sub-sector-grid" style="margin-top:20px">
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🏗️</span>
+      <h3>Mining Boom</h3>
+      <p>Copper mining expansion requires new camps, workshops, offices, and housing — creating massive demand for all construction materials.</p>
+    </div>
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🏙️</span>
+      <h3>Urban Housing</h3>
+      <p>Lusaka's population is growing rapidly. New housing developments, apartments, and commercial buildings are under construction everywhere.</p>
+    </div>
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🛣️</span>
+      <h3>Infrastructure</h3>
+      <p>Government road, bridge, and energy projects increase demand for construction materials and equipment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="background:var(--gold);padding:60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,46px);font-weight:700;color:var(--black);max-width:500px;">Ready to supply Zambia's construction market?</h2>
+  <a href="contact.html" style="padding:16px 48px;background:var(--black);color:var(--gold-light);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;font-weight:600;">Contact Us →</a>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="logo_son3.png" alt="Big Energy Logo">
+      <p>Big Energy &amp; Resources Limited — Mining, Energy &amp; Trade solutions across Africa.</p>
+      <div class="reg">Reg. No. 11045170 · PACRA · Zambia</div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="sector-mining.html">Mining &amp; Equipment</a></li>
+        <li><a href="sector-solar.html">Solar &amp; Power</a></li>
+        <li><a href="sector-agri.html">Agricultural Trade</a></li>
+        <li><a href="sector-oil.html">Lubricants &amp; Oil</a></li>
+        <li><a href="sector-electrical.html">Electrical Systems</a></li>
+        <li><a href="sector-trade.html">Trade Brokerage</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+260973723566">+260 973 723 566</a></li>
+        <li><a href="tel:+905325190312">+90 532 519 0312</a></li>
+        <li><a href="mailto:info@bigenergyzambia.com">info@bigenergyzambia.com</a></li>
+        <li>Lusaka, Zambia 🇿🇲</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© Big Energy &amp; Resources Limited. All rights reserved.</p>
+    <p>Incorporated in Zambia · Reg. No. 11045170</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+</script>
+</body>
+</html>

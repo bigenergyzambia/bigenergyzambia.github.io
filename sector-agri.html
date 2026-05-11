@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agricultural Solutions — Big Energy & Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#C8962A;--gold-light:#E8B84B;--gold-pale:#F5E6C0;--navy:#0D1B3E;--navy-mid:#152347;--black:#060C18;--white:#F8F5EE;--gray:#8A8F9A;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--black);color:var(--white);font-family:'Josefin Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+  nav{position:fixed;top:0;width:100%;z-index:1000;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,12,24,0.97);border-bottom:1px solid rgba(200,150,42,0.15);backdrop-filter:blur(8px);}
+  .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+  .nav-logo img{height:52px;width:52px;object-fit:contain;filter:drop-shadow(0 0 10px rgba(200,150,42,0.3));mix-blend-mode:lighten;}
+  .nav-logo-text{display:flex;flex-direction:column;line-height:1.1;}
+  .nav-logo-text span:first-child{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--gold-light);letter-spacing:2px;}
+  .nav-logo-text span:last-child{font-size:9px;letter-spacing:4px;color:var(--gray);text-transform:uppercase;}
+  .nav-links{display:flex;gap:40px;list-style:none;}
+  .nav-links a{text-decoration:none;color:var(--white);font-size:11px;letter-spacing:3px;text-transform:uppercase;opacity:0.75;transition:all 0.3s;}
+  .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--gold-light);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+  .nav-cta{padding:10px 24px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:3px;text-decoration:none;transition:all 0.3s;}
+  .nav-cta:hover{background:var(--gold);color:var(--black);}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+  .hamburger span{width:24px;height:2px;background:var(--white);display:block;}
+  .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,12,24,0.99);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:var(--white);text-decoration:none;font-size:22px;letter-spacing:5px;text-transform:uppercase;font-family:'Cormorant Garamond',serif;}
+  .mobile-menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:32px;cursor:pointer;}
+  .page-hero{padding:180px 60px 100px;background:linear-gradient(135deg,var(--navy) 0%,var(--black) 60%);position:relative;border-bottom:1px solid rgba(200,150,42,0.2);background-image:url('img_agri.jpg');background-size:cover;background-position:center;}
+  .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,12,24,0.9) 0%,rgba(13,27,62,0.7) 100%);}
+  .section-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:16px;margin-bottom:20px;position:relative;z-index:2;}
+  .section-label::before{content:'';width:40px;height:1px;background:var(--gold);}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;position:relative;z-index:2;}
+  .section-title strong{color:var(--gold-light);font-weight:600;}
+  .page-hero p{font-size:15px;line-height:1.9;color:rgba(248,245,238,0.65);max-width:680px;margin-top:24px;position:relative;z-index:2;}
+  section{padding:80px 60px;}
+  .sub-sector-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin-top:50px;}
+  .sub-sector-card{background:var(--navy-mid);border:1px solid rgba(200,150,42,0.15);padding:35px;transition:all 0.3s;}
+  .sub-sector-card:hover{transform:translateY(-5px);border-color:rgba(200,150,42,0.4);}
+  .sub-sector-icon{font-size:48px;margin-bottom:20px;display:block;}
+  .sub-sector-card h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--gold-light);margin-bottom:15px;}
+  .sub-sector-card p{font-size:13px;line-height:1.8;color:rgba(248,245,238,0.65);margin-bottom:20px;}
+  .product-list{list-style:none;margin-top:15px;}
+  .product-list li{font-size:12px;padding:8px 0;border-bottom:1px solid rgba(200,150,42,0.1);color:var(--gray);}
+  .product-list li::before{content:'✓ ';color:var(--gold);}
+  .data-table{width:100%;border-collapse:collapse;margin:30px 0;background:rgba(6,12,24,0.6);}
+  .data-table th,.data-table td{padding:12px 15px;text-align:left;border:1px solid rgba(200,150,42,0.2);}
+  .data-table th{background:rgba(200,150,42,0.15);color:var(--gold-light);font-size:11px;letter-spacing:2px;font-weight:600;}
+  .data-table td{font-size:13px;color:rgba(248,245,238,0.75);}
+  .highlight{color:var(--gold-light);font-weight:600;}
+  footer{background:var(--navy);padding:80px 60px 40px;border-top:1px solid rgba(200,150,42,0.2);}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;}
+  .footer-brand img{height:70px;margin-bottom:20px;filter:drop-shadow(0 0 8px rgba(200,150,42,0.2));mix-blend-mode:lighten;}
+  .footer-brand p{font-size:12px;line-height:1.9;color:var(--gray);max-width:280px;}
+  .footer-col h4{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:12px;}
+  .footer-col a{text-decoration:none;color:var(--gray);font-size:12px;transition:color 0.3s;}
+  .footer-col a:hover{color:var(--gold-light);}
+  .footer-bottom{border-top:1px solid rgba(200,150,42,0.1);padding-top:30px;display:flex;justify-content:space-between;align-items:center;}
+  .footer-bottom p{font-size:10px;color:rgba(138,143,154,0.6);}
+  @media(max-width:900px){
+    nav{padding:14px 20px;}
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .nav-right .nav-cta{display:none;}
+    .page-hero{padding:120px 20px 60px;}
+    section{padding:60px 20px;}
+    .sub-sector-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr 1fr;gap:30px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="sectors.html">Sectors</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo_son3.png" alt="Big Energy Logo">
+    <div class="nav-logo-text">
+      <span>Big Energy &amp; Resources</span>
+      <span>Limited — Zambia</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="sectors.html" class="active">Sectors</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="contact.html" class="nav-cta">Get In Touch</a>
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="section-label">Agriculture</div>
+  <h1 class="section-title">Agricultural <strong>Solutions</strong></h1>
+  <p>From fertilizers and tractors to advanced irrigation systems — powering Zambia's agricultural growth with Turkish quality and competitive pricing.</p>
+</div>
+
+<!-- MARKET OVERVIEW -->
+<section>
+  <div class="section-label">Market Overview</div>
+  <h2 class="section-title" style="font-size:36px;margin-bottom:30px">Zambia's <strong>Agricultural Sector</strong></h2>
+  <p style="margin-bottom:30px">Agriculture is one of Zambia's fastest-growing economic sectors, contributing significantly to GDP and employment. With abundant arable land and a favorable climate, the country offers immense opportunities for agricultural inputs, machinery, and irrigation solutions.</p>
+  
+  <table class="data-table">
+    <tr><th>Indicator</th><th>Value</th></tr>
+    <tr><td>Annual Fertilizer Imports</td><td>632,000 - 796,000 metric tons</td></tr>
+    <tr><td>Fertilizer Import Value (2024)</td><td>$661.4 million USD</td></tr>
+    <tr><td>Agricultural Import Value (2024)</td><td>$797 million USD</td></tr>
+    <tr><td>Key Crops</td><td>Maize, Soybean, Sugar Cane, Tobacco, Cotton</td></tr>
+    <tr><td>Farmers Nationwide</td><td>~286,000 cotton farmers alone</td></tr>
+  </table>
+</section>
+
+<!-- SUB-SECTORS -->
+<section style="background:var(--navy);">
+  <div class="section-label">Our Solutions</div>
+  <h2 class="section-title" style="margin-bottom:20px"><strong>What We Supply</strong></h2>
+  <p style="margin-bottom:40px">Comprehensive agricultural solutions tailored to Zambian farmers, cooperatives, and agribusinesses.</p>
+  
+  <div class="sub-sector-grid">
+    
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🌾</span>
+      <h3>Fertilizers</h3>
+      <p>High-quality solid fertilizers from leading Turkish and global manufacturers.</p>
+      <ul class="product-list">
+        <li>Urea (46% N)</li>
+        <li>NPK Blends (various formulations)</li>
+        <li>DAP (Diammonium Phosphate)</li>
+        <li>Ammonium Nitrate</li>
+        <li>MAP (Monoammonium Phosphate)</li>
+      </ul>
+    </div>
+
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">💧</span>
+      <h3>Liquid Fertilizers</h3>
+      <p>Fast-absorbing foliar and liquid nutrient solutions for higher yields.</p>
+      <ul class="product-list">
+        <li>Foliar liquid fertilizers</li>
+        <li>Liquid nitrogen solutions</li>
+        <li>Micronutrient blends</li>
+        <li>Organic liquid plant foods</li>
+        <li>Hydroponic nutrients</li>
+      </ul>
+    </div>
+
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🚜</span>
+      <h3>Agricultural Machinery</h3>
+      <p>Complete range of farming equipment from Turkish manufacturers.</p>
+      <ul class="product-list">
+        <li>Tractors (various HP ranges)</li>
+        <li>Combine harvesters</li>
+        <li>Plows, harrows, cultivators</li>
+        <li>Planters and seeders</li>
+        <li>Trailers and transport equipment</li>
+      </ul>
+    </div>
+
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">💦</span>
+      <h3>Irrigation Systems</h3>
+      <p>Modern irrigation solutions for water efficiency and crop health.</p>
+      <ul class="product-list">
+        <li>Drip irrigation systems</li>
+        <li>Sprinkler systems (manual & traveling gun)</li>
+        <li>Center pivot systems</li>
+        <li>Water pumps (diesel, electric, solar)</li>
+        <li>Pipes, fittings, and filtration</li>
+      </ul>
+    </div>
+
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🐛</span>
+      <h3>Crop Protection</h3>
+      <p>Pesticides, herbicides, and fungicides for healthy crops.</p>
+      <ul class="product-list">
+        <li>Herbicides (pre & post emergence)</li>
+        <li>Insecticides for major pests</li>
+        <li>Fungicides for disease control</li>
+        <li>Seed treatments</li>
+        <li>Organic crop protection options</li>
+      </ul>
+    </div>
+
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🏪</span>
+      <h3>Post-Harvest Solutions</h3>
+      <p>Equipment for storage, drying, and processing agricultural products.</p>
+      <ul class="product-list">
+        <li>Grain silos and storage bins</li>
+        <li>Grain dryers</li>
+        <li>Maize shellers and threshers</li>
+        <li>Grinding mills</li>
+        <li>Packaging equipment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TURKEY -->
+<section>
+  <div class="section-label">Why Turkey?</div>
+  <h2 class="section-title" style="font-size:36px;margin-bottom:20px"><strong>Turkish Quality</strong> for African Agriculture</h2>
+  <p style="margin-bottom:20px">Turkey is a global leader in agricultural machinery, fertilizers, and irrigation technology. Turkish products offer:</p>
+  <ul class="product-list" style="margin-bottom:30px">
+    <li>Exceptional quality at competitive prices</li>
+    <li>European standards and certifications</li>
+    <li>Reliable after-sales support and spare parts</li>
+    <li>Proven performance in similar climates and conditions</li>
+  </ul>
+  <table class="data-table">
+    <tr><th>Advantage</th><th>Benefit for Zambian Buyers</th></tr>
+    <tr><td>Cost Savings</td><td>30-40% lower than European equivalents</td></tr>
+    <tr><td>Climate Compatibility</td><td>Turkish equipment tested in similar agricultural zones</td></tr>
+    <tr><td>Direct Sourcing</td><td>No middlemen — we connect you directly to manufacturers</td></tr>
+    <tr><td>Logistics Expertise</td><td>Established shipping routes from Türkiye to Zambia</td></tr>
+  </table>
+</section>
+
+<!-- MARKET OPPORTUNITY -->
+<section style="background:linear-gradient(135deg,var(--navy) 0%,var(--black) 100%);">
+  <div class="section-label">Opportunity</div>
+  <h2 class="section-title" style="margin-bottom:20px">Why <strong>Now?</strong></h2>
+  <div class="sub-sector-grid" style="margin-top:20px">
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">📈</span>
+      <h3>Growing Demand</h3>
+      <p>Zambia's population is growing rapidly, driving food demand. Agricultural imports increased from $604M (2023) to $797M (2024) — a 32% jump.</p>
+    </div>
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">💰</span>
+      <h3>Government Support</h3>
+      <p>Zambia offers tax incentives for agricultural inputs and machinery. The government prioritizes food security and self-sufficiency.</p>
+    </div>
+    <div class="sub-sector-card">
+      <span class="sub-sector-icon">🤝</span>
+      <h3>Ready Partner</h3>
+      <p>Big Energy & Resources is your local arm in Lusaka — handling logistics, distribution, and client relationships while you focus on production.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="background:var(--gold);padding:60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,46px);font-weight:700;color:var(--black);max-width:500px;">Ready to supply Zambia's agricultural market?</h2>
+  <a href="contact.html" style="padding:16px 48px;background:var(--black);color:var(--gold-light);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;font-weight:600;">Contact Us →</a>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="logo_son3.png" alt="Big Energy Logo">
+      <p>Big Energy &amp; Resources Limited — Mining, Energy &amp; Trade solutions across Africa.</p>
+      <div class="reg">Reg. No. 11045170 · PACRA · Zambia</div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="sector-mining.html">Mining &amp; Equipment</a></li>
+        <li><a href="sector-solar.html">Solar &amp; Power</a></li>
+        <li><a href="sector-agri.html">Agricultural Trade</a></li>
+        <li><a href="sector-oil.html">Lubricants &amp; Oil</a></li>
+        <li><a href="sector-electrical.html">Electrical Systems</a></li>
+        <li><a href="sector-trade.html">Trade Brokerage</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+260973723566">+260 973 723 566</a></li>
+        <li><a href="tel:+905325190312">+90 532 519 0312</a></li>
+        <li><a href="mailto:info@bigenergyzambia.com">info@bigenergyzambia.com</a></li>
+        <li>Lusaka, Zambia 🇿🇲</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© Big Energy &amp; Resources Limited. All rights reserved.</p>
+    <p>Incorporated in Zambia · Reg. No. 11045170</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+</script>
+</body>
+</html>
