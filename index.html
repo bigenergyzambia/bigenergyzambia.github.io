@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Big Energy & Resources Limited — Zambia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2 family=Cormorant+Garamond:wght@300;400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --gold:#C8962A; --gold-light:#E8B84B; --gold-pale:#F5E6C0;
@@ -400,22 +400,25 @@ let cur=0;const slides=document.querySelectorAll('.hero-slide');const dots=docum
 function goSlide(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');dots[cur].classList.add('active');}
 setInterval(()=>goSlide((cur+1)%slides.length),5000);
 
-// Language Switcher Logic
+// Safe Language Switcher Logic
 function setLang(lang){
-  let flagUrl="https://flagcdn.com/w20/gb.png",code="EN";
+  var flagUrl="https://flagcdn.com/w20/gb.png",code="EN";
   if(lang==='tr'){flagUrl="https://flagcdn.com/w20/tr.png";code="TR";}
   else if(lang==='fr'){flagUrl="https://flagcdn.com/w20/fr.png";code="FR";}
   else if(lang==='pt'){flagUrl="https://flagcdn.com/w20/pt.png";code="PT";}
   else if(lang==='ar'){flagUrl="https://flagcdn.com/w20/sa.png";code="AR";}
   
-  document.getElementById('currentFlag').src=flagUrl;
-  document.getElementById('currentLang').innerText=code;
-  document.getElementById('langDropdown').classList.remove('open');
+  var f=document.getElementById('currentFlag');
+  var c=document.getElementById('currentLang');
+  if(f) f.src=flagUrl;
+  if(c) c.innerText=code;
+  
+  var d=document.getElementById('langDropdown');
+  if(d) d.classList.remove('open');
+  
   document.body.style.direction=lang==='ar'?'rtl':'ltr';
   document.querySelectorAll('.lang-option').forEach(function(o){o.classList.remove('active');});
   
-  var t=document.querySelector('.lang-option[onclick="setLang(\''+lang+'\')"]');
-  if(t)t.classList.add('active');
   try{localStorage.setItem('be_lang',lang);}catch(e){}
 }
 
@@ -423,8 +426,19 @@ document.addEventListener('DOMContentLoaded',function(){
   try{var s=localStorage.getItem('be_lang');if(s)setLang(s);}catch(e){}
 });
 
-document.getElementById('langBtn').addEventListener('click',function(e){e.stopPropagation();document.getElementById('langDropdown').classList.toggle('open');});
-document.addEventListener('click',function(e){if(!document.getElementById('langBtn').contains(e.target))document.getElementById('langDropdown').classList.remove('open');});
+var lb=document.getElementById('langBtn');
+if(lb){
+  lb.addEventListener('click',function(e){
+    e.stopPropagation();
+    var ld=document.getElementById('langDropdown');
+    if(ld) ld.classList.toggle('open');
+  });
+}
+document.addEventListener('click',function(e){
+  var lb=document.getElementById('langBtn');
+  var ld=document.getElementById('langDropdown');
+  if(lb && ld && !lb.contains(e.target)) ld.classList.remove('open');
+});
 </script>
 </body>
 </html>
