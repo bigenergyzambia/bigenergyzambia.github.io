@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Big Energy & Resources Limited — Zambia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2 family=Cormorant+Garamond:wght@300;400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --gold:#C8962A; --gold-light:#E8B84B; --gold-pale:#F5E6C0;
@@ -31,6 +31,19 @@
   .nav-right{display:flex;align-items:center;gap:16px;}
   .nav-cta{padding:10px 24px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
   .nav-cta:hover{background:var(--gold);color:var(--black);}
+
+  /* Language Switcher */
+  .lang-switcher{position:relative;}
+  .lang-btn{background:none;border:1px solid rgba(200,150,42,0.3);color:var(--gold);padding:7px 14px;font-size:10px;letter-spacing:2px;cursor:pointer;font-family:'Josefin Sans',sans-serif;display:flex;align-items:center;gap:7px;}
+  .lang-btn:hover{border-color:var(--gold);background:rgba(200,150,42,0.1);}
+  .lang-btn img{height:14px;border-radius:2px;}
+  .lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--navy);border:1px solid rgba(200,150,42,0.3);min-width:170px;z-index:9999;}
+  .lang-dropdown.open{display:block;}
+  .lang-option{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;font-size:11px;color:var(--white);background:none;border:none;width:100%;text-align:left;font-family:'Josefin Sans',sans-serif;}
+  .lang-option:hover{background:rgba(200,150,42,0.1);color:var(--gold);}
+  .lang-option img{height:16px;border-radius:2px;}
+  .lang-option.active{color:var(--gold);}
+
   .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
   .hamburger span{width:24px;height:2px;background:var(--white);display:block;transition:all 0.3s;}
   .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,12,24,0.99);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
@@ -40,12 +53,12 @@
   .mobile-menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:32px;cursor:pointer;}
 
   .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-  .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 2s ease;opacity:0;}
-  .hero-slide.active{opacity:1;}
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,12,24,0.85) 0%,rgba(13,27,62,0.6) 50%,rgba(6,12,24,0.8) 100%);}
-  .hero-content{text-align:center;position:relative;z-index:2;padding:0 20px;padding-top:80px;}
+  .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 1.5s ease-in-out;opacity:0;z-index:1;}
+  .hero-slide.active{opacity:1;z-index:2;}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,12,24,0.85) 0%,rgba(13,27,62,0.6) 50%,rgba(6,12,24,0.8) 100%);z-index:3;}
+  .hero-content{text-align:center;position:relative;z-index:4;padding:0 20px;padding-top:80px;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
-  .hero-logo{width:160px;height:160px;margin:0 auto 24px;display:block;object-fit:contain;filter:drop-shadow(0 0 50px rgba(200,150,42,0.5));animation:fadeUp 1.2s 0.1s ease both;}
+  .hero-logo{width:160px;height:160px;margin:0 auto 24px;display:block;object-fit:contain;filter:drop-shadow(0 0 50px rgba(200,150,42,0.5));animation:fadeUp 1.2s 0.1s ease both;mix-blend-mode:lighten;}
   .hero-badge{display:inline-block;padding:6px 20px;border:1px solid rgba(200,150,42,0.45);font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;animation:fadeUp 1.2s 0.3s ease both;}
   .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,7vw,80px);font-weight:300;line-height:1.05;letter-spacing:4px;animation:fadeUp 1.2s 0.4s ease both;}
   .hero h1 em{font-style:normal;color:var(--gold-light);display:block;font-weight:600;}
@@ -177,6 +190,19 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" id="langBtn">
+        <img src="https://flagcdn.com/w20/gb.png" id="currentFlag" alt="">
+        <span id="currentLang">EN</span> ▾
+      </button>
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-option active" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png"> English</button>
+        <button class="lang-option" onclick="setLang('tr')"><img src="https://flagcdn.com/w20/tr.png"> Turkish</button>
+        <button class="lang-option" onclick="setLang('fr')"><img src="https://flagcdn.com/w20/fr.png"> French</button>
+        <button class="lang-option" onclick="setLang('pt')"><img src="https://flagcdn.com/w20/pt.png"> Portuguese</button>
+        <button class="lang-option" onclick="setLang('ar')"><img src="https://flagcdn.com/w20/sa.png"> Arabic</button>
+      </div>
+    </div>
     <a href="contact.html" class="nav-cta">Get In Touch</a>
     <button class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -215,7 +241,6 @@
   <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Countries</div></div>
 </div>
 
-<!-- 9 SECTORS GRID -->
 <section style="background:var(--black);padding:100px 60px;">
   <div class="section-label">Our Sectors</div>
   <h2 class="section-title">What <strong>We Do</strong></h2>
@@ -306,7 +331,6 @@
   </div>
 </section>
 
-<!-- HOW WE WORK -->
 <section class="how">
   <div class="section-label">How We Work</div>
   <h2 class="section-title">We Research. We Connect. <strong>We Deliver.</strong></h2>
@@ -317,7 +341,6 @@
   </div>
 </section>
 
-<!-- NETWORK -->
 <section class="network">
   <div class="section-label">Our Network</div>
   <h2 class="section-title">Zambia Meets <strong>The World</strong></h2>
@@ -328,7 +351,6 @@
   </div>
 </section>
 
-<!-- WHY AFRICA -->
 <section class="why">
   <div class="why-inner">
     <div class="why-text">
@@ -351,7 +373,6 @@
   </div>
 </section>
 
-<!-- CTA -->
 <div class="cta-band">
   <h2>Ready to partner with us in Africa?</h2>
   <a href="contact.html" class="btn-dark">Let's Talk →</a>
@@ -364,7 +385,7 @@
       <p>Big Energy &amp; Resources Limited — Mining, Energy &amp; Trade solutions across Africa.</p>
       <div class="reg">Reg. No. 11045170 · PACRA · Zambia</div>
     </div>
-    <div class="footer-col"><h4>Services</h4><ul><li><a href="sector-mining.html">Mining &amp; Equipment</a></li><li><a href="sector-solar.html">Solar &amp; Power</a></li><li><a href="sector-agri.html">Agricultural Trade</a></li><li><a href="sector-oil.html">Lubricants &amp; Oil</a></li><li><a href="sector-electrical.html">Electrical Systems</a></li><li><a href="sector-trade.html">Trade Brokerage</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="sector-mining.html">Mining &amp; Equipment</a></li><li><a href="sector-solar.html">Solar &amp; Power</a></li><li><a href="sector-agri.html">Agricultural Trade</a></li><li><a href="sector-oil.html">Lubricants &amp; Oil</a></li><li><a href="sector-electrical.html">Electrical Systems</a></li><li><a href="sector-trade.html">Trade Brokerage</a></li><li><a href="sector-cleaning.html">Cleaning Products</a></li><li><a href="sector-construction.html">Construction Materials</a></li><li><a href="sector-textile.html">Textile Products</a></li></ul></div>
     <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+260973723566">+260 973 723 566</a></li><li><a href="tel:+905325190312">+90 532 519 0312</a></li><li><a href="mailto:info@bigenergyzambia.com">info@bigenergyzambia.com</a></li><li>Lusaka, Zambia 🇿🇲</li></ul></div>
   </div>
@@ -374,9 +395,36 @@
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
 window.addEventListener('scroll',function(){document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60);});
+
 let cur=0;const slides=document.querySelectorAll('.hero-slide');const dots=document.querySelectorAll('.hero-dot');
 function goSlide(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');dots[cur].classList.add('active');}
 setInterval(()=>goSlide((cur+1)%slides.length),5000);
+
+// Language Switcher Logic
+function setLang(lang){
+  let flagUrl="https://flagcdn.com/w20/gb.png",code="EN";
+  if(lang==='tr'){flagUrl="https://flagcdn.com/w20/tr.png";code="TR";}
+  else if(lang==='fr'){flagUrl="https://flagcdn.com/w20/fr.png";code="FR";}
+  else if(lang==='pt'){flagUrl="https://flagcdn.com/w20/pt.png";code="PT";}
+  else if(lang==='ar'){flagUrl="https://flagcdn.com/w20/sa.png";code="AR";}
+  
+  document.getElementById('currentFlag').src=flagUrl;
+  document.getElementById('currentLang').innerText=code;
+  document.getElementById('langDropdown').classList.remove('open');
+  document.body.style.direction=lang==='ar'?'rtl':'ltr';
+  document.querySelectorAll('.lang-option').forEach(function(o){o.classList.remove('active');});
+  
+  var t=document.querySelector('.lang-option[onclick="setLang(\''+lang+'\')"]');
+  if(t)t.classList.add('active');
+  try{localStorage.setItem('be_lang',lang);}catch(e){}
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  try{var s=localStorage.getItem('be_lang');if(s)setLang(s);}catch(e){}
+});
+
+document.getElementById('langBtn').addEventListener('click',function(e){e.stopPropagation();document.getElementById('langDropdown').classList.toggle('open');});
+document.addEventListener('click',function(e){if(!document.getElementById('langBtn').contains(e.target))document.getElementById('langDropdown').classList.remove('open');});
 </script>
 </body>
 </html>
