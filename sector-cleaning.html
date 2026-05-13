@@ -21,13 +21,23 @@
   .nav-right{display:flex;align-items:center;gap:16px;}
   .nav-cta{padding:10px 24px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:3px;text-decoration:none;transition:all 0.3s;}
   .nav-cta:hover{background:var(--gold);color:var(--black);}
+
+  .lang-switcher{position:relative;}
+  .lang-btn{background:none;border:1px solid rgba(200,150,42,0.3);color:var(--gold);padding:7px 14px;font-size:10px;letter-spacing:2px;cursor:pointer;font-family:'Josefin Sans',sans-serif;display:flex;align-items:center;gap:7px;}
+  .lang-btn img{height:14px;border-radius:2px;}
+  .lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--navy);border:1px solid rgba(200,150,42,0.3);min-width:170px;z-index:9999;box-shadow:0 12px 40px rgba(0,0,0,0.7);}
+  .lang-dropdown.open{display:block;}
+  .lang-option{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;font-size:11px;color:var(--white);background:none;border:none;width:100%;text-align:left;font-family:'Josefin Sans',sans-serif;}
+  .lang-option:hover{background:rgba(200,150,42,0.1);color:var(--gold);}
+  .lang-option img{height:16px;border-radius:2px;}
+  .lang-option.active{color:var(--gold);}
   .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
   .hamburger span{width:24px;height:2px;background:var(--white);display:block;}
   .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,12,24,0.99);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
   .mobile-menu.open{display:flex;}
   .mobile-menu a{color:var(--white);text-decoration:none;font-size:22px;letter-spacing:5px;text-transform:uppercase;font-family:'Cormorant Garamond',serif;}
   .mobile-menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:32px;cursor:pointer;}
-  .page-hero{padding:180px 60px 100px;background:linear-gradient(135deg,var(--navy) 0%,var(--black) 60%);position:relative;border-bottom:1px solid rgba(200,150,42,0.2);background-image:url('img_cleaning.jpg');background-size:cover;background-position:center;}
+  .page-hero{padding:180px 60px 100px;background:linear-gradient(135deg,var(--navy) 0%,var(--black) 60%);position:relative;border-bottom:1px solid rgba(200,150,42,0.2);background-image:url('img_cleaning.png');background-size:cover;background-position:center;}
   .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,12,24,0.9) 0%,rgba(13,27,62,0.7) 100%);}
   .section-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:16px;margin-bottom:20px;position:relative;z-index:2;}
   .section-label::before{content:'';width:40px;height:1px;background:var(--gold);}
@@ -43,7 +53,7 @@
   .sub-sector-card p{font-size:13px;line-height:1.8;color:rgba(248,245,238,0.65);margin-bottom:20px;}
   .product-list{list-style:none;margin-top:15px;}
   .product-list li{font-size:12px;padding:8px 0;border-bottom:1px solid rgba(200,150,42,0.1);color:var(--gray);}
-  .product-list li::before{content:'\2713 ';color:var(--gold);}
+  .product-list li::before{content:'+ ';color:var(--gold);}
   .data-table{width:100%;border-collapse:collapse;margin:30px 0;background:rgba(6,12,24,0.6);}
   .data-table th,.data-table td{padding:12px 15px;text-align:left;border:1px solid rgba(200,150,42,0.2);}
   .data-table th{background:rgba(200,150,42,0.15);color:var(--gold-light);font-size:11px;letter-spacing:2px;font-weight:600;}
@@ -95,6 +105,19 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" id="langBtn">
+        <img src="https://flagcdn.com/w20/gb.png" id="currentFlag" alt="">
+        <span id="currentLang">EN</span> v
+      </button>
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-option active" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png" alt=""> English</button>
+        <button class="lang-option" onclick="setLang('tr')"><img src="https://flagcdn.com/w20/tr.png" alt=""> Turkce</button>
+        <button class="lang-option" onclick="setLang('fr')"><img src="https://flagcdn.com/w20/fr.png" alt=""> Francais</button>
+        <button class="lang-option" onclick="setLang('pt')"><img src="https://flagcdn.com/w20/pt.png" alt=""> Portugues</button>
+        <button class="lang-option" onclick="setLang('ar')"><img src="https://flagcdn.com/w20/sa.png" alt=""> Arabic</button>
+      </div>
+    </div>
     <a href="contact.html" class="nav-cta">Get In Touch</a>
     <button class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -149,7 +172,7 @@
   
   <div class="sub-sector-grid">
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">R</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">01</span>
       <h3>Rust Removers</h3>
       <p>Powerful solutions for removing rust from metal surfaces, equipment, and machinery.</p>
       <ul class="product-list">
@@ -160,7 +183,7 @@
       </ul>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">D</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">02</span>
       <h3>Degreasers</h3>
       <p>Heavy-duty degreasers for removing oil, grease, and industrial contaminants.</p>
       <ul class="product-list">
@@ -171,7 +194,7 @@
       </ul>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">F</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">03</span>
       <h3>Iron Powder Removers</h3>
       <p>Specialized solutions for removing iron dust, metal particles, and swarf.</p>
       <ul class="product-list">
@@ -182,7 +205,7 @@
       </ul>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">S</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">04</span>
       <h3>Industrial Disinfectants</h3>
       <p>High-strength sanitizers for industrial hygiene and food processing.</p>
       <ul class="product-list">
@@ -202,7 +225,7 @@
   
   <div class="sub-sector-grid">
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">W</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">05</span>
       <h3>Detergents and Soaps</h3>
       <ul class="product-list">
         <li>Laundry powders and liquids</li>
@@ -212,7 +235,7 @@
       </ul>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">H</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">06</span>
       <h3>Hotel and Hospitality</h3>
       <ul class="product-list">
         <li>Commercial laundry chemicals</li>
@@ -222,7 +245,7 @@
       </ul>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">C</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">07</span>
       <h3>Surface Cleaners</h3>
       <ul class="product-list">
         <li>All-purpose cleaners</li>
@@ -251,6 +274,27 @@
 
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+document.addEventListener('DOMContentLoaded',function(){
+  var b=document.getElementById('langBtn'),d=document.getElementById('langDropdown');
+  if(b&&d){
+    b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});
+    document.addEventListener('click',function(e){if(!b.contains(e.target))d.classList.remove('open');});
+  }
+  try{var s=localStorage.getItem('be_lang');if(s)setLang(s);}catch(e){}
+});
+var lf={en:'https://flagcdn.com/w20/gb.png',tr:'https://flagcdn.com/w20/tr.png',fr:'https://flagcdn.com/w20/fr.png',pt:'https://flagcdn.com/w20/pt.png',ar:'https://flagcdn.com/w20/sa.png'};
+var lc={en:'EN',tr:'TR',fr:'FR',pt:'PT',ar:'AR'};
+function setLang(l){
+  if(!lf[l])return;
+  var f=document.getElementById('currentFlag'),c=document.getElementById('currentLang');
+  if(f)f.src=lf[l];if(c)c.textContent=lc[l];
+  document.body.style.direction=l==='ar'?'rtl':'ltr';
+  document.querySelectorAll('.lang-option').forEach(function(o){o.classList.remove('active');});
+  var t=document.querySelector('.lang-option[onclick="setLang(''+l+'')"]');
+  if(t)t.classList.add('active');
+  var d=document.getElementById('langDropdown');if(d)d.classList.remove('open');
+  try{localStorage.setItem('be_lang',l);}catch(e){}
+}
 </script>
 </body>
 </html>

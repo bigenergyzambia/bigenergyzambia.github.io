@@ -21,13 +21,23 @@
   .nav-right{display:flex;align-items:center;gap:16px;}
   .nav-cta{padding:10px 24px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:3px;text-decoration:none;transition:all 0.3s;}
   .nav-cta:hover{background:var(--gold);color:var(--black);}
+
+  .lang-switcher{position:relative;}
+  .lang-btn{background:none;border:1px solid rgba(200,150,42,0.3);color:var(--gold);padding:7px 14px;font-size:10px;letter-spacing:2px;cursor:pointer;font-family:'Josefin Sans',sans-serif;display:flex;align-items:center;gap:7px;}
+  .lang-btn img{height:14px;border-radius:2px;}
+  .lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--navy);border:1px solid rgba(200,150,42,0.3);min-width:170px;z-index:9999;box-shadow:0 12px 40px rgba(0,0,0,0.7);}
+  .lang-dropdown.open{display:block;}
+  .lang-option{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;font-size:11px;color:var(--white);background:none;border:none;width:100%;text-align:left;font-family:'Josefin Sans',sans-serif;}
+  .lang-option:hover{background:rgba(200,150,42,0.1);color:var(--gold);}
+  .lang-option img{height:16px;border-radius:2px;}
+  .lang-option.active{color:var(--gold);}
   .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
   .hamburger span{width:24px;height:2px;background:var(--white);display:block;}
   .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,12,24,0.99);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
   .mobile-menu.open{display:flex;}
   .mobile-menu a{color:var(--white);text-decoration:none;font-size:22px;letter-spacing:5px;text-transform:uppercase;font-family:'Cormorant Garamond',serif;}
   .mobile-menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:32px;cursor:pointer;}
-  .page-hero{padding:180px 60px 100px;background:linear-gradient(135deg,var(--navy) 0%,var(--black) 60%);position:relative;border-bottom:1px solid rgba(200,150,42,0.2);background-image:url('img_trade.jpg');background-size:cover;background-position:center;}
+  .page-hero{padding:180px 60px 100px;background:linear-gradient(135deg,var(--navy) 0%,var(--black) 60%);position:relative;border-bottom:1px solid rgba(200,150,42,0.2);background-image:url('img_mining.png');background-size:cover;background-position:center;}
   .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,12,24,0.9) 0%,rgba(13,27,62,0.7) 100%);}
   .section-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:16px;margin-bottom:20px;position:relative;z-index:2;}
   .section-label::before{content:'';width:40px;height:1px;background:var(--gold);}
@@ -43,7 +53,7 @@
   .sub-sector-card p{font-size:13px;line-height:1.8;color:rgba(248,245,238,0.65);margin-bottom:20px;}
   .product-list{list-style:none;margin-top:15px;}
   .product-list li{font-size:12px;padding:8px 0;border-bottom:1px solid rgba(200,150,42,0.1);color:var(--gray);}
-  .product-list li::before{content:'✓ ';color:var(--gold);}
+  .product-list li::before{content:'+ ';color:var(--gold);}
   .data-table{width:100%;border-collapse:collapse;margin:30px 0;background:rgba(6,12,24,0.6);}
   .data-table th,.data-table td{padding:12px 15px;text-align:left;border:1px solid rgba(200,150,42,0.2);}
   .data-table th{background:rgba(200,150,42,0.15);color:var(--gold-light);font-size:11px;letter-spacing:2px;font-weight:600;}
@@ -75,7 +85,7 @@
 <body>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+  <button class="mobile-menu-close" onclick="toggleMenu()">X</button>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="sectors.html">Sectors</a>
@@ -97,6 +107,19 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" id="langBtn">
+        <img src="https://flagcdn.com/w20/gb.png" id="currentFlag" alt="">
+        <span id="currentLang">EN</span> v
+      </button>
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-option active" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png" alt=""> English</button>
+        <button class="lang-option" onclick="setLang('tr')"><img src="https://flagcdn.com/w20/tr.png" alt=""> Turkce</button>
+        <button class="lang-option" onclick="setLang('fr')"><img src="https://flagcdn.com/w20/fr.png" alt=""> Francais</button>
+        <button class="lang-option" onclick="setLang('pt')"><img src="https://flagcdn.com/w20/pt.png" alt=""> Portugues</button>
+        <button class="lang-option" onclick="setLang('ar')"><img src="https://flagcdn.com/w20/sa.png" alt=""> Arabic</button>
+      </div>
+    </div>
     <a href="contact.html" class="nav-cta">Get In Touch</a>
     <button class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -118,7 +141,7 @@
   <p style="margin-bottom:30px">Big Energy & Resources offers comprehensive trade brokerage services, connecting international suppliers (especially Turkish manufacturers) with buyers across Zambia and the Southern African region. We handle the entire process — from sourcing and negotiation to logistics coordination and after-sales support.</p>
   
   <div class="highlight">
-    <p style="color:var(--gold-light); font-weight:600; margin-bottom:10px;">🇹🇷🇿🇲 Turkish-Zambian Trade Bridge</p>
+    <p style="color:var(--gold-light); font-weight:600; margin-bottom:10px;">Turkish-Zambian Trade Bridge</p>
     <p style="margin-bottom:0;">Turkey's total trade with Sub-Saharan Africa reached <strong>$25 billion</strong> in 2023, with Zambia being a key growth market. We facilitate this trade by providing local representation, market intelligence, and operational support for Turkish exporters.</p>
   </div>
 </section>
@@ -132,7 +155,7 @@
   <div class="sub-sector-grid">
     
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🔍</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">01</span>
       <h3>Sourcing & Supplier Matching</h3>
       <p>We identify the right suppliers or buyers for your specific product needs.</p>
       <ul class="product-list">
@@ -145,7 +168,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🤝</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">02</span>
       <h3>Negotiation & Contract Management</h3>
       <p>Professional negotiation and contract oversight for optimal terms.</p>
       <ul class="product-list">
@@ -158,7 +181,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🚢</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">03</span>
       <h3>Logistics Coordination</h3>
       <p>End-to-end logistics management from factory to destination.</p>
       <ul class="product-list">
@@ -171,7 +194,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">💼</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">04</span>
       <h3>Wholesale Distribution</h3>
       <p>Direct wholesale supply of products to Zambian buyers.</p>
       <ul class="product-list">
@@ -184,7 +207,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">📊</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">05</span>
       <h3>Market Intelligence</h3>
       <p>Data-driven insights for informed business decisions.</p>
       <ul class="product-list">
@@ -197,7 +220,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🛡️</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">06</span>
       <h3>After-Sales Support</h3>
       <p>Ongoing support to ensure customer satisfaction and repeat business.</p>
       <ul class="product-list">
@@ -219,7 +242,7 @@
   
   <div class="sub-sector-grid">
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">⛏️</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">07</span>
       <h3>Mining</h3>
       <ul class="product-list">
         <li>Heavy equipment and machinery</li>
@@ -231,7 +254,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">☀️</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">08</span>
       <h3>Energy</h3>
       <ul class="product-list">
         <li>Solar panels and inverters</li>
@@ -243,7 +266,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🌾</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">09</span>
       <h3>Agriculture</h3>
       <ul class="product-list">
         <li>Fertilizers (solid and liquid)</li>
@@ -255,7 +278,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🧼</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">10</span>
       <h3>Chemicals & Cleaning</h3>
       <ul class="product-list">
         <li>Industrial degreasers and solvents</li>
@@ -267,7 +290,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🏗️</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">11</span>
       <h3>Construction</h3>
       <ul class="product-list">
         <li>Ceramic tiles and sanitary ware</li>
@@ -279,7 +302,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">👕</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">12</span>
       <h3>Textile</h3>
       <ul class="product-list">
         <li>Industrial workwear and uniforms</li>
@@ -298,32 +321,32 @@
   <h2 class="section-title" style="margin-bottom:20px"><strong>Big Energy</strong> Advantage</h2>
   <div class="sub-sector-grid" style="margin-top:20px">
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🇿🇲</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">13</span>
       <h3>Local Presence</h3>
       <p>Registered company in Lusaka with local staff, office, and warehouse. We're not remote brokers — we're on the ground.</p>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🌍</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">14</span>
       <h3>Multilingual Team</h3>
       <p>Turkish, English, Portuguese, and Arabic speaking team ensures seamless communication across all parties.</p>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🏛️</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">15</span>
       <h3>Government & Corporate Ties</h3>
       <p>Established relationships with mining houses, government agencies, and major corporate buyers.</p>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">📋</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">16</span>
       <h3>Full Transparency</h3>
       <p>Weekly reports, real-time updates, and complete visibility throughout the trade process.</p>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">💰</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">17</span>
       <h3>Low Risk Entry</h3>
       <p>3-month pilot period. No need to establish a local entity — use our infrastructure to test the market.</p>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🏆</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">18</span>
       <h3>Proven Track Record</h3>
       <p>Successfully facilitated multiple trade transactions between Turkey and Zambia since 2024.</p>
     </div>
@@ -336,27 +359,27 @@
   <h2 class="section-title" style="margin-bottom:20px">Our <strong>Process</strong></h2>
   <div class="sub-sector-grid" style="margin-top:20px">
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">1️⃣</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">19</span>
       <h3>Consultation</h3>
       <p>We understand your product needs and market objectives. Define target pricing, volumes, and timelines.</p>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">2️⃣</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">20</span>
       <h3>Sourcing</h3>
       <p>We identify and vet potential suppliers or buyers. Present top options with comparative analysis.</p>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">3️⃣</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">21</span>
       <h3>Negotiation</h3>
       <p>We facilitate negotiations, finalize pricing, terms, and contracts. Secure best possible deal.</p>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">4️⃣</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">22</span>
       <h3>Logistics</h3>
       <p>We coordinate shipping, customs clearance, and final delivery. End-to-end tracking.</p>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">5️⃣</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">23</span>
       <h3>Support</h3>
       <p>We provide after-sales support, warranty handling, and ongoing relationship management.</p>
     </div>
@@ -400,7 +423,7 @@
         <li><a href="tel:+260973723566">+260 973 723 566</a></li>
         <li><a href="tel:+905325190312">+90 532 519 0312</a></li>
         <li><a href="mailto:info@bigenergyzambia.com">info@bigenergyzambia.com</a></li>
-        <li>Lusaka, Zambia 🇿🇲</li>
+        <li>Lusaka, Zambia</li>
       </ul>
     </div>
   </div>
@@ -412,6 +435,27 @@
 
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+document.addEventListener('DOMContentLoaded',function(){
+  var b=document.getElementById('langBtn'),d=document.getElementById('langDropdown');
+  if(b&&d){
+    b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});
+    document.addEventListener('click',function(e){if(!b.contains(e.target))d.classList.remove('open');});
+  }
+  try{var s=localStorage.getItem('be_lang');if(s)setLang(s);}catch(e){}
+});
+var lf={en:'https://flagcdn.com/w20/gb.png',tr:'https://flagcdn.com/w20/tr.png',fr:'https://flagcdn.com/w20/fr.png',pt:'https://flagcdn.com/w20/pt.png',ar:'https://flagcdn.com/w20/sa.png'};
+var lc={en:'EN',tr:'TR',fr:'FR',pt:'PT',ar:'AR'};
+function setLang(l){
+  if(!lf[l])return;
+  var f=document.getElementById('currentFlag'),c=document.getElementById('currentLang');
+  if(f)f.src=lf[l];if(c)c.textContent=lc[l];
+  document.body.style.direction=l==='ar'?'rtl':'ltr';
+  document.querySelectorAll('.lang-option').forEach(function(o){o.classList.remove('active');});
+  var t=document.querySelector('.lang-option[onclick="setLang(''+l+'')"]');
+  if(t)t.classList.add('active');
+  var d=document.getElementById('langDropdown');if(d)d.classList.remove('open');
+  try{localStorage.setItem('be_lang',l);}catch(e){}
+}
 </script>
 </body>
 </html>

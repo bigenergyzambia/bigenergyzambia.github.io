@@ -19,7 +19,7 @@
   nav{position:fixed;top:0;width:100%;z-index:1000;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(6,12,24,0.97),transparent);border-bottom:1px solid rgba(200,150,42,0.15);backdrop-filter:blur(8px);transition:all 0.4s;}
   nav.scrolled{background:rgba(6,12,24,0.97);}
   .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
-  .nav-logo img{height:56px;width:56px;object-fit:contain;filter:drop-shadow(0 0 12px rgba(200,150,42,0.4));mix-blend-mode:lighten;}
+  .nav-logo img{height:56px;width:56px;object-fit:contain;filter:drop-shadow(0 0 12px rgba(200,150,42,0.4));mix-blend-mode:lighten;background:transparent;}
   .nav-logo-text{display:flex;flex-direction:column;line-height:1.1;}
   .nav-logo-text span:first-child{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--gold-light);letter-spacing:2px;}
   .nav-logo-text span:last-child{font-size:9px;letter-spacing:4px;color:var(--gray);text-transform:uppercase;}
@@ -42,36 +42,34 @@
   .lang-option{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;font-size:11px;color:var(--white);background:none;border:none;width:100%;text-align:left;font-family:'Josefin Sans',sans-serif;}
   .lang-option:hover{background:rgba(200,150,42,0.1);color:var(--gold);}
   .lang-option img{height:16px;border-radius:2px;}
-  .lang-option.active{color:var(--gold);}
 
   .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
-  .hamburger span{width:24px;height:2px;background:var(--white);display:block;transition:all 0.3s;}
+  .hamburger span{width:24px;height:2px;background:var(--white);display:block;}
   .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,12,24,0.99);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
   .mobile-menu.open{display:flex;}
-  .mobile-menu a{color:var(--white);text-decoration:none;font-size:22px;letter-spacing:5px;text-transform:uppercase;font-family:'Cormorant Garamond',serif;transition:color 0.3s;}
-  .mobile-menu a:hover{color:var(--gold-light);}
+  .mobile-menu a{color:var(--white);text-decoration:none;font-size:22px;letter-spacing:5px;text-transform:uppercase;font-family:'Cormorant Garamond',serif;}
   .mobile-menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:32px;cursor:pointer;}
 
   .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-  .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 1.5s ease-in-out;opacity:0;z-index:1;}
-  .hero-slide.active{opacity:1;z-index:2;}
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,12,24,0.85) 0%,rgba(13,27,62,0.6) 50%,rgba(6,12,24,0.8) 100%);z-index:3;}
-  .hero-content{text-align:center;position:relative;z-index:4;padding:0 20px;padding-top:80px;}
+  .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 2s ease;opacity:0;}
+  .hero-slide.active{opacity:1;}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,12,24,0.85) 0%,rgba(13,27,62,0.6) 50%,rgba(6,12,24,0.8) 100%);}
+  .hero-content{text-align:center;position:relative;z-index:2;padding:0 20px;padding-top:80px;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
-  .hero-logo{width:160px;height:160px;margin:0 auto 24px;display:block;object-fit:contain;filter:drop-shadow(0 0 50px rgba(200,150,42,0.5));animation:fadeUp 1.2s 0.1s ease both;mix-blend-mode:lighten;}
+  .hero-logo{width:160px;height:160px;margin:0 auto 24px;display:block;object-fit:contain;filter:drop-shadow(0 0 50px rgba(200,150,42,0.5));animation:fadeUp 1.2s 0.1s ease both;mix-blend-mode:lighten;background:transparent;}
   .hero-badge{display:inline-block;padding:6px 20px;border:1px solid rgba(200,150,42,0.45);font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;animation:fadeUp 1.2s 0.3s ease both;}
   .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,7vw,80px);font-weight:300;line-height:1.05;letter-spacing:4px;animation:fadeUp 1.2s 0.4s ease both;}
   .hero h1 em{font-style:normal;color:var(--gold-light);display:block;font-weight:600;}
   .hero-sub{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gray);margin:20px 0 14px;animation:fadeUp 1.2s 0.55s ease both;}
-  .hero-tagline{font-size:13px;color:rgba(248,245,238,0.6);letter-spacing:1px;margin-bottom:36px;animation:fadeUp 1.2s 0.65s ease both;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.9;}
+  .hero-tagline{font-size:13px;color:rgba(248,245,238,0.6);margin-bottom:36px;animation:fadeUp 1.2s 0.65s ease both;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.9;}
   .hero-tagline strong{color:var(--gold-pale);}
-  .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1.2s 0.8s ease both;margin-bottom:36px;}
+  .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1.2s 0.8s ease both;}
   .btn-primary{padding:14px 40px;background:var(--gold);color:var(--black);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;font-weight:600;transition:all 0.3s;}
   .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
-  .btn-outline{padding:14px 40px;border:1px solid rgba(255,255,255,0.3);color:var(--white);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+  .btn-outline{padding:14px 40px;border:1px solid rgba(255,255,255,0.3);color:var(--white);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;}
   .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
   .hero-dots{position:absolute;bottom:100px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:5;}
-  .hero-dot{width:7px;height:7px;border-radius:50%;background:rgba(200,150,42,0.3);border:none;cursor:pointer;transition:all 0.3s;}
+  .hero-dot{width:7px;height:7px;border-radius:50%;background:rgba(200,150,42,0.3);border:none;cursor:pointer;}
   .hero-dot.active{background:var(--gold);transform:scale(1.4);}
   .hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:9px;letter-spacing:4px;color:var(--gray);text-transform:uppercase;z-index:5;}
 
@@ -98,7 +96,7 @@
 
   .how{background:linear-gradient(135deg,var(--navy) 0%,var(--black) 100%);padding:100px 60px;}
   .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px;}
-  .how-card{background:rgba(13,27,62,0.6);border:1px solid rgba(200,150,42,0.1);padding:40px 32px;transition:all 0.4s;}
+  .how-card{background:rgba(13,27,62,0.6);border:1px solid rgba(200,150,42,0.1);padding:40px 32px;}
   .how-card:hover{border-color:rgba(200,150,42,0.35);background:rgba(21,35,71,0.8);}
   .how-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:rgba(200,150,42,0.15);line-height:1;margin-bottom:16px;}
   .how-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--gold-light);margin-bottom:14px;}
@@ -106,7 +104,7 @@
 
   .network{background:linear-gradient(135deg,var(--navy) 0%,#1a2d5a 100%);padding:100px 60px;}
   .network-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:60px;}
-  .network-card{background:rgba(6,12,24,0.4);border:1px solid rgba(200,150,42,0.1);padding:44px 36px;transition:all 0.3s;text-align:center;}
+  .network-card{background:rgba(6,12,24,0.4);border:1px solid rgba(200,150,42,0.1);padding:44px 36px;text-align:center;}
   .network-card:hover{background:rgba(200,150,42,0.06);border-color:rgba(200,150,42,0.3);}
   .network-flag{font-size:48px;margin-bottom:16px;display:block;}
   .network-card h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--gold-light);margin-bottom:8px;}
@@ -129,18 +127,18 @@
 
   .cta-band{background:var(--gold);padding:90px 60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
   .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,50px);font-weight:700;color:var(--black);max-width:520px;line-height:1.2;}
-  .btn-dark{padding:16px 48px;background:var(--black);color:var(--gold-light);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;font-weight:600;transition:all 0.3s;white-space:nowrap;}
+  .btn-dark{padding:16px 48px;background:var(--black);color:var(--gold-light);font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;font-weight:600;white-space:nowrap;}
   .btn-dark:hover{background:var(--navy);}
 
   footer{background:var(--navy);padding:80px 60px 40px;border-top:1px solid rgba(200,150,42,0.2);}
   .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;}
-  .footer-brand img{height:70px;margin-bottom:20px;filter:drop-shadow(0 0 8px rgba(200,150,42,0.2));mix-blend-mode:lighten;}
+  .footer-brand img{height:70px;margin-bottom:20px;filter:drop-shadow(0 0 8px rgba(200,150,42,0.2));mix-blend-mode:lighten;background:transparent;}
   .footer-brand p{font-size:12px;line-height:1.9;color:var(--gray);max-width:280px;}
   .footer-brand .reg{margin-top:20px;font-size:9px;letter-spacing:2px;color:rgba(138,143,154,0.6);text-transform:uppercase;}
   .footer-col h4{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
   .footer-col ul{list-style:none;}
   .footer-col li{margin-bottom:12px;}
-  .footer-col a{text-decoration:none;color:var(--gray);font-size:12px;transition:color 0.3s;}
+  .footer-col a{text-decoration:none;color:var(--gray);font-size:12px;}
   .footer-col a:hover{color:var(--gold-light);}
   .footer-bottom{border-top:1px solid rgba(200,150,42,0.1);padding-top:30px;display:flex;justify-content:space-between;align-items:center;}
   .footer-bottom p{font-size:10px;color:rgba(138,143,154,0.6);letter-spacing:1px;}
@@ -160,15 +158,13 @@
     .cta-band{flex-direction:column;text-align:center;}
     section, .how, .network, .why{padding:70px 20px;}
   }
-  @media(max-width:500px){
-    .footer-top{grid-template-columns:1fr;}
-  }
+  @media(max-width:500px){.footer-top{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+  <button class="mobile-menu-close" onclick="toggleMenu()">X</button>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="sectors.html">Sectors</a>
@@ -193,10 +189,10 @@
     <div class="lang-switcher">
       <button class="lang-btn" id="langBtn">
         <img src="https://flagcdn.com/w20/gb.png" id="currentFlag" alt="">
-        <span id="currentLang">EN</span> ▾
+        <span id="currentLang">EN</span> v
       </button>
       <div class="lang-dropdown" id="langDropdown">
-        <button class="lang-option active" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png"> English</button>
+        <button class="lang-option" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png"> English</button>
         <button class="lang-option" onclick="setLang('tr')"><img src="https://flagcdn.com/w20/tr.png"> Turkish</button>
         <button class="lang-option" onclick="setLang('fr')"><img src="https://flagcdn.com/w20/fr.png"> French</button>
         <button class="lang-option" onclick="setLang('pt')"><img src="https://flagcdn.com/w20/pt.png"> Portuguese</button>
@@ -213,7 +209,7 @@
 <section class="hero">
   <div class="hero-slide active" style="background-image:url('1.jpg')"></div>
   <div class="hero-slide" style="background-image:url('2.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('img_mining.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('img_mining.png')"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <img src="logo_son3.png" alt="Big Energy Logo" class="hero-logo">
@@ -226,7 +222,7 @@
       <a href="about.html" class="btn-outline">About Us</a>
     </div>
   </div>
-  <div class="hero-dots" id="heroDots">
+  <div class="hero-dots">
     <button class="hero-dot active" onclick="goSlide(0)"></button>
     <button class="hero-dot" onclick="goSlide(1)"></button>
     <button class="hero-dot" onclick="goSlide(2)"></button>
@@ -247,87 +243,15 @@
   <p style="max-width:700px;margin-bottom:40px;">Complete industrial solutions across nine key sectors, connecting Turkish quality with Zambian and African markets.</p>
   
   <div class="sectors-grid">
-    <a href="sector-mining.html" class="sector-card">
-      <div class="sector-card-bg" style="background-image:url('img_mining.jpg')"></div>
-      <div class="sector-card-overlay"></div>
-      <div class="sector-card-body">
-        <h3>Mining & Equipment</h3>
-        <p>Heavy machinery, spare parts, and consultancy for Zambia's copper mining sector.</p>
-        <span class="sector-arrow">→ EXPLORE</span>
-      </div>
-    </a>
-    <a href="sector-solar.html" class="sector-card">
-      <div class="sector-card-bg" style="background-image:url('img_solar.jpg')"></div>
-      <div class="sector-card-overlay"></div>
-      <div class="sector-card-body">
-        <h3>Solar Energy</h3>
-        <p>Panels, inverters, batteries, and off-grid systems for Zambia's energy transition.</p>
-        <span class="sector-arrow">→ EXPLORE</span>
-      </div>
-    </a>
-    <a href="sector-electrical.html" class="sector-card">
-      <div class="sector-card-bg" style="background-image:url('img_electrical.jpg')"></div>
-      <div class="sector-card-overlay"></div>
-      <div class="sector-card-body">
-        <h3>Electrical Infrastructure</h3>
-        <p>Transformers, cables, panels, and switchgear for industrial projects.</p>
-        <span class="sector-arrow">→ EXPLORE</span>
-      </div>
-    </a>
-    <a href="sector-agri.html" class="sector-card">
-      <div class="sector-card-bg" style="background-image:url('img_agri.jpg')"></div>
-      <div class="sector-card-overlay"></div>
-      <div class="sector-card-body">
-        <h3>Agricultural Inputs</h3>
-        <p>Fertilizers, liquid fertilizers, tractors, and irrigation systems.</p>
-        <span class="sector-arrow">→ EXPLORE</span>
-      </div>
-    </a>
-    <a href="sector-oil.html" class="sector-card">
-      <div class="sector-card-bg" style="background-image:url('img_oil.jpg')"></div>
-      <div class="sector-card-overlay"></div>
-      <div class="sector-card-body">
-        <h3>Motor Oil & Lubricants</h3>
-        <p>Industrial lubricants, engine oils, greases for mining and transport.</p>
-        <span class="sector-arrow">→ EXPLORE</span>
-      </div>
-    </a>
-    <a href="sector-cleaning.html" class="sector-card">
-      <div class="sector-card-bg" style="background-image:url('img_cleaning.jpg')"></div>
-      <div class="sector-card-overlay"></div>
-      <div class="sector-card-body">
-        <h3>Cleaning Products</h3>
-        <p>Industrial degreasers, rust removers, household and hotel detergents.</p>
-        <span class="sector-arrow">→ EXPLORE</span>
-      </div>
-    </a>
-    <a href="sector-construction.html" class="sector-card">
-      <div class="sector-card-bg" style="background-image:url('img_construction.jpg')"></div>
-      <div class="sector-card-overlay"></div>
-      <div class="sector-card-body">
-        <h3>Construction Materials</h3>
-        <p>Ceramics, plumbing, paint, electrical fittings, steel products.</p>
-        <span class="sector-arrow">→ EXPLORE</span>
-      </div>
-    </a>
-    <a href="sector-textile.html" class="sector-card">
-      <div class="sector-card-bg" style="background-image:url('img_textile.jpg')"></div>
-      <div class="sector-card-overlay"></div>
-      <div class="sector-card-body">
-        <h3>Textile Products</h3>
-        <p>Workwear, hotel linen, school uniforms, safety equipment and boots.</p>
-        <span class="sector-arrow">→ EXPLORE</span>
-      </div>
-    </a>
-    <a href="sector-trade.html" class="sector-card">
-      <div class="sector-card-bg" style="background-image:url('img_trade.jpg')"></div>
-      <div class="sector-card-overlay"></div>
-      <div class="sector-card-body">
-        <h3>Trade Brokerage</h3>
-        <p>End-to-end brokerage, wholesale, and import/export coordination services.</p>
-        <span class="sector-arrow">→ EXPLORE</span>
-      </div>
-    </a>
+    <a href="sector-mining.html" class="sector-card"><div class="sector-card-bg" style="background-image:url('img_mining.png')"></div><div class="sector-card-overlay"></div><div class="sector-card-body"><h3>Mining and Equipment</h3><p>Heavy machinery and spare parts for Zambia's copper mining sector.</p><span class="sector-arrow">EXPLORE →</span></div></a>
+    <a href="sector-solar.html" class="sector-card"><div class="sector-card-bg" style="background-image:url('img_solar.jpg')"></div><div class="sector-card-overlay"></div><div class="sector-card-body"><h3>Solar Energy</h3><p>Panels, inverters, batteries, and off-grid systems.</p><span class="sector-arrow">EXPLORE →</span></div></a>
+    <a href="sector-electrical.html" class="sector-card"><div class="sector-card-bg" style="background-image:url('img_electric.jpg')"></div><div class="sector-card-overlay"></div><div class="sector-card-body"><h3>Electrical Infrastructure</h3><p>Transformers, cables, panels, and switchgear.</p><span class="sector-arrow">EXPLORE →</span></div></a>
+    <a href="sector-agri.html" class="sector-card"><div class="sector-card-bg" style="background-image:url('img_agri.webp')"></div><div class="sector-card-overlay"></div><div class="sector-card-body"><h3>Agricultural Inputs</h3><p>Fertilizers, tractors, and irrigation systems.</p><span class="sector-arrow">EXPLORE →</span></div></a>
+    <a href="sector-oil.html" class="sector-card"><div class="sector-card-bg" style="background-image:url('img_oil.webp')"></div><div class="sector-card-overlay"></div><div class="sector-card-body"><h3>Motor Oil and Lubricants</h3><p>Industrial lubricants and engine oils.</p><span class="sector-arrow">EXPLORE →</span></div></a>
+    <a href="sector-cleaning.html" class="sector-card"><div class="sector-card-bg" style="background-image:url('img_cleaning.png')"></div><div class="sector-card-overlay"></div><div class="sector-card-body"><h3>Cleaning Products</h3><p>Industrial degreasers and household detergents.</p><span class="sector-arrow">EXPLORE →</span></div></a>
+    <a href="sector-construction.html" class="sector-card"><div class="sector-card-bg" style="background-image:url('img_construction.png')"></div><div class="sector-card-overlay"></div><div class="sector-card-body"><h3>Construction Materials</h3><p>Ceramics, plumbing, paint, and electrical fittings.</p><span class="sector-arrow">EXPLORE →</span></div></a>
+    <a href="sector-textile.html" class="sector-card"><div class="sector-card-bg" style="background-image:url('img_textile.png')"></div><div class="sector-card-overlay"></div><div class="sector-card-body"><h3>Textile Products</h3><p>Workwear, hotel linen, and school uniforms.</p><span class="sector-arrow">EXPLORE →</span></div></a>
+    <a href="sector-trade.html" class="sector-card"><div class="sector-card-bg" style="background-image:url('img_mining.png')"></div><div class="sector-card-overlay"></div><div class="sector-card-body"><h3>Trade Brokerage</h3><p>End-to-end brokerage and import/export coordination.</p><span class="sector-arrow">EXPLORE →</span></div></a>
   </div>
 </section>
 
@@ -335,9 +259,9 @@
   <div class="section-label">How We Work</div>
   <h2 class="section-title">We Research. We Connect. <strong>We Deliver.</strong></h2>
   <div class="how-grid">
-    <div class="how-card"><div class="how-num">01</div><div class="how-title">We Research</div><p class="how-desc">We identify the best global suppliers — primarily from Turkey — for every product your business needs in Zambia and Southern Africa.</p></div>
-    <div class="how-card"><div class="how-num">02</div><div class="how-title">We Connect</div><p class="how-desc">We bridge Zambian businesses and governments with international suppliers — handling negotiation, communication and brokerage end to end.</p></div>
-    <div class="how-card"><div class="how-num">03</div><div class="how-title">We Deliver</div><p class="how-desc">From sourcing to logistics coordination — quality products reach you at the right price, at the right time, with full transparency.</p></div>
+    <div class="how-card"><div class="how-num">01</div><div class="how-title">We Research</div><p class="how-desc">We identify the best global suppliers — primarily from Turkey — for every product your business needs.</p></div>
+    <div class="how-card"><div class="how-num">02</div><div class="how-title">We Connect</div><p class="how-desc">We bridge Zambian businesses and governments with international suppliers, handling negotiation and brokerage end to end.</p></div>
+    <div class="how-card"><div class="how-num">03</div><div class="how-title">We Deliver</div><p class="how-desc">From sourcing to logistics coordination — quality products reach you at the right price, at the right time.</p></div>
   </div>
 </section>
 
@@ -345,9 +269,9 @@
   <div class="section-label">Our Network</div>
   <h2 class="section-title">Zambia Meets <strong>The World</strong></h2>
   <div class="network-grid">
-    <div class="network-card"><span class="network-flag">🇿🇲</span><h3>Zambia</h3><span class="network-role">Headquarters &amp; Operations</span><p>Our PACRA-registered office in Lusaka is your base in Africa. Local team, local knowledge, direct market access.</p></div>
-    <div class="network-card"><span class="network-flag">🇹🇷</span><h3>Turkey</h3><span class="network-role">Primary Sourcing Hub</span><p>Turkey's strong manufacturing base is our primary sourcing partner for quality products at competitive prices.</p></div>
-    <div class="network-card"><span class="network-flag">🌍</span><h3>Europe &amp; Beyond</h3><span class="network-role">Extended Sourcing Network</span><p>For specialized products, we extend our network to European manufacturers — ensuring quality and competitive pricing.</p></div>
+    <div class="network-card"><span class="network-flag" style="font-family:Cormorant Garamond,serif;font-size:36px;font-weight:700;color:var(--gold-light);">ZM</span><h3>Zambia</h3><span class="network-role">Headquarters and Operations</span><p>Our PACRA-registered office in Lusaka is your base in Africa. Local team, local knowledge, direct market access.</p></div>
+    <div class="network-card"><span class="network-flag" style="font-family:Cormorant Garamond,serif;font-size:36px;font-weight:700;color:var(--gold-light);">TR</span><h3>Turkey</h3><span class="network-role">Primary Sourcing Hub</span><p>Turkey's strong manufacturing base is our primary sourcing partner for quality products at competitive prices.</p></div>
+    <div class="network-card"><span class="network-flag" style="font-family:Cormorant Garamond,serif;font-size:36px;font-weight:700;color:var(--gold-light);">EU</span><h3>Europe and Beyond</h3><span class="network-role">Extended Sourcing Network</span><p>For specialized products, we extend our network to European manufacturers.</p></div>
   </div>
 </section>
 
@@ -365,10 +289,10 @@
       </div>
     </div>
     <div class="why-visual">
-      <div class="why-item"><div class="why-icon">⛏️</div><div><h4>Copper Capital of Africa</h4><p>Zambia is one of the world's top copper producers, driving constant demand for mining equipment.</p></div></div>
-      <div class="why-item"><div class="why-icon">☀️</div><div><h4>Energy Transition Leader</h4><p>Massive solar investments create unprecedented opportunity for energy infrastructure providers.</p></div></div>
-      <div class="why-item"><div class="why-icon">🌾</div><div><h4>Agricultural Powerhouse</h4><p>Growing demand for fertilizers, machinery, and irrigation across Zambia's farming regions.</p></div></div>
-      <div class="why-item"><div class="why-icon">🤝</div><div><h4>Turkish-Zambian Bridge</h4><p>Unique positioning at the intersection of Turkish manufacturing excellence and African market needs.</p></div></div>
+      <div class="why-item"><div class="why-icon" style="font-family:Cormorant Garamond,serif;font-size:22px;font-weight:700;color:var(--gold);min-width:36px;">01</div><div><h4>Copper Capital of Africa</h4><p>Zambia is one of the world's top copper producers, driving constant demand for mining equipment.</p></div></div>
+      <div class="why-item"><div class="why-icon" style="font-family:Cormorant Garamond,serif;font-size:22px;font-weight:700;color:var(--gold);min-width:36px;">02</div><div><h4>Energy Transition Leader</h4><p>Massive solar investments create unprecedented opportunity for energy infrastructure providers.</p></div></div>
+      <div class="why-item"><div class="why-icon" style="font-family:Cormorant Garamond,serif;font-size:22px;font-weight:700;color:var(--gold);min-width:36px;">03</div><div><h4>Agricultural Powerhouse</h4><p>Growing demand for fertilizers, machinery, and irrigation across Zambia's farming regions.</p></div></div>
+      <div class="why-item"><div class="why-icon" style="font-family:Cormorant Garamond,serif;font-size:22px;font-weight:700;color:var(--gold);min-width:36px;">04</div><div><h4>Turkish-Zambian Bridge</h4><p>Unique positioning at the intersection of Turkish manufacturing excellence and African market needs.</p></div></div>
     </div>
   </div>
 </section>
@@ -380,65 +304,42 @@
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand">
-      <img src="logo_son3.png" alt="Big Energy Logo">
-      <p>Big Energy &amp; Resources Limited — Mining, Energy &amp; Trade solutions across Africa.</p>
-      <div class="reg">Reg. No. 11045170 · PACRA · Zambia</div>
-    </div>
-    <div class="footer-col"><h4>Services</h4><ul><li><a href="sector-mining.html">Mining &amp; Equipment</a></li><li><a href="sector-solar.html">Solar &amp; Power</a></li><li><a href="sector-agri.html">Agricultural Trade</a></li><li><a href="sector-oil.html">Lubricants &amp; Oil</a></li><li><a href="sector-electrical.html">Electrical Systems</a></li><li><a href="sector-trade.html">Trade Brokerage</a></li><li><a href="sector-cleaning.html">Cleaning Products</a></li><li><a href="sector-construction.html">Construction Materials</a></li><li><a href="sector-textile.html">Textile Products</a></li></ul></div>
+    <div class="footer-brand"><img src="logo_son3.png" alt="Big Energy Logo"><p>Big Energy and Resources Limited — Mining, Energy and Trade solutions across Africa.</p><div class="reg">Reg. No. 11045170 · PACRA · Zambia</div></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="sector-mining.html">Mining and Equipment</a></li><li><a href="sector-solar.html">Solar and Power</a></li><li><a href="sector-agri.html">Agricultural Trade</a></li><li><a href="sector-oil.html">Lubricants and Oil</a></li><li><a href="sector-electrical.html">Electrical Systems</a></li><li><a href="sector-trade.html">Trade Brokerage</a></li><li><a href="sector-cleaning.html">Cleaning Products</a></li><li><a href="sector-construction.html">Construction Materials</a></li><li><a href="sector-textile.html">Textile Products</a></li></ul></div>
     <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+260973723566">+260 973 723 566</a></li><li><a href="tel:+905325190312">+90 532 519 0312</a></li><li><a href="mailto:info@bigenergyzambia.com">info@bigenergyzambia.com</a></li><li>Lusaka, Zambia 🇿🇲</li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+260973723566">+260 973 723 566</a></li><li><a href="tel:+905325190312">+90 532 519 0312</a></li><li><a href="mailto:info@bigenergyzambia.com">info@bigenergyzambia.com</a></li><li>Lusaka, Zambia</li></ul></div>
   </div>
-  <div class="footer-bottom"><p>© Big Energy &amp; Resources Limited. All rights reserved.</p><p>Incorporated in Zambia · Reg. No. 11045170</p></div>
+  <div class="footer-bottom"><p>© Big Energy and Resources Limited. All rights reserved.</p><p>Incorporated in Zambia · Reg. No. 11045170</p></div>
 </footer>
 
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
 window.addEventListener('scroll',function(){document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60);});
-
 let cur=0;const slides=document.querySelectorAll('.hero-slide');const dots=document.querySelectorAll('.hero-dot');
 function goSlide(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');dots[cur].classList.add('active');}
 setInterval(()=>goSlide((cur+1)%slides.length),5000);
 
-// Safe Language Switcher Logic
+const translations={en:{},tr:{},fr:{},pt:{},ar:{}};
 function setLang(lang){
-  var flagUrl="https://flagcdn.com/w20/gb.png",code="EN";
+  let flagUrl="https://flagcdn.com/w20/gb.png",code="EN";
   if(lang==='tr'){flagUrl="https://flagcdn.com/w20/tr.png";code="TR";}
   else if(lang==='fr'){flagUrl="https://flagcdn.com/w20/fr.png";code="FR";}
   else if(lang==='pt'){flagUrl="https://flagcdn.com/w20/pt.png";code="PT";}
   else if(lang==='ar'){flagUrl="https://flagcdn.com/w20/sa.png";code="AR";}
-  
-  var f=document.getElementById('currentFlag');
-  var c=document.getElementById('currentLang');
-  if(f) f.src=flagUrl;
-  if(c) c.innerText=code;
-  
-  var d=document.getElementById('langDropdown');
-  if(d) d.classList.remove('open');
-  
+  document.getElementById('currentFlag').src=flagUrl;
+  document.getElementById('currentLang').innerText=code;
+  document.getElementById('langDropdown').classList.remove('open');
   document.body.style.direction=lang==='ar'?'rtl':'ltr';
   document.querySelectorAll('.lang-option').forEach(function(o){o.classList.remove('active');});
-  
+  var t=document.querySelector('.lang-option[onclick="setLang(''+lang+'')"]');
+  if(t)t.classList.add('active');
   try{localStorage.setItem('be_lang',lang);}catch(e){}
 }
-
 document.addEventListener('DOMContentLoaded',function(){
   try{var s=localStorage.getItem('be_lang');if(s)setLang(s);}catch(e){}
 });
-
-var lb=document.getElementById('langBtn');
-if(lb){
-  lb.addEventListener('click',function(e){
-    e.stopPropagation();
-    var ld=document.getElementById('langDropdown');
-    if(ld) ld.classList.toggle('open');
-  });
-}
-document.addEventListener('click',function(e){
-  var lb=document.getElementById('langBtn');
-  var ld=document.getElementById('langDropdown');
-  if(lb && ld && !lb.contains(e.target)) ld.classList.remove('open');
-});
+document.getElementById('langBtn').addEventListener('click',function(e){e.stopPropagation();document.getElementById('langDropdown').classList.toggle('open');});
+document.addEventListener('click',function(e){if(!document.getElementById('langBtn').contains(e.target))document.getElementById('langDropdown').classList.remove('open');});
 </script>
 </body>
 </html>

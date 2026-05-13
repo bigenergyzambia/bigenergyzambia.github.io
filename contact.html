@@ -21,6 +21,16 @@
   .nav-right{display:flex;align-items:center;gap:16px;}
   .nav-cta{padding:10px 24px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:3px;text-decoration:none;transition:all 0.3s;}
   .nav-cta:hover{background:var(--gold);color:var(--black);}
+
+  .lang-switcher{position:relative;}
+  .lang-btn{background:none;border:1px solid rgba(200,150,42,0.3);color:var(--gold);padding:7px 14px;font-size:10px;letter-spacing:2px;cursor:pointer;font-family:'Josefin Sans',sans-serif;display:flex;align-items:center;gap:7px;}
+  .lang-btn img{height:14px;border-radius:2px;}
+  .lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--navy);border:1px solid rgba(200,150,42,0.3);min-width:170px;z-index:9999;box-shadow:0 12px 40px rgba(0,0,0,0.7);}
+  .lang-dropdown.open{display:block;}
+  .lang-option{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;font-size:11px;color:var(--white);background:none;border:none;width:100%;text-align:left;font-family:'Josefin Sans',sans-serif;}
+  .lang-option:hover{background:rgba(200,150,42,0.1);color:var(--gold);}
+  .lang-option img{height:16px;border-radius:2px;}
+  .lang-option.active{color:var(--gold);}
   .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
   .hamburger span{width:24px;height:2px;background:var(--white);display:block;}
   .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,12,24,0.99);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
@@ -120,6 +130,19 @@
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
   <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" id="langBtn">
+        <img src="https://flagcdn.com/w20/gb.png" id="currentFlag" alt="">
+        <span id="currentLang">EN</span> ▾
+      </button>
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-option active" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png" alt=""> English</button>
+        <button class="lang-option" onclick="setLang('tr')"><img src="https://flagcdn.com/w20/tr.png" alt=""> Turkce</button>
+        <button class="lang-option" onclick="setLang('fr')"><img src="https://flagcdn.com/w20/fr.png" alt=""> Francais</button>
+        <button class="lang-option" onclick="setLang('pt')"><img src="https://flagcdn.com/w20/pt.png" alt=""> Portugues</button>
+        <button class="lang-option" onclick="setLang('ar')"><img src="https://flagcdn.com/w20/sa.png" alt=""> Arabic</button>
+      </div>
+    </div>
     <a href="contact.html" class="nav-cta">Get In Touch</a>
     <button class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -135,20 +158,20 @@
 
 <div class="connect-strip">
   <div class="connect-item">
-    <span class="connect-symbol">C</span>
+    <span class="connect-symbol" style="font-size:24px;font-weight:600;color:var(--gold);font-family:Cormorant Garamond,serif;">CALL</span>
     <h4>Call Us</h4>
     <p>Zambia and International</p>
     <a href="tel:+260973723566">+260 973 723 566</a>
     <a href="tel:+905325190312">+90 532 519 0312</a>
   </div>
   <div class="connect-item">
-    <span class="connect-symbol">E</span>
+    <span class="connect-symbol" style="font-size:24px;font-weight:600;color:var(--gold);font-family:Cormorant Garamond,serif;">EMAIL</span>
     <h4>Email Us</h4>
     <p>We respond within 24 hours</p>
     <a href="mailto:info@bigenergyzambia.com">info@bigenergyzambia.com</a>
   </div>
   <div class="connect-item">
-    <span class="connect-symbol">W</span>
+    <span class="connect-symbol" style="font-size:24px;font-weight:600;color:var(--gold);font-family:Cormorant Garamond,serif;">WHATSAPP</span>
     <h4>WhatsApp</h4>
     <p>Quick responses via WhatsApp</p>
     <a href="https://wa.me/260973723566" target="_blank">Chat Now</a>
@@ -203,12 +226,32 @@
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
 function handleSubmit(){
-  if(!document.getElementById('fname').value || !document.getElementById('email').value || !document.getElementById('message').value){
-    alert('Please fill in all required fields.');
-    return;
+  if(!document.getElementById('fname').value||!document.getElementById('email').value||!document.getElementById('message').value){
+    alert('Please fill in all required fields.');return;
   }
   document.getElementById('formContent').style.display='none';
   document.getElementById('formSuccess').style.display='block';
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var b=document.getElementById('langBtn'),d=document.getElementById('langDropdown');
+  if(b&&d){
+    b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});
+    document.addEventListener('click',function(e){if(!b.contains(e.target))d.classList.remove('open');});
+  }
+  try{var s=localStorage.getItem('be_lang');if(s)setLang(s);}catch(e){}
+});
+var lf={en:'https://flagcdn.com/w20/gb.png',tr:'https://flagcdn.com/w20/tr.png',fr:'https://flagcdn.com/w20/fr.png',pt:'https://flagcdn.com/w20/pt.png',ar:'https://flagcdn.com/w20/sa.png'};
+var lc={en:'EN',tr:'TR',fr:'FR',pt:'PT',ar:'AR'};
+function setLang(l){
+  if(!lf[l])return;
+  var f=document.getElementById('currentFlag'),c=document.getElementById('currentLang');
+  if(f)f.src=lf[l];if(c)c.textContent=lc[l];
+  document.body.style.direction=l==='ar'?'rtl':'ltr';
+  document.querySelectorAll('.lang-option').forEach(function(o){o.classList.remove('active');});
+  var t=document.querySelector('.lang-option[onclick="setLang(''+l+'')"]');
+  if(t)t.classList.add('active');
+  var d=document.getElementById('langDropdown');if(d)d.classList.remove('open');
+  try{localStorage.setItem('be_lang',l);}catch(e){}
 }
 </script>
 </body>

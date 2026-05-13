@@ -21,13 +21,23 @@
   .nav-right{display:flex;align-items:center;gap:16px;}
   .nav-cta{padding:10px 24px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:3px;text-decoration:none;transition:all 0.3s;}
   .nav-cta:hover{background:var(--gold);color:var(--black);}
+
+  .lang-switcher{position:relative;}
+  .lang-btn{background:none;border:1px solid rgba(200,150,42,0.3);color:var(--gold);padding:7px 14px;font-size:10px;letter-spacing:2px;cursor:pointer;font-family:'Josefin Sans',sans-serif;display:flex;align-items:center;gap:7px;}
+  .lang-btn img{height:14px;border-radius:2px;}
+  .lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--navy);border:1px solid rgba(200,150,42,0.3);min-width:170px;z-index:9999;box-shadow:0 12px 40px rgba(0,0,0,0.7);}
+  .lang-dropdown.open{display:block;}
+  .lang-option{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;font-size:11px;color:var(--white);background:none;border:none;width:100%;text-align:left;font-family:'Josefin Sans',sans-serif;}
+  .lang-option:hover{background:rgba(200,150,42,0.1);color:var(--gold);}
+  .lang-option img{height:16px;border-radius:2px;}
+  .lang-option.active{color:var(--gold);}
   .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
   .hamburger span{width:24px;height:2px;background:var(--white);display:block;}
   .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,12,24,0.99);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
   .mobile-menu.open{display:flex;}
   .mobile-menu a{color:var(--white);text-decoration:none;font-size:22px;letter-spacing:5px;text-transform:uppercase;font-family:'Cormorant Garamond',serif;}
   .mobile-menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:32px;cursor:pointer;}
-  .page-hero{padding:180px 60px 100px;background:linear-gradient(135deg,var(--navy) 0%,var(--black) 60%);position:relative;border-bottom:1px solid rgba(200,150,42,0.2);background-image:url('img_mining.jpg');background-size:cover;background-position:center;}
+  .page-hero{padding:180px 60px 100px;background:linear-gradient(135deg,var(--navy) 0%,var(--black) 60%);position:relative;border-bottom:1px solid rgba(200,150,42,0.2);background-image:url('img_mining.png');background-size:cover;background-position:center;}
   .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,12,24,0.9) 0%,rgba(13,27,62,0.7) 100%);}
   .section-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:16px;margin-bottom:20px;position:relative;z-index:2;}
   .section-label::before{content:'';width:40px;height:1px;background:var(--gold);}
@@ -43,7 +53,7 @@
   .sub-sector-card p{font-size:13px;line-height:1.8;color:rgba(248,245,238,0.65);margin-bottom:20px;}
   .product-list{list-style:none;margin-top:15px;}
   .product-list li{font-size:12px;padding:8px 0;border-bottom:1px solid rgba(200,150,42,0.1);color:var(--gray);}
-  .product-list li::before{content:'✓ ';color:var(--gold);}
+  .product-list li::before{content:'+ ';color:var(--gold);}
   .data-table{width:100%;border-collapse:collapse;margin:30px 0;background:rgba(6,12,24,0.6);}
   .data-table th,.data-table td{padding:12px 15px;text-align:left;border:1px solid rgba(200,150,42,0.2);}
   .data-table th{background:rgba(200,150,42,0.15);color:var(--gold-light);font-size:11px;letter-spacing:2px;font-weight:600;}
@@ -74,7 +84,7 @@
 <body>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+  <button class="mobile-menu-close" onclick="toggleMenu()">X</button>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="sectors.html">Sectors</a>
@@ -96,6 +106,19 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" id="langBtn">
+        <img src="https://flagcdn.com/w20/gb.png" id="currentFlag" alt="">
+        <span id="currentLang">EN</span> v
+      </button>
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-option active" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png" alt=""> English</button>
+        <button class="lang-option" onclick="setLang('tr')"><img src="https://flagcdn.com/w20/tr.png" alt=""> Turkce</button>
+        <button class="lang-option" onclick="setLang('fr')"><img src="https://flagcdn.com/w20/fr.png" alt=""> Francais</button>
+        <button class="lang-option" onclick="setLang('pt')"><img src="https://flagcdn.com/w20/pt.png" alt=""> Portugues</button>
+        <button class="lang-option" onclick="setLang('ar')"><img src="https://flagcdn.com/w20/sa.png" alt=""> Arabic</button>
+      </div>
+    </div>
     <a href="contact.html" class="nav-cta">Get In Touch</a>
     <button class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -135,7 +158,7 @@
   <div class="sub-sector-grid">
     
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">⛏️</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">01</span>
       <h3>Mining Equipment</h3>
       <p>Heavy machinery for underground and open-pit mining operations.</p>
       <ul class="product-list">
@@ -148,7 +171,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🔧</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">02</span>
       <h3>Spare Parts & Consumables</h3>
       <p>Genuine and high-quality aftermarket parts for mining machinery.</p>
       <ul class="product-list">
@@ -161,7 +184,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">📋</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">03</span>
       <h3>Mining Consultancy</h3>
       <p>Professional advisory services for mining operations and investments.</p>
       <ul class="product-list">
@@ -174,7 +197,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🔄</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">04</span>
       <h3>Equipment Leasing</h3>
       <p>Flexible leasing options for short-term and long-term mining projects.</p>
       <ul class="product-list">
@@ -187,7 +210,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🧪</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">05</span>
       <h3>Mining Chemicals</h3>
       <p>Specialty chemicals for mineral processing and extraction.</p>
       <ul class="product-list">
@@ -200,7 +223,7 @@
     </div>
 
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🛡️</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">06</span>
       <h3>Safety Equipment</h3>
       <p>Personal protective equipment (PPE) and mine safety gear.</p>
       <ul class="product-list">
@@ -234,17 +257,17 @@
   <h2 class="section-title" style="margin-bottom:20px">Why <strong>Now?</strong></h2>
   <div class="sub-sector-grid" style="margin-top:20px">
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">📈</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">01</span>
       <h3>Expanding Production</h3>
       <p>Zambia targets 3 million tons of copper annually by 2031 — a 265% increase from current levels, driving massive equipment demand.</p>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">💰</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">02</span>
       <h3>New Investments</h3>
       <p>Major mining houses (Barrick, First Quantum, Vedanta) are expanding operations, creating supply chain opportunities.</p>
     </div>
     <div class="sub-sector-card">
-      <span class="sub-sector-icon">🤝</span>
+      <span class="sub-sector-icon" style="font-family:Cormorant Garamond,serif;font-size:32px;font-weight:700;color:var(--gold-light);">03</span>
       <h3>Ready Partner</h3>
       <p>Big Energy & Resources is your local representative in Lusaka and Copperbelt, handling logistics and client relationships.</p>
     </div>
@@ -288,7 +311,7 @@
         <li><a href="tel:+260973723566">+260 973 723 566</a></li>
         <li><a href="tel:+905325190312">+90 532 519 0312</a></li>
         <li><a href="mailto:info@bigenergyzambia.com">info@bigenergyzambia.com</a></li>
-        <li>Lusaka, Zambia 🇿🇲</li>
+        <li>Lusaka, Zambia</li>
       </ul>
     </div>
   </div>
@@ -300,6 +323,27 @@
 
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+document.addEventListener('DOMContentLoaded',function(){
+  var b=document.getElementById('langBtn'),d=document.getElementById('langDropdown');
+  if(b&&d){
+    b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');});
+    document.addEventListener('click',function(e){if(!b.contains(e.target))d.classList.remove('open');});
+  }
+  try{var s=localStorage.getItem('be_lang');if(s)setLang(s);}catch(e){}
+});
+var lf={en:'https://flagcdn.com/w20/gb.png',tr:'https://flagcdn.com/w20/tr.png',fr:'https://flagcdn.com/w20/fr.png',pt:'https://flagcdn.com/w20/pt.png',ar:'https://flagcdn.com/w20/sa.png'};
+var lc={en:'EN',tr:'TR',fr:'FR',pt:'PT',ar:'AR'};
+function setLang(l){
+  if(!lf[l])return;
+  var f=document.getElementById('currentFlag'),c=document.getElementById('currentLang');
+  if(f)f.src=lf[l];if(c)c.textContent=lc[l];
+  document.body.style.direction=l==='ar'?'rtl':'ltr';
+  document.querySelectorAll('.lang-option').forEach(function(o){o.classList.remove('active');});
+  var t=document.querySelector('.lang-option[onclick="setLang(''+l+'')"]');
+  if(t)t.classList.add('active');
+  var d=document.getElementById('langDropdown');if(d)d.classList.remove('open');
+  try{localStorage.setItem('be_lang',l);}catch(e){}
+}
 </script>
 </body>
 </html>
