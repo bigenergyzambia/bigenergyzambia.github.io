@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mining Solutions — Big Energy & Resources Limited</title>
+<meta name="description" content="Mining sector sourcing and commercial brokerage: investor and credit partner sourcing, mining equipment, spare parts, diesel and lubricants supply support, safety equipment and project documentation.">
+<meta name="theme-color" content="#060C18">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C8962A;--gold-light:#E8B84B;--gold-soft:#F5E6C0;--navy:#0D1B3E;--navy-mid:#152347;--black:#060C18;--white:#F8F5EE;--muted:#9AA1AE;--line:rgba(200,150,42,.20)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Josefin Sans',sans-serif;font-weight:300;overflow-x:hidden}
+a{text-decoration:none;color:inherit}button{font-family:inherit}img{max-width:100%;display:block}
+::selection{background:rgba(200,150,42,.35);color:var(--white)}
+.site-nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:18px 58px;border-bottom:1px solid rgba(200,150,42,.14);background:rgba(6,12,24,.96);backdrop-filter:blur(10px);box-shadow:0 18px 60px rgba(0,0,0,.22)}
+.brand{display:flex;align-items:center;gap:14px;min-width:250px}
+.brand img{width:58px;height:58px;object-fit:contain;background:transparent!important;border:0!important;box-shadow:none!important;filter:drop-shadow(0 0 16px rgba(232,184,75,.25))}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-text strong{font-family:'Cormorant Garamond',serif;color:var(--gold-light);letter-spacing:2px;font-size:18px}
+.brand-text span{color:rgba(248,245,238,.62);letter-spacing:4px;text-transform:uppercase;font-size:9px}
+.nav-links{display:flex;align-items:center;gap:34px;list-style:none}
+.nav-links a{color:rgba(248,245,238,.78);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:500;position:relative;padding:9px 0;transition:.25s ease}
+.nav-links a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:.25s ease}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+.nav-links a:hover:after,.nav-links a.active:after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:14px}
+.nav-cta{border:1px solid rgba(200,150,42,.62);color:var(--gold-light);padding:12px 24px;letter-spacing:3px;font-size:10px;text-transform:uppercase;transition:.25s ease;white-space:nowrap}
+.nav-cta:hover{background:var(--gold);color:var(--black)}
+.lang-switcher{position:relative}
+.lang-btn{min-width:108px;height:42px;border:1px solid rgba(200,150,42,.32);background:rgba(6,12,24,.32);color:var(--gold-light);display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;letter-spacing:2px;font-size:10px;text-transform:uppercase}
+.lang-btn img{width:22px;height:15px;object-fit:cover;border-radius:2px}
+.lang-dropdown{position:absolute;right:0;top:calc(100% + 10px);width:180px;background:rgba(13,27,62,.98);border:1px solid rgba(200,150,42,.28);box-shadow:0 22px 70px rgba(0,0,0,.52);display:none;overflow:hidden}
+body[dir="rtl"] .lang-dropdown{right:auto;left:0}
+.lang-dropdown.open{display:block}
+.lang-option{width:100%;display:flex;align-items:center;gap:10px;padding:12px 14px;border:0;background:transparent;color:rgba(248,245,238,.80);cursor:pointer;text-align:left;font-size:12px}
+.lang-option img{width:22px;height:15px;object-fit:cover;border-radius:2px}
+.lang-option:hover,.lang-option.active{background:rgba(200,150,42,.10);color:var(--gold-light)}
+.menu-toggle{display:none;width:42px;height:42px;border:1px solid rgba(200,150,42,.28);background:rgba(6,12,24,.28);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.menu-toggle span{width:20px;height:1px;background:var(--gold-light);display:block}
+.mobile-panel{display:none;position:fixed;inset:0;z-index:999;background:rgba(6,12,24,.98);align-items:center;justify-content:center;flex-direction:column;gap:26px}
+.mobile-panel.open{display:flex}
+.mobile-panel a{font-family:'Cormorant Garamond',serif;font-size:28px;letter-spacing:4px;text-transform:uppercase}
+.mobile-close{position:absolute;top:25px;right:25px;background:transparent;border:1px solid rgba(200,150,42,.3);color:var(--gold-light);width:42px;height:42px;cursor:pointer;font-size:20px}
+
+.hero{min-height:84vh;position:relative;display:flex;align-items:center;overflow:hidden;isolation:isolate;padding:165px 60px 92px;background:linear-gradient(90deg,rgba(6,12,24,.96),rgba(6,12,24,.48),rgba(6,12,24,.92)),url('images/mining/mining-main.jpg') center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 28%,rgba(232,184,75,.18),transparent 24%),linear-gradient(to top,rgba(6,12,24,.98),transparent 52%);z-index:-1}
+.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(248,245,238,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(248,245,238,.025) 1px,transparent 1px);background-size:82px 82px;mask-image:linear-gradient(to bottom,transparent,black 18%,black 78%,transparent);z-index:-1}
+.container{width:min(1180px,92vw);margin:0 auto}
+.section-kicker{color:var(--gold);letter-spacing:6px;text-transform:uppercase;font-size:9px;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.section-kicker:before{content:"";width:42px;height:1px;background:var(--gold)}
+body[dir="rtl"] .section-kicker:before{order:2}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(50px,8vw,96px);line-height:.98;font-weight:300;letter-spacing:3px;max-width:940px}
+.hero-title strong{color:var(--gold-light);font-weight:600}
+.hero-lead{color:rgba(248,245,238,.72);max-width:820px;margin-top:25px;line-height:1.9;font-size:16px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.btn{min-width:168px;padding:16px 28px;text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;border:1px solid rgba(248,245,238,.25);transition:.25s ease;text-align:center}
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--black);border-color:transparent}.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.btn-secondary{color:var(--white);background:rgba(6,12,24,.26)}.btn-secondary:hover{border-color:var(--gold);color:var(--gold-light)}
+.metrics{background:rgba(13,27,62,.78);border-top:1px solid var(--line);border-bottom:1px solid rgba(200,150,42,.12);display:grid;grid-template-columns:repeat(4,1fr)}
+.metric{padding:34px 22px;text-align:center;border-right:1px solid rgba(200,150,42,.12)}.metric:last-child{border-right:0}
+.metric-value{color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;line-height:1}.metric-label{color:rgba(248,245,238,.56);letter-spacing:3px;text-transform:uppercase;font-size:9px;margin-top:8px}
+section{padding:110px 60px;position:relative}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,60px);line-height:1.04;font-weight:300;margin-bottom:16px}.section-title strong{color:var(--gold-light);font-weight:600}
+.section-lead{max-width:840px;color:rgba(248,245,238,.66);line-height:1.9;font-size:15px}
+.overview{background:radial-gradient(circle at 15% 20%,rgba(200,150,42,.10),transparent 30%),linear-gradient(135deg,var(--black),var(--navy));border-top:1px solid rgba(200,150,42,.12);border-bottom:1px solid rgba(200,150,42,.12)}
+.overview-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.overview p{color:rgba(248,245,238,.68);line-height:1.95;font-size:15px;margin-top:18px}
+.visual-card{min-height:430px;position:relative;border:1px solid rgba(200,150,42,.20);background:linear-gradient(135deg,rgba(13,27,62,.72),rgba(6,12,24,.78));overflow:hidden}
+.visual-card:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,12,24,.74),rgba(6,12,24,.16)),url('images/mining/mining-components.jpg') center/cover no-repeat;opacity:.88}
+.visual-card:after{content:"";position:absolute;inset:28px;border:1px solid rgba(200,150,42,.22)}
+.visual-card .mark{position:absolute;left:34px;bottom:34px;right:34px;z-index:2}
+.visual-card h3{font-family:'Cormorant Garamond',serif;color:var(--gold-light);font-size:34px;line-height:1.05;margin-bottom:8px}
+.visual-card p{margin:0;color:rgba(248,245,238,.70);font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:52px}
+.category-card{min-height:350px;position:relative;overflow:hidden;display:flex;align-items:flex-end;border:1px solid rgba(200,150,42,.10);background:var(--navy-mid)}
+.category-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:.75s ease}.category-card:hover .category-bg{transform:scale(1.07)}
+.category-card:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(6,12,24,.97),rgba(6,12,24,.56),rgba(6,12,24,.14));z-index:1}
+.category-body{position:relative;z-index:2;padding:32px}.category-body h3{font-family:'Cormorant Garamond',serif;font-size:29px;line-height:1.05;font-weight:600;margin-bottom:10px}
+.category-body p{color:rgba(248,245,238,.65);font-size:13px;line-height:1.75}
+.product-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.product-tags span{border:1px solid rgba(200,150,42,.24);color:rgba(248,245,238,.72);padding:7px 9px;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:rgba(6,12,24,.34)}
+.support{background:linear-gradient(135deg,var(--navy),var(--black));border-top:1px solid rgba(200,150,42,.13);border-bottom:1px solid rgba(200,150,42,.13)}
+.support-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px}
+.support-card{border:1px solid rgba(200,150,42,.13);background:rgba(6,12,24,.36);padding:34px 28px}
+.support-card strong{color:rgba(232,184,75,.25);font-family:'Cormorant Garamond',serif;font-size:46px;display:block;margin-bottom:14px}
+.support-card h3{color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:23px;margin-bottom:10px}.support-card p{color:rgba(248,245,238,.60);line-height:1.75;font-size:12px}
+.note-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:46px}
+.note-card{border:1px solid rgba(200,150,42,.16);background:linear-gradient(135deg,rgba(13,27,62,.72),rgba(6,12,24,.74));padding:30px;min-height:185px}
+.note-card h3{font-family:'Cormorant Garamond',serif;color:var(--gold-light);font-size:25px;margin-bottom:10px}
+.note-card p{color:rgba(248,245,238,.62);font-size:13px;line-height:1.8}
+.cta{background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:86px 60px}.cta .container{display:flex;align-items:center;justify-content:space-between;gap:36px}.cta h2{font-family:'Cormorant Garamond',serif;color:var(--black);font-size:clamp(32px,5vw,58px);line-height:1.04;max-width:720px}.cta a{background:var(--black);color:var(--gold-light);padding:17px 42px;text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;white-space:nowrap}
+.footer{background:var(--navy);padding:80px 60px 36px;border-top:1px solid rgba(200,150,42,.18)}
+.footer-top{width:min(1180px,92vw);margin:0 auto 52px;display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:50px}
+.footer-brand img{width:72px;height:72px;object-fit:contain;background:transparent!important;border:0!important;box-shadow:none!important;margin-bottom:20px;filter:drop-shadow(0 0 14px rgba(232,184,75,.22))}
+.footer-brand p{color:rgba(248,245,238,.60);font-size:13px;line-height:1.9;max-width:320px}.footer-reg{color:rgba(248,245,238,.38);text-transform:uppercase;letter-spacing:2px;font-size:9px;margin-top:18px}
+.footer h4{color:var(--gold);text-transform:uppercase;letter-spacing:4px;font-size:10px;margin-bottom:22px}.footer ul{list-style:none}.footer li{margin-bottom:11px;color:rgba(248,245,238,.56);font-size:12px;line-height:1.6}.footer a:hover{color:var(--gold-light)}
+.footer-bottom{width:min(1180px,92vw);margin:0 auto;border-top:1px solid rgba(200,150,42,.10);padding-top:28px;display:flex;justify-content:space-between;gap:20px}.footer-bottom p{color:rgba(248,245,238,.38);font-size:10px;letter-spacing:1px}
+[dir="rtl"] .brand-text,[dir="rtl"] .section-kicker,[dir="rtl"] .overview,[dir="rtl"] .category-body,[dir="rtl"] .support-card,[dir="rtl"] .note-card,[dir="rtl"] .footer{text-align:right}
+@media(max-width:1080px){.site-nav{padding:14px 24px}.nav-links{display:none}.menu-toggle{display:flex}.brand{min-width:auto}.brand-text strong{font-size:16px}.brand-text span{font-size:8px}.nav-cta{display:none}.overview-grid{grid-template-columns:1fr}.category-grid{grid-template-columns:repeat(2,1fr)}.support-grid{grid-template-columns:repeat(2,1fr)}.note-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.site-nav{padding:12px 16px}.brand img{width:48px;height:48px}.brand-text strong{font-size:14px}.brand-text span{letter-spacing:2.5px}.lang-btn{min-width:84px}.hero{padding:135px 20px 72px;min-height:80vh}.hero-title{letter-spacing:2px}.metrics{grid-template-columns:repeat(2,1fr)}section{padding:78px 20px}.category-grid,.support-grid{grid-template-columns:1fr}.category-card{min-height:320px}.visual-card{min-height:320px}.cta{padding:72px 20px}.cta .container{flex-direction:column;text-align:center}.footer{padding:70px 20px 34px}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column}}
+@media(max-width:440px){.brand-text{display:none}.btn{width:100%}}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="brand" aria-label="Big Energy & Resources Limited">
+    <img src="images/logo/logo-main-transparent.png" alt="Big Energy & Resources Logo">
+    <span class="brand-text"><strong>Big Energy &amp; Resources</strong><span>Limited — Zambia</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-i18n="nav_home">Home</a></li><li><a href="about.html" data-i18n="nav_about">About</a></li><li><a href="sectors.html" class="active" data-i18n="nav_sectors">Sectors</a></li><li><a href="services.html" data-i18n="nav_services">Services</a></li><li><a href="downloads.html" data-i18n="nav_downloads">Downloads</a></li><li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="lang-switcher">
+      <button class="lang-btn" id="langBtn" type="button"><img src="https://flagcdn.com/w20/gb.png" alt="" id="currentFlag"><span id="currentLang">EN</span></button>
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-option active" type="button" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="">English</button><button class="lang-option" type="button" data-lang="tr"><img src="https://flagcdn.com/w20/tr.png" alt="">Turkish</button><button class="lang-option" type="button" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="">French</button><button class="lang-option" type="button" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="">Portuguese</button><button class="lang-option" type="button" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="">Arabic</button>
+      </div>
+    </div>
+    <a href="contact.html" class="nav-cta" data-i18n="nav_cta">Get In Touch</a><button class="menu-toggle" type="button" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-panel" id="mobilePanel"><button class="mobile-close" type="button" onclick="toggleMenu()">X</button><a href="index.html" data-i18n="nav_home">Home</a><a href="about.html" data-i18n="nav_about">About</a><a href="sectors.html" data-i18n="nav_sectors">Sectors</a><a href="services.html" data-i18n="nav_services">Services</a><a href="downloads.html" data-i18n="nav_downloads">Downloads</a><a href="contact.html" data-i18n="nav_contact">Contact</a></div>
+
+<header class="hero">
+  <div class="container">
+    <div class="section-kicker" data-i18n="hero_kicker">Mining Solutions</div>
+    <h1 class="hero-title"><span data-i18n="hero_title_a">Mining Projects</span> <strong data-i18n="hero_title_b">Supply And Investment Support</strong></h1>
+    <p class="hero-lead" data-i18n="hero_lead">Structured commercial support for mining equipment, spare parts, fuel and lubricants supply, investor and credit partner sourcing, project documentation and supplier matching for mining-related opportunities.</p>
+    <div class="hero-actions"><a href="#categories" class="btn btn-primary" data-i18n="hero_btn_1">View Categories</a><a href="contact.html" class="btn btn-secondary" data-i18n="hero_btn_2">Request Mining Support</a></div>
+  </div>
+</header>
+
+<div class="metrics">
+  <div class="metric"><div class="metric-value">7</div><div class="metric-label" data-i18n="metric_1">Support Areas</div></div>
+  <div class="metric"><div class="metric-value">PV</div><div class="metric-label" data-i18n="metric_2">Mining Focus</div></div>
+  <div class="metric"><div class="metric-value">TR</div><div class="metric-label" data-i18n="metric_3">Supplier Focus</div></div>
+  <div class="metric"><div class="metric-value">ZM</div><div class="metric-label" data-i18n="metric_4">Supplier Focus</div></div>
+</div>
+
+<section class="overview">
+  <div class="container overview-grid">
+    <div>
+      <div class="section-kicker" data-i18n="overview_kicker">Sector Overview</div>
+      <h2 class="section-title"><span data-i18n="overview_title_a">A Strategic Sector For</span> <strong data-i18n="overview_title_b">Capital, Equipment And Supply</strong></h2>
+      <p data-i18n="overview_p1">Mining is one of the most important sectors for Big Energy & Resources Limited. Our role is to support serious mining-related opportunities with commercial connections, supplier sourcing, project documentation and investor or credit partner introductions where appropriate.</p>
+      <p data-i18n="overview_p2">We do not present ourselves as a mine operator. We support the commercial side: matching projects with potential partners, sourcing equipment and consumables, and helping mining requests become clear, professional business discussions.</p>
+    </div>
+    <div class="visual-card"><div class="mark"><h3 data-i18n="visual_title">Mining Support Range</h3><p data-i18n="visual_text">Investment · Equipment · Spare Parts · Diesel · Lubricants</p></div></div>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="container">
+    <div class="section-kicker" data-i18n="cat_kicker">Product & Support Categories</div>
+    <h2 class="section-title"><span data-i18n="cat_title_a">Mining Solutions</span> <strong data-i18n="cat_title_b">By Category</strong></h2>
+    <p class="section-lead" data-i18n="cat_lead">Each category is prepared to support product requests, supplier matching and commercial brokerage discussions.</p>
+    <div class="category-grid" id="categoryGrid"></div>
+  </div>
+</section>
+
+<section class="support">
+  <div class="container">
+    <div class="section-kicker" data-i18n="support_kicker">Commercial Support</div>
+    <h2 class="section-title"><span data-i18n="support_title_a">How We Support</span> <strong data-i18n="support_title_b">Mining Projects</strong></h2>
+    <p class="section-lead" data-i18n="support_lead">Our role is to make mining-related product needs, project information, partner communication and commercial documentation clearer for all parties.</p>
+    <div class="support-grid" id="supportGrid"></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-kicker" data-i18n="note_kicker">Business Focus</div>
+    <h2 class="section-title"><span data-i18n="note_title_a">Where Mining Requests</span> <strong data-i18n="note_title_b">Usually Begin</strong></h2>
+    <p class="section-lead" data-i18n="note_lead">Mining requests often begin with a project owner, a concession opportunity, a funding need, an equipment list, fuel supply demand or a spare parts requirement. We help structure that request into a clear commercial path.</p>
+    <div class="note-grid" id="noteGrid"></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container"><h2 data-i18n="cta_title">Need mining equipment, investor partners, credit partners, diesel or lubricant sourcing support?</h2><a href="contact.html" data-i18n="cta_button">Contact Us</a></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="images/logo/logo-main-transparent.png" alt="Big Energy & Resources Logo"><p data-i18n="footer_about">Big Energy & Resources Limited supports sourcing, brokerage and commercial representation across key industrial sectors in Zambia and Southern Africa.</p><div class="footer-reg">Established 2026 · Lusaka · Zambia</div></div>
+    <div><h4 data-i18n="footer_company">Company</h4><ul><li><a href="about.html" data-i18n="nav_about">About</a></li><li><a href="sectors.html" data-i18n="nav_sectors">Sectors</a></li><li><a href="services.html" data-i18n="nav_services">Services</a></li><li><a href="downloads.html" data-i18n="nav_downloads">Downloads</a></li></ul></div>
+    <div><h4 data-i18n="footer_sectors">Sectors</h4><ul><li><a href="sector-solar.html">Mining Solutions</a></li><li><a href="sector-mining.html">Mining</a></li><li><a href="sector-electrical.html">Electrical Infrastructure</a></li><li><a href="sector-agri.html">Agriculture</a></li></ul></div>
+    <div><h4 data-i18n="footer_contact">Contact</h4><ul><li><a href="tel:+260973723566">+260 973 723 566</a></li><li><a href="tel:+905325190312">+90 532 519 0312</a></li><li><a href="mailto:info@bigenergyzambia.com">info@bigenergyzambia.com</a></li><li>Lusaka, Zambia</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p data-i18n="footer_rights">© Big Energy & Resources Limited. All rights reserved.</p><p data-i18n="footer_registered">Established in 2026 · Zambia-based commercial bridge</p></div>
+</footer>
+
+<script>
+const imgFallbacks={"images/mining/mining-main.jpg":"img_mining.png","images/mining/mining-components.jpg":"img_mining.png","images/mining/mining-investor-credit.jpg":"img_mining.png","images/mining/mining-equipment.jpg":"img_mining.png","images/mining/mining-spare-parts.jpg":"img_mining.png","images/mining/mining-diesel-lubricants.jpg":"img_mining.png","images/mining/mining-chemicals.jpg":"img_mining.png","images/mining/mining-safety.jpg":"img_mining.png","images/mining/mining-documentation.jpg":"img_mining.png"};
+const translations={
+en:{nav_home:"Home",nav_about:"About",nav_sectors:"Sectors",nav_services:"Services",nav_downloads:"Downloads",nav_contact:"Contact",nav_cta:"Get In Touch",hero_kicker:"Mining Solutions",hero_title_a:"Mining Projects",hero_title_b:"Supply And Investment Support",hero_lead:"Structured commercial support for mining equipment, spare parts, fuel and lubricants supply, investor and credit partner sourcing, project documentation and supplier matching for mining-related opportunities.",hero_btn_1:"View Categories",hero_btn_2:"Request Mining Support",metric_1:"Support Areas",metric_2:"Mining Focus",metric_3:"Investor Network",metric_4:"Supplier Focus",overview_kicker:"Sector Overview",overview_title_a:"A Strategic Sector For",overview_title_b:"Capital, Equipment And Supply",overview_p1:"Mining is one of the most important sectors for Big Energy & Resources Limited. Our role is to support serious mining-related opportunities with commercial connections, supplier sourcing, project documentation and investor or credit partner introductions where appropriate.",overview_p2:"We do not present ourselves as a mine operator. We support the commercial side: matching projects with potential partners, sourcing equipment and consumables, and helping mining requests become clear, professional business discussions.",visual_title:"Mining Support Range",visual_text:"Investment · Equipment · Spare Parts · Diesel · Lubricants",cat_kicker:"Product & Support Categories",cat_title_a:"Mining Solutions",cat_title_b:"By Category",cat_lead:"Each category is prepared to support product requests, investor discussions, supplier matching and commercial brokerage processes.",support_kicker:"Commercial Support",support_title_a:"How We Support",support_title_b:"Mining Projects",support_lead:"Our role is to make mining-related product needs, project information, partner communication and commercial documentation clearer for all parties.",note_kicker:"Business Focus",note_title_a:"Where Mining Requests",note_title_b:"Usually Begin",note_lead:"Mining requests often begin with a project owner, a concession opportunity, a funding need, an equipment list, fuel supply demand or a spare parts requirement. We help structure that request into a clear commercial path.",cta_title:"Need mining equipment, investor partners, credit partners, diesel or lubricant sourcing support?",cta_button:"Contact Us",footer_about:"Big Energy & Resources Limited supports sourcing, brokerage and commercial representation across key industrial sectors in Zambia and Southern Africa.",footer_company:"Company",footer_sectors:"Sectors",footer_contact:"Contact",footer_rights:"© Big Energy & Resources Limited. All rights reserved.",footer_registered:"Established in 2026 · Zambia-based commercial bridge",
+cat_1_title:"Investor & Credit Partner Sourcing",cat_1_desc:"Support for connecting mining projects with potential investors, financing contacts, credit partners and strategic business partners.",cat_1_tags:"Investors|Credit Partners|Project Finance|Partnership",
+cat_2_title:"Mining Equipment",cat_2_desc:"Commercial sourcing support for excavators, loaders, dump trucks, drilling equipment, crushers and heavy mining machinery.",cat_2_tags:"Excavators|Loaders|Dump Trucks|Drilling",
+cat_3_title:"Spare Parts & Consumables",cat_3_desc:"Support for hydraulic parts, filters, belts, hoses, undercarriage parts, wear parts and equipment maintenance consumables.",cat_3_tags:"Hydraulic|Filters|Wear Parts|Hoses",
+cat_4_title:"Diesel & Lubricants Supply Support",cat_4_desc:"Commercial support for diesel, engine oils, hydraulic oils, greases, coolants and heavy-duty fluid supply requests for mining operations.",cat_4_tags:"Diesel|Engine Oil|Hydraulic Oil|Grease",
+cat_5_title:"Mining Chemicals",cat_5_desc:"Supplier matching support for flotation reagents, flocculants, grinding aids, solvent extraction products and water treatment chemicals.",cat_5_tags:"Reagents|Flocculants|Grinding Aids|Water Treatment",
+cat_6_title:"Safety Equipment",cat_6_desc:"PPE and safety equipment categories such as helmets, lamps, safety boots, reflective workwear, gas detectors and field safety products.",cat_6_tags:"PPE|Helmets|Boots|Detectors",
+cat_7_title:"Project Documentation Support",cat_7_desc:"Support for company profiles, LOI, NDA, investor presentation documents, supply requests and partnership communication files.",cat_7_tags:"LOI|NDA|Profile|Supply Request",
+support_1_title:"Project & Requirement Review",support_1_desc:"We clarify whether the request is equipment, fuel, lubricants, investment, credit, documentation or supplier matching related.",support_2_title:"Partner & Supplier Matching",support_2_desc:"We help identify suitable suppliers, manufacturers, investors, credit partners or commercial contacts for the request.",support_3_title:"Commercial Communication",support_3_desc:"We support structured communication between project owners, buyers, suppliers, investors and possible business partners.",support_4_title:"Documentation Support",support_4_desc:"We assist with LOI, NDA, commission agreements, supply request files, investor summaries and partnership documents when needed.",
+note_1_title:"Investor & Credit Needs",note_1_desc:"Mining projects may need capital partners, credit support, equipment finance or strategic project partners before supply discussions begin.",note_2_title:"Fuel & Lubricant Demand",note_2_desc:"Mining operations often require recurring diesel, engine oil, hydraulic oil, grease and coolant supply support.",note_3_title:"Equipment & Spare Parts",note_3_desc:"Heavy machinery, spare parts and consumables require clear specifications, trusted suppliers and structured quotation communication."},
+tr:{nav_home:"Ana Sayfa",nav_about:"Hakkımızda",nav_sectors:"Sektörler",nav_services:"Hizmetler",nav_downloads:"İndirilebilir Evraklar",nav_contact:"İletişim",nav_cta:"İletişime Geç",hero_kicker:"Madencilik Çözümleri",hero_title_a:"Maden Projeleri İçin",hero_title_b:"Tedarik ve Yatırım Desteği",hero_lead:"Maden ekipmanları, yedek parçalar, mazot ve yağ temini, yatırımcı ve kredi ortağı bulma, proje evrakları ve maden bağlantılı fırsatlar için yapılandırılmış ticari destek.",hero_btn_1:"Kategorileri Gör",hero_btn_2:"Maden Desteği İste",metric_1:"Destek Alanı",metric_2:"Maden Odağı",metric_3:"Yatırımcı Ağı",metric_4:"Tedarikçi Odağı",overview_kicker:"Sektör Özeti",overview_title_a:"Sermaye, Ekipman ve Tedarik İçin",overview_title_b:"Stratejik Sektör",overview_p1:"Madencilik, Big Energy & Resources Limited için en önemli sektörlerden biridir. Rolümüz ciddi maden bağlantılı fırsatları ticari bağlantılar, tedarikçi araştırması, proje evrakları ve uygun durumlarda yatırımcı veya kredi ortağı tanıştırmalarıyla desteklemektir.",overview_p2:"Kendimizi maden işletmecisi olarak göstermiyoruz. Ticari tarafı destekliyoruz: projeleri potansiyel ortaklarla buluşturmak, ekipman ve sarf malzeme tedarikini araştırmak ve maden taleplerini net, profesyonel iş görüşmelerine dönüştürmek.",visual_title:"Maden Destek Yelpazesi",visual_text:"Yatırım · Ekipman · Yedek Parça · Mazot · Yağ",cat_kicker:"Ürün ve Destek Kategorileri",cat_title_a:"Madencilik Çözümleri",cat_title_b:"Kategori Bazında",cat_lead:"Her kategori ürün taleplerini, yatırımcı görüşmelerini, tedarikçi eşleştirmesini ve ticari aracılık süreçlerini desteklemek için hazırlanmıştır.",support_kicker:"Ticari Destek",support_title_a:"Maden Projelerini",support_title_b:"Nasıl Destekliyoruz",support_lead:"Rolümüz maden bağlantılı ürün ihtiyaçlarını, proje bilgilerini, ortak iletişimini ve ticari evrakları tüm taraflar için daha net hale getirmektir.",note_kicker:"İş Odağı",note_title_a:"Maden Talepleri",note_title_b:"Genelde Nereden Başlar",note_lead:"Maden talepleri genellikle proje sahibi, ruhsat/fırsat, finansman ihtiyacı, ekipman listesi, yakıt talebi veya yedek parça ihtiyacıyla başlar. Bu talebi net bir ticari yola dönüştürmeye yardımcı oluruz.",cta_title:"Maden ekipmanı, yatırımcı ortağı, kredi ortağı, mazot veya yağ tedarik desteğine mi ihtiyacınız var?",cta_button:"İletişim",footer_about:"Big Energy & Resources Limited, Zambia ve Güney Afrika’daki ana endüstriyel sektörlerde tedarik, aracılık ve ticari temsil hizmetleri sunar.",footer_company:"Şirket",footer_sectors:"Sektörler",footer_contact:"İletişim",footer_rights:"© Big Energy & Resources Limited. Tüm hakları saklıdır.",footer_registered:"2026 yılında kurulmuştur · Zambia merkezli ticari köprü",
+cat_1_title:"Yatırımcı ve Kredi Ortağı Bulma",cat_1_desc:"Maden projelerini potansiyel yatırımcılar, finansman bağlantıları, kredi ortakları ve stratejik iş ortaklarıyla buluşturma desteği.",cat_1_tags:"Yatırımcı|Kredi Ortağı|Proje Finansmanı|Ortaklık",
+cat_2_title:"Maden Ekipmanları",cat_2_desc:"Ekskavatör, loader, damperli kamyon, sondaj ekipmanı, kırıcı ve ağır maden makineleri için ticari tedarik desteği.",cat_2_tags:"Ekskavatör|Loader|Kamyon|Sondaj",
+cat_3_title:"Yedek Parça ve Sarf Malzemeleri",cat_3_desc:"Hidrolik parçalar, filtreler, kayışlar, hortumlar, yürüyüş takımı parçaları, aşınma parçaları ve bakım sarfları için destek.",cat_3_tags:"Hidrolik|Filtre|Aşınma Parçası|Hortum",
+cat_4_title:"Mazot ve Yağ Temini Desteği",cat_4_desc:"Maden operasyonları için mazot, motor yağı, hidrolik yağ, gres, soğutma sıvısı ve ağır kullanım sıvı taleplerine ticari destek.",cat_4_tags:"Mazot|Motor Yağı|Hidrolik Yağ|Gres",
+cat_5_title:"Maden Kimyasalları",cat_5_desc:"Flotasyon reaktifleri, flokülantlar, öğütme yardımcıları, solvent ekstraksiyon ürünleri ve su arıtma kimyasalları için tedarikçi eşleştirme desteği.",cat_5_tags:"Reaktif|Flokülant|Öğütme|Su Arıtma",
+cat_6_title:"İş Güvenliği Ekipmanları",cat_6_desc:"Baret, lamba, güvenlik botu, reflektif iş kıyafeti, gaz dedektörü ve saha güvenlik ürünleri gibi PPE kategorileri.",cat_6_tags:"PPE|Baret|Bot|Dedektör",
+cat_7_title:"Proje Evrak Desteği",cat_7_desc:"Şirket profili, LOI, NDA, yatırımcı sunumu, tedarik talebi ve ortaklık iletişim dosyaları için destek.",cat_7_tags:"LOI|NDA|Profil|Tedarik Talebi",
+support_1_title:"Proje ve İhtiyaç Analizi",support_1_desc:"Talebin ekipman, yakıt, yağ, yatırım, kredi, evrak veya tedarikçi eşleştirme odaklı olup olmadığını netleştiririz.",support_2_title:"Ortak ve Tedarikçi Eşleştirme",support_2_desc:"Talebe uygun tedarikçi, üretici, yatırımcı, kredi ortağı veya ticari bağlantıları belirlemeye destek oluruz.",support_3_title:"Ticari İletişim",support_3_desc:"Proje sahipleri, alıcılar, tedarikçiler, yatırımcılar ve olası iş ortakları arasında yapılandırılmış iletişimi destekleriz.",support_4_title:"Evrak Desteği",support_4_desc:"Gerektiğinde LOI, NDA, komisyon anlaşması, tedarik talep dosyası, yatırımcı özeti ve ortaklık evraklarına destek veririz.",
+note_1_title:"Yatırımcı ve Kredi İhtiyacı",note_1_desc:"Maden projeleri tedarik görüşmelerinden önce sermaye ortağı, kredi desteği, ekipman finansmanı veya stratejik ortaklık gerektirebilir.",note_2_title:"Yakıt ve Yağ Talebi",note_2_desc:"Maden operasyonları düzenli mazot, motor yağı, hidrolik yağ, gres ve soğutma sıvısı tedarik desteğine ihtiyaç duyabilir.",note_3_title:"Ekipman ve Yedek Parça",note_3_desc:"Ağır makineler, yedek parçalar ve sarf malzemeleri net teknik özellik, güvenilir tedarikçi ve düzenli teklif iletişimi gerektirir."}
+};
+["fr","pt","ar"].forEach(l=>translations[l]=translations.en);
+const categories=[1,2,3,4,5,6,7], supports=[1,2,3,4], notes=[1,2,3];
+const catImages=["images/mining/mining-investor-credit.jpg","images/mining/mining-equipment.jpg","images/mining/mining-spare-parts.jpg","images/mining/mining-diesel-lubricants.jpg","images/mining/mining-chemicals.jpg","images/mining/mining-safety.jpg","images/mining/mining-documentation.jpg"];
+let currentLang="en";
+function t(k){return (translations[currentLang]&&translations[currentLang][k])||translations.en[k]||k}
+function bg(el,path){el.style.backgroundImage="url('"+path+"')";const test=new Image();test.onerror=()=>{if(imgFallbacks[path])el.style.backgroundImage="url('"+imgFallbacks[path]+"')"};test.src=path}
+function renderCategories(){const grid=document.getElementById("categoryGrid");grid.innerHTML="";categories.forEach((n,i)=>{const a=document.createElement("article");a.className="category-card";const b=document.createElement("div");b.className="category-bg";bg(b,catImages[i]);const tags=t("cat_"+n+"_tags").split("|").map(x=>"<span>"+x+"</span>").join("");const body=document.createElement("div");body.className="category-body";body.innerHTML="<h3>"+t("cat_"+n+"_title")+"</h3><p>"+t("cat_"+n+"_desc")+'</p><div class="product-tags">'+tags+"</div>";a.appendChild(b);a.appendChild(body);grid.appendChild(a)})}
+function renderSupport(){const grid=document.getElementById("supportGrid");grid.innerHTML="";supports.forEach(n=>{const card=document.createElement("article");card.className="support-card";card.innerHTML="<strong>"+String(n).padStart(2,"0")+"</strong><h3>"+t("support_"+n+"_title")+"</h3><p>"+t("support_"+n+"_desc")+"</p>";grid.appendChild(card)})}
+function renderNotes(){const grid=document.getElementById("noteGrid");grid.innerHTML="";notes.forEach(n=>{const card=document.createElement("article");card.className="note-card";card.innerHTML="<h3>"+t("note_"+n+"_title")+"</h3><p>"+t("note_"+n+"_desc")+"</p>";grid.appendChild(card)})}
+function translatePage(){document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.getAttribute("data-i18n")));renderCategories();renderSupport();renderNotes()}
+function setLang(lang){currentLang=translations[lang]?lang:"en";const meta={en:["EN","https://flagcdn.com/w20/gb.png"],tr:["TR","https://flagcdn.com/w20/tr.png"],fr:["FR","https://flagcdn.com/w20/fr.png"],pt:["PT","https://flagcdn.com/w20/pt.png"],ar:["AR","https://flagcdn.com/w20/sa.png"]};document.getElementById("currentLang").textContent=meta[currentLang][0];document.getElementById("currentFlag").src=meta[currentLang][1];document.documentElement.lang=currentLang;document.documentElement.dir=currentLang==="ar"?"rtl":"ltr";document.body.dir=currentLang==="ar"?"rtl":"ltr";document.querySelectorAll(".lang-option").forEach(btn=>btn.classList.toggle("active",btn.dataset.lang===currentLang));translatePage();try{localStorage.setItem("be_lang",currentLang)}catch(e){}}
+function toggleMenu(){document.getElementById("mobilePanel").classList.toggle("open")}
+document.addEventListener("DOMContentLoaded",()=>{try{setLang(localStorage.getItem("be_lang")||"en")}catch(e){setLang("en")}document.getElementById("langBtn").addEventListener("click",e=>{e.stopPropagation();document.getElementById("langDropdown").classList.toggle("open")});document.querySelectorAll(".lang-option").forEach(btn=>btn.addEventListener("click",()=>{setLang(btn.dataset.lang);document.getElementById("langDropdown").classList.remove("open")}));document.addEventListener("click",()=>document.getElementById("langDropdown").classList.remove("open"))});document.querySelectorAll(".lang-option").forEach(btn=>btn.addEventListener("click",()=>{setLang(btn.dataset.lang);document.getElementById("langDropdown").classList.remove("open")}));document.addEventListener("click",()=>document.getElementById("langDropdown").classList.remove("open"))});
+</script>
+</body>
+</html>
