@@ -19,9 +19,9 @@ a{text-decoration:none;color:inherit}button{font-family:inherit}img{max-width:10
 .site-nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:18px 58px;border-bottom:1px solid rgba(200,150,42,.14);background:rgba(6,12,24,.96);backdrop-filter:blur(10px);box-shadow:0 18px 60px rgba(0,0,0,.22)}
 .brand{display:flex;align-items:center;gap:14px;min-width:250px}
 .brand img{width:58px;height:58px;object-fit:contain;background:transparent!important;border:0!important;box-shadow:none!important;filter:drop-shadow(0 0 16px rgba(232,184,75,.25))}
-.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-text{display:flex;flex-direction:column;line-height:1.18}
 .brand-text strong{font-family:'Cormorant Garamond',serif;color:var(--gold-light);letter-spacing:2px;font-size:18px}
-.brand-text span{color:rgba(248,245,238,.62);letter-spacing:4px;text-transform:uppercase;font-size:9px}
+.brand-text span{color:rgba(248,245,238,.62);letter-spacing:3px;text-transform:uppercase;font-size:9px;margin-top:5px}
 .nav-links{display:flex;align-items:center;gap:34px;list-style:none}
 .nav-links a{color:rgba(248,245,238,.78);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:500;position:relative;padding:9px 0;transition:.25s ease}
 .nav-links a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:.25s ease}
@@ -138,7 +138,6 @@ section{padding:78px 20px}.sector-grid,.service-grid{grid-template-columns:1fr}.
     <li><a href="index.html" class="active" data-i18n="nav_home">Home</a></li>
     <li><a href="about.html" data-i18n="nav_about">About</a></li>
     <li><a href="index.html#sectors" data-i18n="nav_sectors">Sectors</a></li>
-    <li><a href="downloads.html" data-i18n="nav_downloads">Downloads</a></li>
     <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
   </ul>
   <div class="nav-actions">
@@ -160,7 +159,6 @@ section{padding:78px 20px}.sector-grid,.service-grid{grid-template-columns:1fr}.
   <a href="index.html" data-i18n="nav_home">Home</a>
   <a href="about.html" data-i18n="nav_about">About</a>
   <a href="index.html#sectors" data-i18n="nav_sectors">Sectors</a>
-  <a href="downloads.html" data-i18n="nav_downloads">Downloads</a>
   <a href="contact.html" data-i18n="nav_contact">Contact</a>
 </div>
 
@@ -236,7 +234,7 @@ section{padding:78px 20px}.sector-grid,.service-grid{grid-template-columns:1fr}.
       <p data-i18n="footer_about">Big Energy & Resources Limited supports sourcing, brokerage and commercial representation across key industrial sectors in Zambia and Southern Africa.</p>
       <div class="footer-reg">Established 2026 · Lusaka · Zambia</div>
     </div>
-    <div><h4 data-i18n="footer_company">Company</h4><ul><li><a href="about.html" data-i18n="nav_about">About</a></li><li><a href="index.html#sectors" data-i18n="nav_sectors">Sectors</a></li><li><a href="downloads.html" data-i18n="nav_downloads">Downloads</a></li><li><a href="contact.html" data-i18n="nav_contact">Contact</a></li></ul></div>
+    <div><h4 data-i18n="footer_company">Company</h4><ul><li><a href="about.html" data-i18n="nav_about">About</a></li><li><a href="index.html#sectors" data-i18n="nav_sectors">Sectors</a></li><li><a href="contact.html" data-i18n="nav_contact">Contact</a></li></ul></div>
     <div><h4 data-i18n="footer_sectors">Sectors</h4><ul><li><a href="sector-solar.html">Solar Energy</a></li><li><a href="sector-agri.html">Agriculture</a></li><li><a href="sector-mining.html">Mining</a></li><li><a href="sector-electrical.html">Electrical Infrastructure</a></li><li><a href="sector-construction.html">Construction Materials</a></li><li><a href="sector-oil.html">Industrial Lubricants</a></li><li><a href="sector-cleaning.html">Cleaning Products</a></li><li><a href="sector-textile.html">Textile Supply</a></li><li><a href="sector-trade.html">Trade Brokerage</a></li></ul></div>
     <div><h4 data-i18n="footer_contact">Contact</h4><ul><li><a href="mailto:info@bigenergyzambia.com">info@bigenergyzambia.com</a></li><li><a href="tel:+260973723566">+260 973 723 566</a></li><li><a href="tel:+905325190312">+90 532 519 0312</a></li><li>Lusaka, Zambia</li></ul></div>
   </div>
@@ -246,7 +244,7 @@ section{padding:78px 20px}.sector-grid,.service-grid{grid-template-columns:1fr}.
 <script>
 const translations={
 en:{
-nav_home:"Home",nav_about:"About",nav_sectors:"Sectors",nav_services:"Services",nav_downloads:"Downloads",nav_contact:"Contact",nav_cta:"Get In Touch",
+nav_home:"Home",nav_about:"About",nav_sectors:"Sectors",nav_services:"Services",nav_contact:"Contact",nav_cta:"Get In Touch",
 hero_kicker:"Zambia-Based Commercial Bridge",hero_title_a:"Connecting Energy, Resources",hero_title_b:"And Strategic Trade",hero_lead:"Big Energy & Resources Limited supports sourcing, trade brokerage, investment connections, documentation and commercial representation across priority sectors including solar energy, agriculture, mining and electrical infrastructure.",hero_btn_1:"Explore Sectors",hero_btn_2:"Start a Business Request",strip_1:"Established",strip_2:"Zambia Based",strip_3:"Commercial Focus",strip_4:"Connection Markets",
 about_kicker:"About Big Energy",about_title_a:"Built To Support",about_title_b:"Serious Business Connections",about_p1:"Big Energy & Resources Limited is a Zambia-based commercial bridge established in 2026. We support companies, project owners, suppliers and investors by helping them structure business requests and connect with relevant commercial parties.",about_p2:"Our priority sectors include solar energy, agriculture, mining, electrical infrastructure, construction materials, industrial products, textiles, cleaning products and trade brokerage.",about_btn:"Read More",panel_title:"What We Focus On",panel_1:"Supplier sourcing and buyer-seller matching",panel_2:"Investor, credit partner and project partner introductions",panel_3:"LOI, NDA, commission and brokerage document support",panel_4:"Commercial representation between Zambia and international business networks",
 sectors_kicker:"Priority Sectors",sectors_title_a:"Sector-Based",sectors_title_b:"Commercial Support",sectors_lead:"Each sector page is prepared to support product requests, supplier matching, documentation and commercial brokerage discussions.",
@@ -255,7 +253,7 @@ sector_1_title:"Solar Energy",sector_1_desc:"Solar panels, inverters, batteries,
 service_1_title:"Supplier Sourcing",service_1_desc:"Identifying suitable manufacturers and suppliers for defined product groups.",service_2_title:"Commercial Brokerage",service_2_desc:"Supporting introductions, negotiation structure and commission-based commercial processes.",service_3_title:"Documentation Support",service_3_desc:"Helping organize LOI, NDA, commission agreements and supply request files.",service_4_title:"Representation",service_4_desc:"Professional communication support for meetings, follow-up and business coordination."
 },
 tr:{
-nav_home:"Ana Sayfa",nav_about:"Hakkımızda",nav_sectors:"Sektörler",nav_services:"Hizmetler",nav_downloads:"İndirilebilir Evraklar",nav_contact:"İletişim",nav_cta:"İletişime Geç",
+nav_home:"Ana Sayfa",nav_about:"Hakkımızda",nav_sectors:"Sektörler",nav_services:"Hizmetler",nav_contact:"İletişim",nav_cta:"İletişime Geç",
 hero_kicker:"Zambia Merkezli Ticari Köprü",hero_title_a:"Enerji, Kaynaklar",hero_title_b:"ve Stratejik Ticareti Buluşturuyoruz",hero_lead:"Big Energy & Resources Limited; güneş enerjisi, tarım, madencilik ve elektrik altyapısı başta olmak üzere öncelikli sektörlerde tedarik, ticari aracılık, yatırım bağlantıları, evrak desteği ve kurumsal temsil sağlar.",hero_btn_1:"Sektörleri İncele",hero_btn_2:"İş Talebi Başlat",strip_1:"Kuruluş",strip_2:"Zambia Merkezli",strip_3:"Ticari Odak",strip_4:"Bağlantı Pazarı",
 about_kicker:"Big Energy Hakkında",about_title_a:"Ciddi İş Bağlantılarını",about_title_b:"Desteklemek İçin Kuruldu",about_p1:"Big Energy & Resources Limited, 2026 yılında kurulmuş Zambia merkezli bir ticari köprüdür. Şirketleri, proje sahiplerini, tedarikçileri ve yatırımcıları iş taleplerini yapılandırma ve ilgili ticari taraflarla buluşturma konusunda destekleriz.",about_p2:"Öncelikli sektörlerimiz arasında güneş enerjisi, tarım, madencilik, elektrik altyapısı, inşaat malzemeleri, endüstriyel ürünler, tekstil, temizlik ürünleri ve ticari aracılık yer alır.",about_btn:"Devamını Oku",panel_title:"Neye Odaklanıyoruz",panel_1:"Tedarikçi araştırması ve alıcı-satıcı eşleştirme",panel_2:"Yatırımcı, kredi ortağı ve proje ortağı tanıştırmaları",panel_3:"LOI, NDA, komisyon ve aracılık evrak desteği",panel_4:"Zambia ile uluslararası iş ağları arasında ticari temsil",
 sectors_kicker:"Öncelikli Sektörler",sectors_title_a:"Sektör Bazlı",sectors_title_b:"Ticari Destek",sectors_lead:"Her sektör sayfası ürün taleplerini, tedarikçi eşleştirmesini, evrak desteğini ve ticari aracılık görüşmelerini desteklemek için hazırlanmıştır.",
