@@ -70,7 +70,7 @@ section{padding:110px 60px;position:relative}
 .overview-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
 .overview p{color:rgba(248,245,238,.68);line-height:1.95;font-size:15px;margin-top:18px}
 .visual-card{min-height:430px;position:relative;border:1px solid rgba(200,150,42,.20);background:linear-gradient(135deg,rgba(13,27,62,.72),rgba(6,12,24,.78));overflow:hidden}
-.visual-card:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,12,24,.74),rgba(6,12,24,.18)),url('img_trade_main.jpg') center/cover no-repeat;opacity:.88}
+.visual-card:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,12,24,.74),rgba(6,12,24,.18)),url('images/trade/trade-network.jpg') center/cover no-repeat;opacity:.88}
 .visual-card:after{content:"";position:absolute;inset:28px;border:1px solid rgba(200,150,42,.22)}
 .visual-card .mark{position:absolute;left:34px;bottom:34px;right:34px;z-index:2}
 .visual-card h3{font-family:'Cormorant Garamond',serif;color:var(--gold-light);font-size:34px;line-height:1.05;margin-bottom:8px}
@@ -102,7 +102,7 @@ section{padding:110px 60px;position:relative}
 </head>
 <body>
 <nav class="site-nav">
-  <a href="index.html" class="brand" aria-label="Big Energy & Resources">
+  <a href="index.html" class="brand" aria-label="Big Energy & Resources Limited">
     <img src="images/logo/logo-main-transparent.png" alt="Big Energy & Resources Logo">
     <span class="brand-text"><strong>Big Energy &amp; Resources</strong><span>Zambia</span></span>
   </a>
@@ -182,7 +182,7 @@ section{padding:110px 60px;position:relative}
 </footer>
 
 <script>
-const imgFallbacks={"img_trade_main.jpg":"img_trade_main.jpg"};
+const imgFallbacks={"img_trade_main.jpg":"img_trade.jpg","images/trade/trade-main.jpg":"img_trade.jpg","images/trade/trade-network.jpg":"img_trade.jpg","images/trade/supplier-sourcing.jpg":"img_trade.jpg","images/trade/buyer-representation.jpg":"img_trade.jpg","images/trade/import-export.jpg":"img_trade.jpg","images/trade/commercial-documents.jpg":"img_trade.jpg","images/trade/brokerage-support.jpg":"img_trade.jpg"};
 const translations={
 en:{nav_home:"Home",nav_about:"About",nav_sectors:"Sectors",nav_services:"Services",nav_downloads:"Downloads",nav_contact:"Contact",nav_cta:"Get In Touch",hero_kicker:"Trade Brokerage",hero_title_a:"International Trade",hero_title_b:"& Commercial Brokerage",hero_lead:"Structured commercial support for supplier sourcing, buyer representation, import and export coordination, documentation and commission-based brokerage.",hero_btn_1:"View Services",hero_btn_2:"Request Brokerage Support",metric_1:"Service Groups",metric_2:"Supply Support",metric_3:"Trade Focus",metric_4:"Market Focus",overview_kicker:"Sector Overview",overview_title_a:"A Practical Commercial Structure For",overview_title_b:"International Trade",overview_p1:"The trade brokerage sector is designed for buyers, suppliers, investors, exporters and importers who need professional commercial communication and structured market connection.",overview_p2:"Big Energy & Resources supports supplier sourcing, buyer matching, quotation communication, documentation support and commercial representation across selected business sectors.",visual_title:"Trade Support Range",visual_text:"Sourcing · Buyers · Import · Export · Brokerage",cat_kicker:"Service Categories",cat_title_a:"Trade Services",cat_title_b:"By Category",cat_lead:"Each service category is prepared to support business requests, supplier matching, buyer representation and commercial brokerage discussions.",support_kicker:"Commercial Support",support_title_a:"How We Support",support_title_b:"Trade Brokerage",support_lead:"Our role is to make product needs, buyer-supplier communication and commercial documentation clearer for both sides.",cta_title:"Need trade brokerage or commercial representation support?",cta_button:"Contact Us",footer_about:"Big Energy & Resources supports sourcing, brokerage and commercial representation across key industrial sectors in Zambia and Southern Africa.",footer_company:"Company",footer_sectors:"Sectors",footer_contact:"Contact",footer_rights:"© Big Energy & Resources. All rights reserved.",footer_registered:"Established in 2026 · Zambia-based commercial bridge",explore:"Request Details",
 cat_1_title:"Supplier Sourcing",cat_1_desc:"Structured supplier research and sourcing support for buyers seeking reliable products, manufacturers and commercial supply channels.",cat_1_tags:"Suppliers|Manufacturers|Sourcing|Products",
@@ -201,7 +201,7 @@ support_1_title:"Talep Analizi",support_1_desc:"İş talebini, ürün grubunu, h
 };
 ["fr","pt","ar"].forEach(l=>translations[l]=translations.en);
 const categories=[1,2,3,4,5], supports=[1,2,3,4];
-const catImages=["img_trade_main.jpg","img_trade_main.jpg","img_trade_main.jpg","img_trade_main.jpg","img_trade_main.jpg"];
+const catImages=["images/trade/supplier-sourcing.jpg","images/trade/buyer-representation.jpg","images/trade/import-export.jpg","images/trade/commercial-documents.jpg","images/trade/brokerage-support.jpg"];
 let currentLang="en";
 function t(k){return (translations[currentLang]&&translations[currentLang][k])||translations.en[k]||k}
 function bg(el,path){el.style.backgroundImage="url('"+path+"')";const test=new Image();test.onerror=()=>{if(imgFallbacks[path])el.style.backgroundImage="url('"+imgFallbacks[path]+"')"};test.src=path}
