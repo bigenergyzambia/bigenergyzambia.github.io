@@ -27,6 +27,55 @@ a{text-decoration:none;color:inherit}button{font-family:inherit}img{max-width:10
 .nav-links a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:.25s ease}
 .nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
 .nav-links a:hover:after,.nav-links a.active:after{width:100%}
+.nav-item{position:relative}
+.sector-dropdown{
+  position:absolute;
+  top:calc(100% + 15px);
+  left:50%;
+  transform:translateX(-50%) translateY(8px);
+  width:270px;
+  background:rgba(6,12,24,.98);
+  border:1px solid rgba(200,150,42,.38);
+  box-shadow:0 24px 70px rgba(0,0,0,.58);
+  padding:10px 0;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:.25s ease;
+}
+.sector-dropdown:before{
+  content:"";
+  position:absolute;
+  top:-7px;
+  left:50%;
+  width:12px;
+  height:12px;
+  transform:translateX(-50%) rotate(45deg);
+  background:rgba(6,12,24,.98);
+  border-left:1px solid rgba(200,150,42,.38);
+  border-top:1px solid rgba(200,150,42,.38);
+}
+.nav-item:hover .sector-dropdown,
+.nav-item:focus-within .sector-dropdown{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
+}
+.sector-dropdown a{
+  display:block;
+  padding:12px 18px;
+  color:rgba(248,245,238,.74);
+  letter-spacing:2px;
+  font-size:10px;
+  line-height:1.35;
+  white-space:nowrap;
+}
+.sector-dropdown a:after{display:none}
+.sector-dropdown a:hover{
+  color:var(--gold-light);
+  background:rgba(200,150,42,.10);
+}
 .nav-actions{display:flex;align-items:center;gap:14px}
 .nav-cta{border:1px solid rgba(200,150,42,.62);color:var(--gold-light);padding:12px 24px;letter-spacing:3px;font-size:10px;text-transform:uppercase;transition:.25s ease;white-space:nowrap}
 .nav-cta:hover{background:var(--gold);color:var(--black)}
@@ -137,7 +186,20 @@ section{padding:78px 20px}.sector-grid,.service-grid{grid-template-columns:1fr}.
   <ul class="nav-links">
     <li><a href="index.html" class="active" data-i18n="nav_home">Home</a></li>
     <li><a href="about.html" data-i18n="nav_about">About</a></li>
-    <li><a href="index.html#sectors" data-i18n="nav_sectors">Sectors</a></li>
+    <li class="nav-item">
+      <a href="index.html#sectors" data-i18n="nav_sectors">Sectors</a>
+      <div class="sector-dropdown">
+        <a href="sector-solar.html">Solar Energy</a>
+        <a href="sector-agri.html">Agriculture</a>
+        <a href="sector-mining.html">Mining</a>
+        <a href="sector-electrical.html">Electrical Infrastructure</a>
+        <a href="sector-construction.html">Construction Materials</a>
+        <a href="sector-oil.html">Industrial Lubricants</a>
+        <a href="sector-cleaning.html">Cleaning Products</a>
+        <a href="sector-textile.html">Textile Supply</a>
+        <a href="sector-trade.html">Trade Brokerage</a>
+      </div>
+    </li>
     <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
   </ul>
   <div class="nav-actions">
