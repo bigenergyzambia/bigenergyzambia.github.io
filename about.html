@@ -44,11 +44,14 @@
   .fact-item:last-child{border-bottom:none;}
   .fact-label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
   .fact-value{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--white);line-height:1.5;}
-  .method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:50px;}
-  .method-card{background:rgba(13,27,62,0.6);border:1px solid rgba(200,150,42,0.1);padding:40px 28px;text-align:center;}
-  .method-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:rgba(200,150,42,0.2);margin-bottom:15px;}
-  .method-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--gold-light);margin-bottom:12px;}
-  .method-desc{font-size:12px;line-height:1.7;color:rgba(248,245,238,0.55);}
+  .method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:54px;}
+  .method-card{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(21,35,71,0.95),rgba(6,12,24,0.72));border:1px solid rgba(200,150,42,0.22);padding:38px 28px 34px;text-align:left;min-height:270px;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;}
+  .method-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 18% 16%,rgba(232,184,75,0.16),transparent 34%);opacity:.9;pointer-events:none;}
+  .method-card:hover{transform:translateY(-8px);border-color:rgba(232,184,75,0.48);box-shadow:0 28px 70px rgba(0,0,0,0.34);}
+  .method-num{position:relative;z-index:1;width:68px;height:68px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(232,184,75,0.45);background:rgba(200,150,42,0.10);font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--gold-light);margin-bottom:24px;box-shadow:0 0 28px rgba(200,150,42,0.10);}
+  .method-title{position:relative;z-index:1;font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1.08;font-weight:700;color:var(--gold-light);margin-bottom:14px;}
+  .method-title::after{content:'';display:block;width:44px;height:1px;background:var(--gold);margin-top:14px;opacity:.75;}
+  .method-desc{position:relative;z-index:1;font-size:13px;line-height:1.9;color:rgba(248,245,238,0.72);}
   .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px;}
   .team-card{background:var(--navy-mid);border:1px solid rgba(200,150,42,0.1);padding:48px 36px;text-align:center;transition:all 0.4s;}
   .team-card:hover{transform:translateY(-6px);border-color:rgba(200,150,42,0.3);}
@@ -150,14 +153,14 @@
 
 <section style="background:var(--navy);">
   <div class="section-label">Our Philosophy</div>
-  <h2 class="section-title">Not a Distributor — <strong>Your Corporate Arm in Lusaka</strong></h2>
-  <p style="max-width:800px;margin-top:20px;font-size:14px;line-height:1.9;">Working with a standard distributor means your product sits on a shelf. Working with Big Energy & Resources means your brand has a physical presence in the heart of Lusaka — with your signage, your language, and a dedicated team running toward your goals.</p>
+  <h2 class="section-title">Not a Distributor — <strong>Your Corporate Branch in Lusaka</strong></h2>
+  <p style="max-width:840px;margin-top:20px;font-size:14px;line-height:1.9;">More than a standard distribution model: Big Energy &amp; Resources gives your brand an active field presence in Lusaka — with local representation, structured follow-up and a dedicated team working toward your commercial goals.</p>
   
   <div class="method-grid">
-    <div class="method-card"><div class="method-num">01</div><div class="method-title">Selection</div><div class="method-desc">We identify relevant contacts in your sector. We arrange meetings. You approve. Your personnel, our discipline.</div></div>
-    <div class="method-card"><div class="method-num">02</div><div class="method-title">Management</div><div class="method-desc">Administrative responsibility with Big Energy. Daily strategy and management fully in your hands.</div></div>
-    <div class="method-card"><div class="method-num">03</div><div class="method-title">Language</div><div class="method-desc">Multilingual team speaking Turkish, English, Portuguese, and Arabic — eliminating communication gaps.</div></div>
-    <div class="method-card"><div class="method-num">04</div><div class="method-title">Reporting</div><div class="method-desc">Weekly planning, real-time digital reporting after each site visit. Daily, weekly, monthly reports.</div></div>
+    <div class="method-card"><div class="method-num">01</div><div class="method-title">Strategic Selection</div><div class="method-desc">We identify the right sector contacts, organize meetings and bring qualified opportunities to your table. Final approval and direction always remain with you.</div></div>
+    <div class="method-card"><div class="method-num">02</div><div class="method-title">Operational Management</div><div class="method-desc">Administrative operations are handled by Big Energy. Daily strategy, business direction and management control remain fully in your hands.</div></div>
+    <div class="method-card"><div class="method-num">03</div><div class="method-title">Multilingual Communication</div><div class="method-desc">Our team supports Turkish, English, Portuguese and Arabic communication, helping remove language barriers and move business discussions faster.</div></div>
+    <div class="method-card"><div class="method-num">04</div><div class="method-title">Reporting &amp; Follow-Up</div><div class="method-desc">After each site visit, we provide structured digital reporting. Daily, weekly and monthly reports help you follow the process with clarity.</div></div>
   </div>
 </section>
 
